@@ -1,0 +1,4 @@
+<picker class="{{open==true?'item-value':''}}" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+  <!-- input有自带样式，其基于父组件（显示为自带默认宽高），这里可以通过传值决定input内容显示位置 -->
+	<input value='{{time}}' placeholder='请选择时间' style="text-align: {{size || 'right'}}; color: {{color}}" />
+</picker>
