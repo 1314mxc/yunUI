@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "通知",
+  "usingComponents": {
+    "y-picker":"../../components/yPicker/ypicker"
+  }
+}

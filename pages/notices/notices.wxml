@@ -1,0 +1,15 @@
+<form bindsubmit="register">
+
+	<!-- 这里是三行和通知有关的，也用list整体布局吧 -->
+	<view class="n_top">
+		<view class="list" wx:if="{{swItch!=0}}">
+			<view class="left">通知时间</view>
+			<view class="l_right">
+        <y-picker open="true" size="right" color="#888888" s="false" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
+				<i class="iconfont icon-fanhui-copy-copy"></i>
+			</view>
+		</view>
+	</view>
+
+
+</form>

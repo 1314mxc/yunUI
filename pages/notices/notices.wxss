@@ -1,0 +1,55 @@
+Page{
+  background-color: rgb(248,248,248);
+}
+.n_top{
+  width: 100%;
+  margin-top: 15rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 31rpx;
+  padding-right: 30rpx;
+}
+
+.n_top .list{
+  position: relative;
+  width: 100%;
+  height: 94rpx;
+  border-bottom: 1rpx solid rgba(0,0,0,.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  letter-spacing: 0;
+}
+.list .left{
+  font-size: 36rpx;
+  color: #000000;
+}
+.list .right{
+  margin-left: 112rpx;
+  font-size: 33rpx;
+  color: #B2B2B2;
+
+}
+
+.list .l_right{
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.l_right input{
+  text-align: right;
+}
+.l_right .item-value,.snum{
+  color: #888888;
+  font-size: 34rpx;
+  margin-right: 19rpx;
+}
+.l_right .iconfont{
+  font-size: 39rpx;
+  color: #C7C7CC;
+}
+
