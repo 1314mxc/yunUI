@@ -48,14 +48,12 @@ for (let i = 0; i < 60; i++) {
 
 Component({
   lifetimes:{
-    created:function(){
-      console.log(this.properties.s)
-      if(this.properties.s && this.properties.s==true){
-        sec=true
-      }
-    },
     // 这时节点树已创建完成，开始可以用setData渲染节点，但还无法操作节点
     attached:function(){
+      console.log(this.properties.seo)
+      if(this.properties.seo && this.properties.seo==true){
+        sec=true
+      }
       //设置默认的年份
       this.setData({
         choose_year: this.data.multiArray[0][0]
@@ -66,10 +64,12 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    s:Boolean,
+    seo:Boolean,
     open:Boolean,
     size:String,
-    color:String
+    color:String,
+    time:String,
+    holder:String
   },
 
   /**
@@ -77,8 +77,8 @@ Component({
    */
   data: {
     time: '',
-    multiArray: sec!=true?[years, months, days, hours, minutes]:[years, months, days, hours, minutes,seconds],
-    multiIndex: sec!=true?[10, meng_date.getMonth()+1, meng_date.getDate(), meng_date.getHours(), meng_date.getMinutes()]:[10, meng_date.getMonth()+1, meng_date.getDate(), meng_date.getHours(), meng_date.getMinutes(),meng_date.getSeconds()],
+    multiArray: !sec?[years, months, days, hours, minutes]:[years, months, days, hours, minutes,seconds],
+    multiIndex: !sec?[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes()]:[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes(),meng_date.getSeconds()],
     choose_year:''
   },
 
