@@ -1,0 +1,4 @@
+.item-value{
+  font-size: 34rpx;
+  margin-right: 19rpx;
+}
