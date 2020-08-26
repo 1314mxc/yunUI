@@ -2,8 +2,8 @@
 ### 致力于“微信小程序”原生组件扩展组件开发 —— 功能更强大，使用更方便。
 
 ## 现在有
-- 扩展微信小程序原生日期组件【picker】，使选择时间可精确到分、秒
-- 优化软键盘弹出问题。兼容iPhone/Android
+- 扩展微信小程序原生日期组件【picker】，使选择时间可精确到分、秒；优化软键盘弹出问题。兼容iPhone/Android
+- “头条信息”组件coupon，采用slot，使控制更轻松
 
 ## 如何使用
 
@@ -34,9 +34,16 @@
 - defaulttext: 默认展示文字，如果不填则会显示“请选择时间” —— 可选
 - bind:bindMultiPickerChange：接收组件传回的事件名 —— 在其中可直接取到“字符串”形式的选中日期，便于后续操作
 
+### coupon（“头条信息”组件）
+- 无
+
 
 ## 展示实例
 ### yPicker
 ```
 <y-picker open="true" size="right" color="#888888" seo="true" holder="#888888" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
 ```
+具体使用见page/notice/notice
+
+### coupon
+具体使用见page/coupon/coupon
