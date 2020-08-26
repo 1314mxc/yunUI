@@ -12,7 +12,8 @@
 调用时需要先在对应文件夹的```.json```文件里的**usingComponents**字段添加ypicker组件路径，如：
 ```
 "usingComponents": {
-    "y-picker":"../../components/yPicker/ypicker"
+    "y-picker":"/components/yPicker/ypicker",
+    "y-coupon":"/components/coupon/coupon"
  }
 ```
 
@@ -21,6 +22,11 @@
 然后即可在wxml中调用：
 ```
 <y-picker></y-picker>
+<y-coupon>
+    <image slot="l_img" src="/img/localSDK.png" mode="aspectFill"></image>
+    <text slot="l_text">今日头条</text>
+    <text slot="r_text">uagiuagfiuagf以按广东省覅蒛以爱的功夫撒个</text>
+</y-coupon>
 ```
 并传参！
 
