@@ -1,6 +1,4 @@
 <form bindsubmit="register">
-
-	<!-- 这里是三行和通知有关的，也用list整体布局吧 -->
 	<view class="n_top">
 		<view class="list" wx:if="{{swItch!=0}}">
 			<view class="left">通知时间</view>
@@ -10,6 +8,4 @@
 			</view>
 		</view>
 	</view>
-
-
 </form>

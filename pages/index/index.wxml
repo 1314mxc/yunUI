@@ -1,0 +1,6 @@
+<view class="mxc0" bindtap="gonotice">
+  <text>去康康“日期组件扩展组件”——高自定义程度、可精确到分、秒</text>
+</view>
+<view class="mxc1" bindtap="gocoupon">
+  <text>去康康“优惠券组件”——左右布局，支持slot，可自定义文字</text>
+</view>

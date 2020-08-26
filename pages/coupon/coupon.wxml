@@ -1,0 +1,5 @@
+<y-coupon>
+  <image slot="l_img" src="/img/localSDK.png" mode="aspectFill"></image>
+  <text slot="l_text">今日头条</text>
+  <text slot="r_text">uagiuagfiuagf以按广东省覅蒛以爱的功夫撒个</text>
+</y-coupon>

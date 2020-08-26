@@ -1,0 +1,15 @@
+<view class="card">
+  <view class="left">
+    <view class="left_img">
+      <slot name="l_img"></slot>
+    </view>
+    <view class="left_text">
+      <slot name="l_text"></slot>
+    </view>
+  </view>
+  <view class="right">
+    <view class="right_text">
+      <slot name="r_text"></slot>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "y-coupon":"/components/coupon/coupon"
+  }
+}
