@@ -44,7 +44,6 @@ for (let i = 0; i < 60; i++) {
   }
   seconds.push("" + i);
 }
-
 Component({
   lifetimes:{
     // 这时节点树已创建完成，开始可以用setData渲染节点，但还无法操作节点
@@ -61,13 +60,18 @@ Component({
   properties: {
     seo:String,
     open:Boolean,
-    size:String,
+    size:{
+        type:String,
+        value:'right'
+    },
     color:String,
     time:String,
-    defaulttext:String,
+    defaulttext:{
+        type:String,
+        value:'请选择时间'
+    },
     holder:String
   },
-
   /**
    * 组件的自身数据
    */
@@ -77,7 +81,6 @@ Component({
     multiIndex: (!Component.seo=="true")?[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes()]:[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes(),meng_date.getSeconds()],
     choose_year:''
   },
-
   /**
    * 组件的方法列表
    */
@@ -145,7 +148,6 @@ Component({
         });
       } else if (num == 2) { //判断2月份天数
         let year = parseInt(this.data.choose_year);
-        console.log(year);
         if (((year % 400 == 0) || (year % 100 != 0)) && (year % 4 == 0)) {
           for (let i = 1; i <= 29; i++) {
             if (i < 10) {
