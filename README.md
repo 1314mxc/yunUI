@@ -21,7 +21,7 @@
 
 然后即可在wxml中调用：
 ```
-<y-picker open="true" size="right" color="#888888" seo="true" holder="#888888" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
+<y-picker slot="midR" time="{{time}}" size="right" color="#888888" defaulttext="请选择时间" seo="true" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
 <y-coupon>
     <image slot="l_img" src="/img/localSDK.png" mode="aspectFill"></image>
     <text slot="l_text">今日头条</text>
