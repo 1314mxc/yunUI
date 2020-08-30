@@ -3,7 +3,7 @@
 
 ## 现在有
 - 扩展微信小程序原生日期组件【picker】，使选择时间可精确到分、秒；优化软键盘弹出问题。兼容iPhone/Android
-- “头条信息”组件coupon，采用slot，使控制更轻松
+- “头条信息”组件【coupon】，采用slot，使控制更轻松
 
 ## 如何使用
 
@@ -21,7 +21,7 @@
 
 然后即可在wxml中调用：
 ```
-<y-picker></y-picker>
+<y-picker open="true" size="right" color="#888888" seo="true" holder="#888888" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
 <y-coupon>
     <image slot="l_img" src="/img/localSDK.png" mode="aspectFill"></image>
     <text slot="l_text">今日头条</text>
@@ -46,9 +46,6 @@
 
 ## 展示实例
 ### yPicker
-```
-<y-picker open="true" size="right" color="#888888" seo="true" holder="#888888" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
-```
 具体使用见page/notice/notice
 
 ### coupon
