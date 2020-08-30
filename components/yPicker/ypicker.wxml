@@ -1,4 +1,3 @@
-
 <picker class="{{open==true?'item-value':''}}" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
 	<input value='{{time}}' readonly="" disabled="true" placeholder='{{defaulttext}}' style="text-align: {{size}}; color: {{color}}" placeholder-style="color:{{holder}}" />
 </picker>
