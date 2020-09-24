@@ -1,10 +1,10 @@
 {
   "pages":[
+    "pages/index/index",
     "pages/notices/notices",
     "pages/tdetail/tdetail",
-    "pages/detail/detail",
-    "pages/index/index"
-    
+    "pages/calendar/calendar",
+    "pages/coupon/coupon"
   ],
   "window":{
     "backgroundTextStyle":"light",

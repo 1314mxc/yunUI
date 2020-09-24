@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/detail/detail.js
 Page({
 
   /**
@@ -8,29 +8,19 @@ Page({
 
   },
 
-  gonotice(){
-    wx.navigateTo({
-      url: '../notices/notices',
-    })
-  },
-
-  gocoupon(){
-    wx.navigateTo({
-      url: '../coupon/coupon',
-    })
-  },
-
-  gotime(){
-    wx.navigateTo({
-      url: '../calendar/calendar',
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
+  },
+
+  timeload(e){
+    console.log(e.detail)
+  },
+
+  timechanged(e){
+    console.log(e.detail)
   },
 
   /**

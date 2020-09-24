@@ -58,7 +58,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    seo:String,
+    seo:{
+      type:Number,
+      value:0
+    },
     open:Boolean,
     size:{
         type:String,
@@ -77,8 +80,8 @@ Component({
    */
   data: {
     time: '',
-    multiArray: (!Component.seo=="true")?[years, months, days, hours, minutes]:[years, months, days, hours, minutes,seconds],
-    multiIndex: (!Component.seo=="true")?[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes()]:[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes(),meng_date.getSeconds()],
+    multiArray: (!Component.seo==1)?[years, months, days, hours, minutes]:[years, months, days, hours, minutes,seconds],
+    multiIndex: (!Component.seo==1)?[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes()]:[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes(),meng_date.getSeconds()],
     choose_year:''
   },
   /**

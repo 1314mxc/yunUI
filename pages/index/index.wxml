@@ -4,3 +4,6 @@
 <view class="mxc1" bindtap="gocoupon">
   <text>去康康“优惠券组件”——左右布局，支持slot，可自定义文字</text>
 </view>
+<view class="mxc2" bindtap="gotime">
+  <text>去康康“日历组件”吧！</text>
+</view>

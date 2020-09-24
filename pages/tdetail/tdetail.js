@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/tdetail/tdetail.js
 Page({
 
   /**
@@ -6,24 +6,6 @@ Page({
    */
   data: {
 
-  },
-
-  gonotice(){
-    wx.navigateTo({
-      url: '../notices/notices',
-    })
-  },
-
-  gocoupon(){
-    wx.navigateTo({
-      url: '../coupon/coupon',
-    })
-  },
-
-  gotime(){
-    wx.navigateTo({
-      url: '../calendar/calendar',
-    })
   },
 
   /**
