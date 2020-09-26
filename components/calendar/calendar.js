@@ -11,6 +11,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    now_selectedDate:'',   //当前是几月几号
     selectedDate:'',   //选中的几月几号
     selectedWeek:'',   //选中的是星期几
     curYear:2017,   //当前年份
@@ -33,6 +34,7 @@ Component({
         curYear,
         curMonth,
         selectedDate,
+        now_selectedDate:selectedDate,
         selectedWeek
       })
       this.getDateList(curYear,curMonth-1);

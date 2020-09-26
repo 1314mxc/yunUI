@@ -29,14 +29,14 @@
   overflow: hidden;
   display: flex;
   height: calc(100% / 6);
-  border-radius: 50%;
+  align-items: center;
 }
 .weekday_label{
   width: calc(100% / 7);
   /* float: left; */
   /* text-align: center; */
   font-size: 27rpx;
-  /* padding: 10rpx 0; */
+  padding: 12rpx 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,11 +53,27 @@
 }
 .active_date{
   background: rgba(0,0,0,.12);
-  color: #fff;
+  color: rgba(0,0,0,.6);
   /* border-radius: 50%; */
-  padding: 12rpx;
-  box-sizing: border-box;
+  /* padding: 12rpx;
+  box-sizing: border-box; */
   overflow: hidden;
+  position: relative;
+}
+.active_dates{
+  background: rgba(0,0,0,.12);
+  color: rgba(0,0,0,.6);
+  overflow: hidden;
+  position: relative;
+}
+.active_dates::before{
+  content: "今天";
+  position: absolute;
+  top: -2rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  color: blue;
+  font-size: 20rpx;
 }
 .show_box{
   padding: 20rpx;
