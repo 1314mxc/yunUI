@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 .selected_date>view{
-  width: 33%;
+  width: 29.5%;
 }
 .calendar_panel{
   width: 100%;
@@ -61,15 +61,14 @@
   position: relative;
 }
 .active_dates{
-  background: rgba(0,0,0,.12);
-  color: rgba(0,0,0,.6);
-  overflow: hidden;
+  background: rgba(0,0,0,.1);
+  color: rgba(0,0,0,.5);
   position: relative;
 }
 .active_dates::before{
   content: "今天";
   position: absolute;
-  top: -2rpx;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   color: blue;
