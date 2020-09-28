@@ -64,4 +64,4 @@
 具体使用见page/coupon/coupon
 
 ### calendar
-具体使用见page/calendar/calendar
+具体使用见page/calendar/calendar——我强烈建议你在使用时为 ```<y-calendar></y-calendar>``` 标签外套一个组件（比如：view），并酌情为它设置应有的大小
