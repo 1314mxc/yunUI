@@ -72,7 +72,20 @@
   left: 50%;
   transform: translateX(-50%);
   color: blue;
-  font-size: 20rpx;
+  font-size: 18rpx;
+}
+.actived_date{
+  overflow: hidden;
+  position: relative;
+}
+.actived_date::after{
+  content: attr(data-event);
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: blue;
+  font-size: 16rpx;
 }
 .show_box{
   padding: 20rpx;

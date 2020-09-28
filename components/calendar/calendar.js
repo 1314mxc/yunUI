@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    dateTimes:{
+      type:Array,
+      value:[]
+    }
   },
 
   /**
@@ -18,6 +21,7 @@ Component({
     curMonth:0,   //当前月份
     daysCountArr:[31,28,31,30,31,30,31,31,30,31,30,31],
     weekArr:['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
+    // dateTimes:[{day:'10-1',target:'国庆节'},{day:'10-2',target:'中秋节'}],
     dateList:[]
   },
 
@@ -62,9 +66,18 @@ Component({
         var week=new Date(Date.UTC(y,mon,i+1)).getDay();
         dateList[weekIndex].push({
           value:y+'-'+(mon+1)+'-'+(i+1),
+          dateTime:(mon+1)+'-'+(i+1),
           date:i+1,
           week:week
         });
+        // console.log(this.properties.dateTimes)
+        for(let k in vm.data.dateTimes){
+          for(let j in dateList[weekIndex]){
+            if(dateList[weekIndex][j].dateTime==vm.properties.dateTimes[k].day){
+              dateList[weekIndex][j].event=vm.properties.dateTimes[k].target
+            }
+          }
+        }
         if(week==6){
           weekIndex++;
           dateList[weekIndex]=[]

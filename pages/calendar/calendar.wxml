@@ -1,3 +1,3 @@
 <view>
-  <y-calendar bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
+  <y-calendar dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
 </view>
