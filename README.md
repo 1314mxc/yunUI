@@ -1,10 +1,11 @@
-# yunUI
+# yunUI（微信小程序自定义扩展组件库）
 ### 致力于“微信小程序”原生组件扩展组件开发 —— 功能更强大，使用更方便。
 
 ## 现在有
 - 扩展微信小程序原生日期-时间组件【picker】，使选择时间可精确到分、秒；优化软键盘弹出问题。兼容iPhone/Android
 - “头条信息”组件【coupon】，采用slot，使控制更轻松
 - “日历”组件【calendar】：使日期选择更便捷！可以支持选中得到当前选中日期、星期几，突出显示当前日期模块及某一天标记。
+- “侧边栏字母导航”组件【alphabet】：使用便捷，查找方便！
 
 
 ## 如何使用（仅为测试示例）
@@ -16,7 +17,8 @@
 "usingComponents": {
     "y-picker":"/components/yPicker/ypicker",
     "y-coupon":"/components/coupon/coupon",
-    "y-calendar":"/components/calendar/calendar"
+    "y-calendar":"/components/calendar/calendar",
+    "y-alphabet":"../../components/alphabet/alphabet"
  }
 ```
 
@@ -33,6 +35,7 @@
 <view style="width:50%;height:500rpx;border:1rpx solid red;">
   <y-calendar dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
 </view>
+<y-alphabet list="{{list}}"></y-alphabet>
 ```
 并传参！
 
@@ -52,9 +55,12 @@
 ### calendar（“日历”组件）
 - dateTimes：数组，可选 —— 如果填写的话则必须是数组-对象的形式，它用于为您提供在日历上显示某一天标记的功能：比如“10-1日显示国庆节” —— 强烈建议您注意格式：```[{day:'哪一天',target:'标记语'}]```
 - 还有两个监听函数供调用：
-- timeload：使用如：```bind:timeload="这里写函数名"```，用来在组件展示时即返回当前日期——接收一个参数e，其中包含有两个值：当前年月日和当前为周几
-- timechanged：使用同上，用来在选中某个日期时返回当前选中日期——接收一个参数e，其中包含有两个值：当前年月日和当前为周几
+- timeload：使用如：```bind:timeload="这里写函数名"```，用来在组件展示时即返回当前日期——接收一个参数e，其中包含有：当前年月日和当前为周几以及当前日期节日显示
+- timechanged：使用同上，用来在选中某个日期时返回当前选中日期——接收一个参数e，其中包含有两个值：当前年月日和当前为周几以及当前日期节日显示
 
+### alphabet
+- list：数组，必填！其格式必须严格参照“pages/alphabet/alphabet.js”中list格式！
+- bind:selector：接收组件传回的事件名 —— 用户点击的某一条数据值
 
 
 ## 展示
@@ -66,3 +72,6 @@
 
 ### calendar
 具体使用见page/calendar/calendar——我强烈建议你在使用时为 ```<y-calendar></y-calendar>``` 标签外套一个组件（比如：view），并酌情为它设置应有的大小
+
+### coupon
+具体使用见pages/alphabet/alphabet
