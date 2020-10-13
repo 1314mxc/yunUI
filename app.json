@@ -4,7 +4,8 @@
     "pages/notices/notices",
     "pages/tdetail/tdetail",
     "pages/calendar/calendar",
-    "pages/coupon/coupon"
+    "pages/coupon/coupon",
+    "pages/alphabet/alphabet"
   ],
   "window":{
     "backgroundTextStyle":"light",

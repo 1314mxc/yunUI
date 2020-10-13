@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "y-alphabet":"../../components/alphabet/alphabet"
+  }
+}

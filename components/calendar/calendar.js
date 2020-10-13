@@ -22,7 +22,8 @@ Component({
     daysCountArr:[31,28,31,30,31,30,31,31,30,31,30,31],
     weekArr:['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
     // dateTimes:[{day:'10-1',target:'国庆节'},{day:'10-2',target:'中秋节'}],
-    dateList:[]
+    dateList:[],
+    now_event:""
   },
 
   lifetimes:{
@@ -33,16 +34,18 @@ Component({
       var d=today.getDate();
       var i=today.getDay();
       var selectedDate=curYear+'-'+curMonth+'-'+d;
+      var now_date=curMonth+'-'+d;
       var selectedWeek=this.data.weekArr[i];
       this.setData({
         curYear,
         curMonth,
         selectedDate,
         now_selectedDate:selectedDate,
-        selectedWeek
+        selectedWeek,
+        now_date
       })
-      this.getDateList(curYear,curMonth-1);
-      this.triggerEvent('timeload',{selectedDate,selectedWeek})
+      this.getDateList(curYear,curMonth-1,now_date);
+      this.triggerEvent('timeload',{selectedDate,selectedWeek,event:this.data.now_event})
     }
   },
 
@@ -50,7 +53,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    getDateList(y,mon){
+    getDateList(y,mon,now_date){
       var vm=this;
       var daysCountArr=this.data.daysCountArr;
       if(y%4===0 && y%100!=0){
@@ -76,6 +79,11 @@ Component({
             if(dateList[weekIndex][j].dateTime==vm.properties.dateTimes[k].day){
               dateList[weekIndex][j].event=vm.properties.dateTimes[k].target
             }
+            if(now_date==vm.properties.dateTimes[k].day){
+              vm.setData({
+                now_event:vm.properties.dateTimes[k].target
+              })
+            }
           }
         }
         if(week==6){
@@ -96,7 +104,8 @@ Component({
       })
       this.triggerEvent('timechanged',{
         selectedDate:e.currentTarget.dataset.date.value,
-        selectedWeek:vm.data.weekArr[e.currentTarget.dataset.date.week]
+        selectedWeek:vm.data.weekArr[e.currentTarget.dataset.date.week],
+        event:(e.currentTarget.dataset.date.event?e.currentTarget.dataset.date.event:"")
       })
     },
     preMonth(){
@@ -109,7 +118,7 @@ Component({
         curYear,
         curMonth
       });
-      vm.getDateList(curYear,curMonth-1);
+      vm.getDateList(curYear,curMonth-1,this.data.now_date);
     },
     nextMonth(){
       var vm=this;
@@ -121,7 +130,7 @@ Component({
         curYear,
         curMonth
       });
-      vm.getDateList(curYear,curMonth-1);
+      vm.getDateList(curYear,curMonth-1,this.data.now_date);
     }
   }
 })

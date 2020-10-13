@@ -68,7 +68,7 @@
 .active_dates::before{
   content: "今天";
   position: absolute;
-  top: 0;
+  top: 3rpx;
   left: 50%;
   transform: translateX(-50%);
   color: blue;
