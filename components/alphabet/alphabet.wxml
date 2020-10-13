@@ -6,7 +6,7 @@
         <view class="section-item-header">
           {{item.alphabet}}
         </view>
-        <view wx:for="{{item.datas}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
+        <view wx:for="{{item.datas}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells" data-city="{{cell}}" bindtap="selector">
           <view class="section-item-cell {{cellIndex!=(item.datas.length-1)?'border-bottom':''}}">
             <text>{{cell}}</text>
           </view>

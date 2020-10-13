@@ -1,1 +1,1 @@
-<y-alphabet list="{{list}}"></y-alphabet>
+<y-alphabet list="{{list}}" bind:selector="selector"></y-alphabet>

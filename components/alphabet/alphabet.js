@@ -56,5 +56,10 @@ Component({
         }
       }
     },
+    selector(e){
+      this.triggerEvent('selector',{
+        city_data:e.currentTarget.dataset.city
+      })
+    }
   }
 })

@@ -41,14 +41,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // try{
-    //   var res=wx.getSystemInfoSync()
-    //   this.apHeight=16
-    //   this.offsetTop=80
-    //   this.setData({
-    //     windowHeight:res.windowHeight+'px'
-    //   })
-    // }catch(e){}
+  },
+
+  selector(e){
+    console.log(e.detail.city_data)
   },
   
 
