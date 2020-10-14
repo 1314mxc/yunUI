@@ -4,11 +4,11 @@
 ## 现在有
 - 扩展微信小程序原生日期-时间组件【picker】，使选择时间可精确到分、秒；优化软键盘弹出问题。兼容iPhone/Android
 - “头条信息”组件【coupon】，采用slot，使控制更轻松
-- “日历”组件【calendar】：使日期选择更便捷！可以支持选中得到当前选中日期、星期几，突出显示当前日期模块及某一天标记。
+- “日历”组件【calendar】：使日期选择更便捷！可以支持选中得到当前选中日期、星期几，突出显示当前日期模块及某一天标记，**新增弹出方式，使更接近原生组件**。
 - “侧边栏字母导航”组件【alphabet】：使用便捷，查找方便！
 
 
-## 如何使用（仅为测试示例）
+## 如何使用（仅为测试示例，具体请参照pages/下相关使用）
 
 (components中是组件 pages里是相关使用实例)
 
@@ -32,8 +32,9 @@
     <text slot="l_text">今日头条</text>
     <text slot="r_text">uagiuagfiuagf以按广东省覅蒛以爱的功夫撒个</text>
 </y-coupon>
-<view style="width:50%;height:500rpx;border:1rpx solid red;">
-  <y-calendar dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
+<view>
+  <view class="select" bindtap="selected">选择时间</view>
+  <y-calendar wx:if="{{selected}}" before_show="0" task_show="1" dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
 </view>
 <y-alphabet list="{{list}}"></y-alphabet>
 ```
@@ -54,6 +55,9 @@
 
 ### calendar（“日历”组件）
 - dateTimes：数组，可选 —— 如果填写的话则必须是数组-对象的形式，它用于为您提供在日历上显示某一天标记的功能：比如“10-1日显示国庆节” —— 强烈建议您注意格式：```[{day:'哪一天',target:'标记语'}]```
+- before_show：Number，可选 —— 如果传0，则表示“要通过按钮事件触发弹出”，这种方式更接近原生组件弹出（从底部向上弹出，若传1则组件正常显示，你可以在组件引用外部包裹view标签并设置大小和位置！），更丝滑！**这时你要为自定义组件添加一个wx:if并通过事件改变其值**，注意：目前此组件只能通过if事件改变状态
+- task_show：Number，可选 —— 控制遮罩层是否显示：为0时组件无遮罩层，为1时且在组件弹出时遮罩层显示——且当遮罩层被点击时组件收回。**我强烈建议您在选择弹出式组件显示时为此属性赋值为1！**
+
 - 还有两个监听函数供调用：
 - timeload：使用如：```bind:timeload="这里写函数名"```，用来在组件展示时即返回当前日期——接收一个参数e，其中包含有：当前年月日和当前为周几以及当前日期节日显示
 - timechanged：使用同上，用来在选中某个日期时返回当前选中日期——接收一个参数e，其中包含有两个值：当前年月日和当前为周几以及当前日期节日显示
@@ -71,7 +75,7 @@
 具体使用见page/coupon/coupon
 
 ### calendar
-具体使用见page/calendar/calendar——我强烈建议你在使用时为 ```<y-calendar></y-calendar>``` 标签外套一个组件（比如：view），并酌情为它设置应有的大小
+具体使用见page/calendar/calendar
 
 ### coupon
 具体使用见pages/alphabet/alphabet
