@@ -2,15 +2,15 @@
 
 .calendar_date{
   width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 100000 !important;
   background-color: white;
   padding-bottom: 3rpx;
 }
 .calendar_select_date{
-  animation: transfer 1.3s linear;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100000 !important;
+  animation: transfer 1.2s linear;
   animation-delay: -.5s;
 }
 @keyframes transfer{
