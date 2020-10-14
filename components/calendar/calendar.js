@@ -7,6 +7,14 @@ Component({
     dateTimes:{
       type:Array,
       value:[]
+    },
+    before_show:{   //是否作为日期组件由按钮触发弹出（为0时是）
+      type:Number,
+      value:1
+    },
+    task_show:{   //只有这个为1时，“和遮罩层有关的事件才会响应”
+      type:Number,
+      value:1
     }
   },
 
@@ -42,7 +50,8 @@ Component({
         selectedDate,
         now_selectedDate:selectedDate,
         selectedWeek,
-        now_date
+        now_date,
+        closed:true
       })
       this.getDateList(curYear,curMonth-1,now_date);
       this.triggerEvent('timeload',{selectedDate,selectedWeek,event:this.data.now_event})
@@ -131,6 +140,13 @@ Component({
         curMonth
       });
       vm.getDateList(curYear,curMonth-1,this.data.now_date);
+    },
+    closed(){
+      if(this.properties.task_show==1){
+        this.setData({
+          closed:false
+        })
+      }
     }
   }
 })

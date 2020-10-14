@@ -10,7 +10,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "yunUI—微信小程序自定义扩展组件库",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",

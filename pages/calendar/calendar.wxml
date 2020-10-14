@@ -1,3 +1,4 @@
 <view>
-  <y-calendar dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
+  <view class="select" bindtap="selected">选择时间</view>
+  <y-calendar wx:if="{{selected}}" before_show="0" task_show="1" dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
 </view>
