@@ -71,11 +71,23 @@
 ### yPicker
 具体使用见page/notice/notice
 
+![自定义日期-时间组件](https://img-blog.csdnimg.cn/20201014153356164.gif#pic_center)
+
 ### coupon
 具体使用见page/coupon/coupon
 
 ### calendar
 具体使用见page/calendar/calendar
 
-### coupon
+![自定义日历组件-方式1](https://img-blog.csdnimg.cn/20201014153403313.gif#pic_center)
+![自定义日历组件-方式2](https://img-blog.csdnimg.cn/20201014153325679.gif#pic_center)
+
+### alphabet
 具体使用见pages/alphabet/alphabet
+
+![自定义侧边字母导航组件](https://img-blog.csdnimg.cn/20201014153342166.gif#pic_center)
+
+
+## 联系作者
+
+![wx](https://img-blog.csdnimg.cn/20200716101914321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0ODc4,size_16,color_FFFFFF,t_70)
