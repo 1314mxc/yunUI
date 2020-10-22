@@ -48,6 +48,7 @@ Component({
   lifetimes:{
     // 这时节点树已创建完成，开始可以用setData渲染节点，但还无法操作节点
     attached:function(){
+      this.appd()
       //设置默认的年份
       this.setData({
         choose_year: this.data.multiArray[0][0]
@@ -80,14 +81,21 @@ Component({
    */
   data: {
     time: '',
-    multiArray: (!Component.seo==1)?[years, months, days, hours, minutes]:[years, months, days, hours, minutes,seconds],
-    multiIndex: (!Component.seo==1)?[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes()]:[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes(),meng_date.getSeconds()],
+    multiArray: [],
+    multiIndex: [],
     choose_year:''
   },
   /**
    * 组件的方法列表
    */
   methods: {
+    appd(){
+      console.log(this.properties.seo)
+      this.setData({
+        multiArray: (!this.properties.seo==1)?[years, months, days, hours, minutes]:[years, months, days, hours, minutes,seconds],
+        multiIndex: (!this.properties.seo==1)?[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes()]:[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes(),meng_date.getSeconds()],
+      })
+    },
     //获取时间日期 - 点进picker组件而什么也不干 && 每次触发完成后 -> 每次点击“确定”时携带值
   bindMultiPickerChange: function(e) {
     // console.log('picker发送选择改变，携带值为', e.detail.value)

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    url_one:'https://codechina.csdn.net/qq_43624878/yunUI',
+    url_two:'https://github.com/1314mxc/yunUI'
   },
 
   gonotice(){
@@ -30,6 +31,25 @@ Page({
     wx.navigateTo({
       url: '../alphabet/alphabet',
     })
+  },
+
+  clipone(){
+    this.setclip(this.data.url_one)
+  },
+  cliptwo(){
+    this.setclip(this.data.url_two)
+  },
+
+  setclip(data){
+    wx.setClipboardData({
+      //准备复制的数据内容
+      data: data,
+      success: function (res) {
+        wx.showToast({
+          title: '链接复制成功',
+        });
+      }
+    });
   },
 
   /**

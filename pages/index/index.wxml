@@ -10,3 +10,17 @@
 <view class="mxc3" bindtap="alphabetshow">
   <text>去康康“自定义侧边栏字母导航组件”吧！</text>
 </view>
+
+<view class="loaded">
+  <view class="typing">更多内容，敬请期待 ...</view>
+</view>
+
+<view class="navigator">
+  <text>项目开源地址：</text>
+  <text class="url" bindlongtap="clipone">{{url_one}}</text>
+
+  <text>或：</text>
+  <text class="url" bindlongtap="cliptwo">{{url_two}}</text>
+
+  <text>在其中你可以看到详细代码及注释以及使用方式（本小程序版本只展示其中一种应用方式）</text>
+</view>
