@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dateTimes:[{day:'10-1',target:'国庆节'},{day:'10-2',target:'中秋节'}],
+    dateTimes:[{day:'10-1',target:'国庆节'},{day:'10-2',target:'中秋节'},{day:'2020-10-24',target:'程序员节'}],
     selected:false
   },
 

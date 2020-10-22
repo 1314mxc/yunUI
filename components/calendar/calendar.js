@@ -88,6 +88,9 @@ Component({
             if(dateList[weekIndex][j].dateTime==vm.properties.dateTimes[k].day){
               dateList[weekIndex][j].event=vm.properties.dateTimes[k].target
             }
+            if(dateList[weekIndex][j].value==vm.properties.dateTimes[k].day){
+              dateList[weekIndex][j].event=vm.properties.dateTimes[k].target
+            }
             if(now_date==vm.properties.dateTimes[k].day){
               vm.setData({
                 now_event:vm.properties.dateTimes[k].target

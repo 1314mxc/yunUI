@@ -2,17 +2,18 @@ Page{
   width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
 }
 
 view{
-  width: 100%;
-  height: 96rpx;
-  background-color: rgba(0,0,0,.2);
+  width: 46%;
+  min-height: 231rpx;
+  background-color: rgba(0,0,0,.1);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 26rpx;
+  margin-bottom: 24rpx;
 }
