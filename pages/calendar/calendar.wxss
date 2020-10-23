@@ -1,1 +1,6 @@
-/* pages/detail/detail.wxss */
+.select{
+  display: inline-block;
+  margin: 20rpx;
+  border: 1rpx solid rgba(0,0,0,.2);
+  padding: 6rpx 10rpx;
+}

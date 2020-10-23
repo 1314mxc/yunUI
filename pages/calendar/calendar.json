@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "自定义日历组件",
   "usingComponents": {
     "y-calendar":"../../components/calendar/calendar"
   }

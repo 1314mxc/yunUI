@@ -1,8 +1,10 @@
+<view>第一种使用方式：直接选择(这种可用于外面嵌套一个view然后改变大小后用position做一个悬浮)</view>
+<view>
+  <y-calendar before_show="1" task_show="0" dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
+</view>
+
+<view style="margin-top:30rpx;border-top:1rpx solid rgba(0,0,0,.15)">第二种使用方式：弹出式(请点击下面那个按钮)</view>
 <view>
   <view class="select" bindtap="selected">选择时间</view>
   <y-calendar wx:if="{{selected}}" before_show="0" task_show="1" dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
 </view>
-
-<!-- <view>
-  <y-calendar before_show="1" task_show="0" dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
-</view> -->

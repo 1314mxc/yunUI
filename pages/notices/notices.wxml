@@ -1,9 +1,18 @@
 <form bindsubmit="register">
 	<view class="n_top">
 		<view class="list" wx:if="{{swItch!=0}}">
-			<view class="left">通知时间</view>
+			<view class="left">通知时间（精确到秒）</view>
 			<view class="l_right">
         <y-picker open="true" size="right" color="#888888" seo="1" defaulttext="请选择时间" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
+				<i class="iconfont icon-fanhui-copy-copy"></i>
+			</view>
+		</view>
+	</view>
+	<view class="n_top">
+		<view class="list" wx:if="{{swItch!=0}}">
+			<view class="left">通知时间（精确到分）</view>
+			<view class="l_right">
+        <y-picker open="true" size="right" color="#888888" seo="0" defaulttext="请选择时间" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
 				<i class="iconfont icon-fanhui-copy-copy"></i>
 			</view>
 		</view>

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "通知",
+  "navigationBarTitleText": "自定义日期组件",
   "usingComponents": {
     "y-picker":"../../components/yPicker/ypicker"
   }

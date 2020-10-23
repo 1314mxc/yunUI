@@ -90,7 +90,6 @@ Component({
    */
   methods: {
     appd(){
-      console.log(this.properties.seo)
       this.setData({
         multiArray: (!this.properties.seo==1)?[years, months, days, hours, minutes]:[years, months, days, hours, minutes,seconds],
         multiIndex: (!this.properties.seo==1)?[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes()]:[10, meng_date.getMonth(), meng_date.getDate()-1, meng_date.getHours(), meng_date.getMinutes(),meng_date.getSeconds()],

@@ -5,6 +5,7 @@ Page{
   flex-wrap: wrap;
   justify-content: space-around;
   overflow-y: auto;
+  background-color: white;
 }
 
 view{

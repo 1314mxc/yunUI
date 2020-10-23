@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "自定义侧边栏字母导航组件",
   "usingComponents": {
     "y-alphabet":"../../components/alphabet/alphabet"
   }
