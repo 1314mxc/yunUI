@@ -68,6 +68,9 @@
 
 
 ## 展示
+
+![wx-yunUI](https://img-blog.csdnimg.cn/20201024121550490.png#pic_center)
+
 ### yPicker
 具体使用见page/notice/notice
 
