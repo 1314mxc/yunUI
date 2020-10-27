@@ -11,6 +11,7 @@ Page{
 view{
   width: 46%;
   height: 489rpx;
+  border-radius: 7px;
   background-color: rgba(0,0,0,.1);
   overflow: hidden;
   display: flex;
@@ -18,6 +19,7 @@ view{
   align-items: center;
   margin-top: 26rpx;
   margin-bottom: 24rpx;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .loaded{

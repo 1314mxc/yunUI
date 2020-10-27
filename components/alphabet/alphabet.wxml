@@ -1,5 +1,5 @@
 <!-- 页面主要滚动区域 -->
-<scroll-view scroll-y style="height: {{windowHeight}}" scroll-into-view="{{alpha}}">
+<scroll-view scroll-y style="height: {{windowHeight}}" scroll-top="{{topNum}}" scroll-into-view="{{alpha}}">
   <view class="alphabet">
     <view class="alphabet-list">
       <view wx:for="{{list}}" wx:key="unique" id="{{item.alphabet}}" class="section-item" wx:if="{{index!=0}}">
@@ -18,7 +18,7 @@
 
 <!-- 侧边栏字母导航 -->
 <view data-id="selector" catchtouchstart="handlerAlphaTap" catchtouchmove="handlerMove" class="alphanet-selector">
-  <view data-ap="{{item.alphabet}}" wx:for="{{list}}" wx:key="unique" class="selector-one">
+  <view data-ap="{{item.alphabet}}" data-index="{{index}}" wx:for="{{list}}" wx:key="unique" class="selector-one">
     {{item.alphabet}}
   </view>
 </view>

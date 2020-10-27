@@ -6,7 +6,8 @@ Component({
   properties: {
     list:{
       type:Array,
-      value:[]
+      value:[],
+      topNum:0
     }
   },
 
@@ -36,9 +37,12 @@ Component({
    */
   methods: {
     handlerAlphaTap(e){
-      let {ap} = e.target.dataset
-      if(this.properties.list[0].alphabet=="Top" && (ap=="Top" || ap=="top")){
-        ap=this.properties.list[1].alphabet
+      let {ap,index} = e.target.dataset
+      if(index==0){
+        this.setData({
+          topNum:this.data.topNum=0
+        })
+        return
       }
       this.setData({
         alpha:ap
