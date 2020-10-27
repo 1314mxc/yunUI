@@ -38,7 +38,7 @@ Component({
   methods: {
     handlerAlphaTap(e){
       let {ap,index} = e.target.dataset
-      if(index==0){
+      if(index==0 && (ap=="Top" || ap=="top")){
         this.setData({
           topNum:this.data.topNum=0
         })
