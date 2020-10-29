@@ -4,3 +4,59 @@
   border: 1rpx solid rgba(0,0,0,.2);
   padding: 6rpx 10rpx;
 }
+.basic_box{
+  width: 100%;
+  border-top: 1rpx solid rgba(0,0,0,.08);
+  border-bottom: 1rpx solid rgba(0,0,0,.08);
+  box-sizing: border-box;
+  padding: 0 0 0 26rpx;
+}
+
+.basic_box .departments{
+  width: 100%;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: 347;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.basic_box .departments:nth-child(2){
+  border-top: 1rpx solid rgba(0,0,0,.08);
+  border-bottom: 1rpx solid rgba(0,0,0,.08);
+}
+.basic_box .location{
+  position: relative;
+  border-bottom: 1rpx solid rgba(0,0,0,.009);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20rpx;
+}
+
+.basic_box .desc{
+  position: absolute;
+  right: 19rpx;
+  bottom: 4rpx;
+  color: rgb(63,142,255);
+  font-size: 23rpx;
+}
+.departments .depart_title{
+  width: 20%;
+}
+.departments .depart_content{
+  margin-left: 10%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.departments .placeholder{
+  width: 69%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.departments .befselect{
+  color: rgba(0,0,0,.6);
+}
