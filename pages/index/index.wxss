@@ -59,7 +59,7 @@ i{
 
 .navigator{
   width: 96%;
-  height: 500rpx;
+  height: 360rpx;
   margin: 20rpx auto;
   background-color: rgba(0,0,0,.09);
   display: flex;
