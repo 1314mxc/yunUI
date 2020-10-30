@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    url_one:'https://codechina.csdn.net/qq_43624878/yunUI',
     url_two:'https://github.com/1314mxc/yunUI'
   },
 
@@ -39,9 +38,6 @@ Page({
     })
   },
 
-  clipone(){
-    this.setclip(this.data.url_one)
-  },
   cliptwo(){
     this.setclip(this.data.url_two)
   },
