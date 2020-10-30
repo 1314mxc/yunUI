@@ -10,6 +10,10 @@
 <view class="mxc3" bindtap="alphabetshow">
   <text>去康康“自定义侧边栏字母导航组件”吧！</text>
 </view>
+<view class="mxc4" bindtap="modelshow">
+  <text>去康康“自定义弹出框yModel组件”吧！</text>
+</view>
+<i></i>
 
 <view class="loaded">
   <view class="typing">更多内容，敬请期待 ...</view>

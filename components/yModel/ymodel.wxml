@@ -1,0 +1,13 @@
+<view class="model_show {{(back)?'model_unshow':''}}">
+  <view class="ym_mask"></view>
+  <view class="ym_model" style="width:{{md}}">
+    <view class="ym_title">{{title}}</view>
+    <view class="ym_content {{center==1?'ym_center':''}}">
+      <slot></slot>
+    </view>
+    <view class="ym_button" catchtap="trigger">
+      <view class="ym_fail" hover-class="ym_fail_but" bindtap="closed">{{fail}}</view>
+      <view class="ym_complete" hover-class="ym_suc_but" bindtap="completed">{{suc}}</view>
+    </view>
+  </view>
+</view>

@@ -12,7 +12,7 @@ view{
   width: 46%;
   height: 489rpx;
   border-radius: 7px;
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(0,0,0,.09);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -20,6 +20,9 @@ view{
   margin-top: 26rpx;
   margin-bottom: 24rpx;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+i{
+  width: 46%;
 }
 
 .loaded{
@@ -58,7 +61,7 @@ view{
   width: 96%;
   height: 500rpx;
   margin: 20rpx auto;
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(0,0,0,.09);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;

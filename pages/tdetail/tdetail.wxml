@@ -1,2 +1,22 @@
-<!--pages/tdetail/tdetail.wxml-->
-<text>pages/tdetail/tdetail.wxml</text>
+<view id="button" bindtap="showone">居中式多行弹窗</view>
+<view id="button" bindtap="showtwo">普通多行弹窗</view>
+<view id="button" bindtap="showsix">普通单行弹窗</view>
+<view id="button" bindtap="showthr">标题自定义多行弹窗</view>
+<view id="button" bindtap="showfou">按钮自定义多行弹窗</view>
+<view id="button" bindtap="showfiv">看，我大小不一样</view>
+
+<y-model wx:if="{{show}}" center="{{center}}" md="{{md}}" title="{{title}}" fail="{{fail}}" suc="{{suc}}" bind:modelClosed="modelClosed" bind:modelcomplete="modelcomplete">
+  <view>
+    <view>sadas</view>
+    <view>safafa</view>
+    <view>sadas</view>
+    <view>safafa</view>
+    <view>sadas</view>
+  </view>
+</y-model>
+
+<y-model wx:if="{{showed}}" bind:modelClosed="modelClosed" bind:modelcomplete="modelcomplete">
+  <view>
+    <view>sadasdadads</view>
+  </view>
+</y-model>

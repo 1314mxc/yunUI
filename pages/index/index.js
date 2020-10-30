@@ -33,6 +33,12 @@ Page({
     })
   },
 
+  modelshow(){
+    wx.navigateTo({
+      url: '../tdetail/tdetail',
+    })
+  },
+
   clipone(){
     this.setclip(this.data.url_one)
   },

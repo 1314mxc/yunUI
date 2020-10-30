@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "自定义model弹出窗组件",
+  "usingComponents": {
+    "y-model":"/components/yModel/ymodel"
+  }
 }
