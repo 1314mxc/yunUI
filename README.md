@@ -1,11 +1,12 @@
 # yunUI（微信小程序自定义扩展组件库）
 ### 致力于“微信小程序”原生组件扩展组件开发 —— 功能更强大，使用更方便。
 
-## 现在有
+## 现收录有：
 - 扩展微信小程序原生日期-时间组件【picker】，使选择时间可精确到分、秒；完美解决iPhone/Android软键盘弹出问题。
 - “头条信息”组件【coupon】，采用slot，使控制更轻松
 - “日历”组件【calendar】：使日期选择更便捷！可以支持选中得到当前选中日期、星期几，突出显示当前日期模块及某一天标记，**现有直接使用和弹出两种方式，使更接近原生组件**。
 - “侧边栏字母导航”组件【alphabet】：使用便捷，查找方便，更顺滑！
+- “自定义弹窗”组件【ymodel】：自定义程度高，使用更便捷，体验更好！
 
 
 ## 如何使用（仅为测试示例，具体请参照pages/下相关使用）
@@ -18,7 +19,8 @@
     "y-picker":"/components/yPicker/ypicker",
     "y-coupon":"/components/coupon/coupon",
     "y-calendar":"/components/calendar/calendar",
-    "y-alphabet":"../../components/alphabet/alphabet"
+    "y-alphabet":"/components/alphabet/alphabet",
+    "y-alphabet":"/components/yModel/ymodel"
  }
 ```
 
@@ -37,6 +39,11 @@
   <y-calendar wx:if="{{selected}}" before_show="0" task_show="1" dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
 </view>
 <y-alphabet list="{{list}}"></y-alphabet>
+<y-model wx:if="{{show}}" center="{{center}}" md="{{md}}" title="{{title}}" fail="{{fail}}" suc="{{suc}}" bind:modelClosed="modelClosed" bind:modelcomplete="modelcomplete">
+  <view>
+    <view>sadas</view>
+  </view>
+</y-model>
 ```
 并传参！
 
@@ -66,6 +73,14 @@
 - list：数组，必填！其格式必须严格参照“pages/alphabet/alphabet.js”中list格式！（当数组第一项的alphabet属性值为top或Top时，触发显示为“回到页面顶部”）
 - bind:selector：接收组件传回的事件名 —— 用户点击的某一条数据值
 
+### ymodel
+- center：0/1（number），可选。不传此参数时默认为0——内容以靠左展示（仿原生sheet弹窗），传值为1时表示内容部分居中展示
+- title：String，可选。不传此参数时默认为“提示”（仿原生sheet弹窗标题部分）
+- fail：String，可选。不传此参数时默认为“取消”，灰黑色（仿原生sheet弹窗取消按钮部分）
+- suc：String，可选。不传此参数时默认为“确定”，鲜绿色（仿原生sheet弹窗确定按钮部分）
+- md：String，可选。表示弹窗的宽度（由于内容部分允许传入，所以高度自适应），**其格式为“数字+百分号%”**，不传此参数时默认为“86%”
+- **重点：** 此组件采用slot方式接收开发者传入“内容部分”，即：此组件允许子组件（子元素）的存在！而且不止一个！其格式参见上面“如何使用”中的```<y-model></y-model>```，您可以通过wx:if来控制组件的显示与隐藏（并且我强烈推荐用wx:if而不是hidden！）
+
 
 ## 展示
 
@@ -94,6 +109,11 @@
 具体使用见pages/alphabet/alphabet
 
 ![自定义侧边字母导航组件](https://img-blog.csdnimg.cn/20201014153342166.gif#pic_center)
+
+### ymodel
+具体使用见pages/tdetail/tdetail
+
+![自定义弹窗组件ymodel](https://img-blog.csdnimg.cn/20201030174513521.gif#pic_center)
 
 
 ## 联系作者
