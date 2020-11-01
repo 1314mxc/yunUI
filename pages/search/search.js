@@ -8,6 +8,9 @@ Page({
 
   },
 
+  Onsearch(e){
+    console.log(e.detail.keyword)
+  },
   Insearch(e){
     console.log(e.detail.keyword)
   },
