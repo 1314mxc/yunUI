@@ -5,7 +5,8 @@
     "pages/tdetail/tdetail",
     "pages/calendar/calendar",
     "pages/coupon/coupon",
-    "pages/alphabet/alphabet"
+    "pages/alphabet/alphabet",
+    "pages/search/search"
   ],
   "window":{
     "backgroundTextStyle":"light",

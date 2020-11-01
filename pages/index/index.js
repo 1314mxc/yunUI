@@ -38,6 +38,12 @@ Page({
     })
   },
 
+  searchshow(){
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
+
   cliptwo(){
     this.setclip(this.data.url_two)
   },

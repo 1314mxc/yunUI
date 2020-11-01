@@ -1,0 +1,5 @@
+<view class="container">
+  <i class="iconfont icon-soushuo find"></i>
+  <input class="bar" placeholder="{{placeholder}}" placeholder-class="in-bar" style="background-color:{{y_bgcolor_bar}};color:{{y_color}}" model:value="{{y_value}}" bindinput="onInput"></input>
+  <button wx:if="{{button==='true'}}" class="search" style="background-color:{{y_bgcolor_but}}" bindtap="onSearch">{{but_title}}</button>
+</view>

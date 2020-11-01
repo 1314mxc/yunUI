@@ -1,0 +1,1 @@
+<y-search button="true" bind:search="onSearch" bind:mousetap="Insearch" />

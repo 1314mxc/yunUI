@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "自定义搜索栏组件",
+  "usingComponents": {
+    "y-search":"/components/ysearch/search"
+  }
+}

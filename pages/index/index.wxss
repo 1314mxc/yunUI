@@ -10,7 +10,7 @@ Page{
 
 view{
   width: 46%;
-  height: 489rpx;
+  height: 469rpx;
   border-radius: 7px;
   background-color: rgba(0,0,0,.09);
   overflow: hidden;
@@ -59,7 +59,7 @@ i{
 
 .navigator{
   width: 96%;
-  height: 360rpx;
+  height: 400rpx;
   margin: 20rpx auto;
   background-color: rgba(0,0,0,.09);
   display: flex;
