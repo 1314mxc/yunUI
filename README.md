@@ -8,6 +8,7 @@
 - “侧边栏字母导航”组件【alphabet】：使用便捷，查找方便，更顺滑！
 - “自定义弹窗”组件【ymodel】：自定义程度高，使用更便捷，体验更流畅！
 - “自定义搜索栏”组件【ysearch】：支持多种搜索方式，高自定义程度，使用更流畅！
+- “自定义卡片”组件【ycard】：支持图片、短文、图文三种形式，自定义展示样式，使用方便。
 
 
 ## 如何使用（仅为测试示例，具体请参照pages/下相关使用）
@@ -22,7 +23,8 @@
     "y-calendar":"/components/calendar/calendar",
     "y-alphabet":"/components/alphabet/alphabet",
     "y-model":"/components/yModel/ymodel",
-    "y-search":"/components/ysearch/search"
+    "y-search":"/components/ysearch/search",
+    "y-card":"/components/ycard/ycard"
  }
 ```
 
@@ -47,6 +49,7 @@
   </view>
 </y-model>
 <y-search button="true" bind:search="Onsearch" bind:mousetap="Insearch" />
+<y-card txtIndent="{{txtIndent}}" blog="{{blog}}"></y-card>
 ```
 并传参！
 
@@ -91,6 +94,12 @@
 （当然，你可以让两个函数都存在，反正值是一样的，它们在组件中“被认为是不共存的”！你可以放心使用！）
 
 
+### ycard
+- txtIndent：0/1，可选。不填或传值为0时默认，表示“以短句形式展示”，即头部对其；若传值为1，表示“首行头部有缩进”
+- blog：{} 对象格式，必填。它的属性都为可选：avatarUrl：发帖人头像，String类型（若传值为空会显示“暂无头像”的占位图）、createTime：发帖时间，若传值为时间戳，则使用Number类型，否则为String类型、nickName：用户名，String类型、content：短文内容，String类型、img：图片，Array类型，可有多个（**但建议都用网络图片！**），若用网络图片则可预览。
+- **blog对象的属性名必须保持一致！**
+
+
 ## 展示
 
 ![wx-yunUI](https://img-blog.csdnimg.cn/20201024121550490.png#pic_center)
@@ -98,7 +107,7 @@
 ### yPicker
 具体使用见page/notice/notice
 
-![自定义日期-时间组件](https://img-blog.csdnimg.cn/20201014153356164.gif#pic_center)
+![自定义日期-时间组件](https://img-blog.csdnimg.cn/20201105191139777.gif#pic_center)
 
 ### coupon
 具体使用见page/coupon/coupon
@@ -134,6 +143,12 @@
 （2）
 
 ![ysearch_two](https://img-blog.csdnimg.cn/20201101093016495.gif#pic_center)
+
+
+### ycard
+具体使用见pages/card/card
+
+![y_card](https://img-blog.csdnimg.cn/20201105191121536.gif#pic_center)
 
 
 ## 联系作者
