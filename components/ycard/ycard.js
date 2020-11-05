@@ -6,7 +6,13 @@ Component({
   properties: {
     blog:{
       type:Object,
-      value:{}
+      value:{
+        avatarUrl:'',
+        createTime:'',
+        nickName:'',
+        content:'',
+        img:[]
+      }
     },
     txtIndent:{
       type:Number,
