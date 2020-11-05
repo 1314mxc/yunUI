@@ -1,5 +1,5 @@
 .model_show{
-  animation: opac .6s linear;
+  animation: opac .15s linear;
 }
 @keyframes opac{
   0%{
@@ -10,7 +10,7 @@
   }
 }
 .model_unshow{
-  transition: all .6s ease;
+  transition: all .3s ease;
   opacity: 0;
 }
 .ym_mask{
@@ -77,7 +77,7 @@
   font-weight: 346;
 }
 .ym_button .ym_fail{
-  border-right: .5rpx solid rgba(0,0,0,.09);
+  border-right: .45rpx solid rgba(0,0,0,.09);
   transition: all .6s ease;
 }
 .ym_fail_but{
@@ -85,7 +85,7 @@
 }
 .ym_button .ym_complete{
   color: rgb(0,255,0);
-  border-left: .5rpx solid rgba(0,0,0,.09);
+  border-left: .45rpx solid rgba(0,0,0,.09);
   transition: all .6s ease;
 }
 .ym_suc_but{

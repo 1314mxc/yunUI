@@ -44,6 +44,12 @@ Page({
     })
   },
 
+  cardshow(){
+    wx.navigateTo({
+      url: '../card/card',
+    })
+  },
+
   cliptwo(){
     this.setclip(this.data.url_two)
   },

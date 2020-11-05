@@ -20,6 +20,8 @@ view{
   margin-top: 26rpx;
   margin-bottom: 24rpx;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+  padding: 0 17rpx;
 }
 i{
   width: 46%;

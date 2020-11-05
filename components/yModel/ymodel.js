@@ -38,17 +38,20 @@ Component({
    */
   methods: {
     trigger(){
+      // 根据是否有这个值（true）让模态框消失
       setTimeout(()=>{
         this.triggerEvent('modelClosed',true)
-      },500)
+      },300)
     },
     closed(){
+      // 点击了取消按钮
       this.setData({
         back:true
       })
       this.triggerEvent('modelcomplete',0)
     },
     completed(){
+      // 点击了确定按钮
       this.setData({
         back:true
       })

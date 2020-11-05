@@ -6,12 +6,13 @@
     "pages/calendar/calendar",
     "pages/coupon/coupon",
     "pages/alphabet/alphabet",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/card/card"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "yunUI(微信小程序自定义扩展组件库)",
+    "navigationBarTitleText": "yunUI(微信小程序自定义功能组件库)",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",

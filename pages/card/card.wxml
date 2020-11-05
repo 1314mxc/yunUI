@@ -1,0 +1,1 @@
+<y-card txtIndent="{{txtIndent}}" blog="{{blog}}"></y-card>

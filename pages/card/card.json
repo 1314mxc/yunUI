@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "自定义card卡片组件",
+  "usingComponents": {
+    "y-card":"/components/ycard/ycard"
+  }
+}

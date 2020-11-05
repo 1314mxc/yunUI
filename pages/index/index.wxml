@@ -16,7 +16,12 @@
 <view class="mxc5" bindtap="searchshow">
   <text>去康康“自定义搜索栏ysearch组件”吧！</text>
 </view>
-<i></i><i></i><i></i><i></i><i></i><i></i>
+<view class="mxc6" bindtap="cardshow">
+  <text>去康康“自定义卡片ycard组件”吧！</text>
+</view>
+
+<!-- 处理对其问题 -->
+<i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 
 <view class="loaded">
   <view class="typing">更多内容，敬请期待 ...</view>

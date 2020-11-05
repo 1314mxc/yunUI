@@ -1,0 +1,15 @@
+<view class="blog">
+  <view class="blog-title">
+    <image class="blog-portrait" src="{{blog.avatarUrl?blog.avatarUrl:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAbCAYAAAAkoDzBAAACqUlEQVRYhe1X7W3bMBB9KTqECE8hFHF3sAGzU4TqFKanqOgtJCDeITIC7mDAkbZo70hZ/hJptwkQoNL7k0Q6kvfe3T0xD78JGCC+fHYCn4WR+NAwEh8aRuJDw9fbITU2SwP81Jgl7ZNnDV3WZ1FiQc/mAnatkL/e2PJbBvOUHk+g/QyUW8+wa416cTzvCjaHfpMu3uVSTaFXM4jbZDo8hC8wTFijaC6fp5CLBtVJomFci9Yb1WxQLAtY2jszGXCDeCdMnUPl9vzlhaghRCouMFtpgBISK4na/czAW7LKRamhypPwRAZUTyAipLlDXh4NEZ6534vnGjKWMYu0n5LsG+gctM7A07TI1Qu+30GaEW91W1DFSVHVqqqUU5RqArkyVBGu6FGQv0eN5FGiyRWUE85A87HryIrXCphK2F85eNhyzuk05fbvNCMxI0nFiafUNsYn2BGk+VJbCdNTxb7Zd7hIjnHwBJEK6EO17YySrVHvQwlZ6jTaf5GcdCOL3lbbnHRklNi/zPidM+TzPJrQ/Qh3kTNBKjim7C8IeJDHrYpHiHfZk5o5bPC9N6TrM47GJsp2ji+Cgh3SBx6xCcdWVE119QU5dJBDQ12TiKjL3/E5Q8S4fHV6wf4w8SMREk3MqYLzi4dkXnq5g+wVMyWxuOSNq/buh4FZcHyBujRkdwmNgj/tfTPeJVNAq9DUpM7szsA+4Bw3cDKTK2m2L0em8SRA1WLTCidPX4oJUBxM0WhYbntye5lYJ0iMNOPDK+7bNwm0/yFoB0xO3raEazc2plvHrcwC9gmQPlG1Wx/SqoLMJMSWP8HGr9vGvehDZ9zNHHoOtNcXDSYj39oZDwrL8OSqqe5uanzLk3tN8y3oMnVs77M5v4E7iP+fGOw/KSPxoWEkPjSMxIeGP97hehVGfTjGAAAAAElFTkSuQmCC'}}"></image>
+    <view class="blog-box">
+      <view class="blog-nickName">{{blog.nickName}}</view>
+      <view class="blog-time">{{_createTime}}</view>
+    </view>
+  </view>
+  <view class="blog-content {{txtIndent===1?'blog_indent':''}}">{{blog.content}}</view>
+  <view class="blog-img" wx:if="{{blog.img && blog.img.length!==0}}">
+    <block wx:for="{{blog.img}}" wx:key="{{index}}">
+      <image class="img" src="{{item}}" mode="aspectFill" bind:tap="onPreviewImage" data-imgsrc="{{item}}" data-imgs="{{blog.img}}"></image>
+    </block>
+  </view>
+</view>
