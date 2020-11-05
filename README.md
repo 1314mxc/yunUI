@@ -1,12 +1,13 @@
-# yunUI（微信小程序自定义扩展组件库）
-### 致力于“微信小程序”原生组件扩展组件开发 —— 功能更强大，使用更方便。
+# yunUI（微信小程序自定义功能组件库）
+### 致力于“微信小程序”原生组件扩展开发 —— 功能更强大，使用更方便。
 
 ## 现收录有：
 - 扩展微信小程序原生日期-时间组件【picker】，使选择时间可精确到分、秒；完美解决iPhone/Android软键盘弹出问题。
 - “头条信息”组件【coupon】，采用slot，使控制更轻松
 - “日历”组件【calendar】：使日期选择更便捷！可以支持选中得到当前选中日期、星期几，突出显示当前日期模块及某一天标记，**现有直接使用和弹出两种方式，使更接近原生组件**。
 - “侧边栏字母导航”组件【alphabet】：使用便捷，查找方便，更顺滑！
-- “自定义弹窗”组件【ymodel】：自定义程度高，使用更便捷，体验更好！
+- “自定义弹窗”组件【ymodel】：自定义程度高，使用更便捷，体验更流畅！
+- “自定义搜索栏”组件【ysearch】：支持多种搜索方式，高自定义程度，使用更流畅！
 
 
 ## 如何使用（仅为测试示例，具体请参照pages/下相关使用）
@@ -20,7 +21,8 @@
     "y-coupon":"/components/coupon/coupon",
     "y-calendar":"/components/calendar/calendar",
     "y-alphabet":"/components/alphabet/alphabet",
-    "y-alphabet":"/components/yModel/ymodel"
+    "y-model":"/components/yModel/ymodel",
+    "y-search":"/components/ysearch/search"
  }
 ```
 
@@ -44,6 +46,7 @@
     <view>sadas</view>
   </view>
 </y-model>
+<y-search button="true" bind:search="Onsearch" bind:mousetap="Insearch" />
 ```
 并传参！
 
@@ -81,6 +84,12 @@
 - md：String，可选。表示弹窗的宽度（由于内容部分允许传入，所以高度自适应），**其格式为“数字+百分号%”**，不传此参数时默认为“86%”
 - **重点：** 此组件采用slot方式接收开发者传入“内容部分”，即：此组件允许子组件（子元素）的存在！而且不止一个！其格式参见上面“如何使用”中的```<y-model></y-model>```，您可以通过wx:if来控制组件的显示与隐藏（并且我强烈推荐用wx:if而不是hidden！）
 
+### ysearch
+- button：true/false，可选。默认为false（不填），此参数意义为“是否有input后面的button按钮”，当此参数为true时。代表你需要用点击“搜索”按钮的方式来查询，为false时表示需要用“监听键盘实时搜索”的方式查询
+- bind:search：监听：search事件。在其中你接收一个event（或e），event（或e）.detail.keyword值为用户在input中输入的“查询条件”。**此参数在button传值为false时存在！**
+- bind:mousetap：监听：mousetap事件。在其中你接收一个event（或e），event（或e）.detail.keyword值为用户在input中输入的“查询条件”。**此参数在button传值为true时存在！**
+（当然，你可以让两个函数都存在，反正值是一样的，它们在组件中“被认为是不共存的”！你可以放心使用！）
+
 
 ## 展示
 
@@ -114,6 +123,17 @@
 具体使用见pages/tdetail/tdetail
 
 ![自定义弹窗组件ymodel](https://img-blog.csdnimg.cn/20201030174513521.gif#pic_center)
+
+### ysearch
+具体使用见pages/search/search
+
+（1）
+
+![ysearch_one](https://img-blog.csdnimg.cn/20201101092957967.gif#pic_center)
+
+（2）
+
+![ysearch_two](https://img-blog.csdnimg.cn/20201101093016495.gif#pic_center)
 
 
 ## 联系作者
