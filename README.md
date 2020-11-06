@@ -96,7 +96,8 @@
 
 ### ycard
 - txtIndent：0/1，可选。不填或传值为0时默认，表示“以短句形式展示”，即头部对其；若传值为1，表示“首行头部有缩进”
-- blog：{} 对象格式，必填。它的属性都为可选：avatarUrl：发帖人头像，String类型（若传值为空会显示“暂无头像”的占位图）、createTime：发帖时间，若传值为时间戳，则使用Number类型，否则为String类型、nickName：用户名，String类型、content：短文内容，String类型、img：图片，Array类型，可有多个（**但建议都用网络图片！**），若用网络图片则可预览。
+- blog：{} 对象格式，必填。它的属性有：avatarUrl：发帖人头像，可选，String类型（若传值为空会显示“暂无头像”的占位图）、createTime：发帖时间，必填，String类型，可传时间戳或标准格式（yyyy-MM-dd hh:mm:ss）、nickName：用户名，必填，String类型、content：短文内容，可选，String类型、img：图片，可选，Array类型，可有多张图片（**但建议都用网络图片！**），若用网络图片则可预览。
+- ani：String类型，可选。此参数通常不写或为```ani="ani"```，若传值，则卡片有一个自下而上的动画过程。
 - **blog对象的属性名必须保持一致！**
 
 
