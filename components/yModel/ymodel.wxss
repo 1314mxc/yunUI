@@ -48,8 +48,8 @@
   color: rgba(0,0,0,.6);
   font-size: 35rpx;
   box-sizing: border-box;
-  padding: 0 19rpx;
-  margin-bottom: 110rpx;
+  padding: 0 20rpx;
+  margin-bottom: 114rpx;
 }
 .ym_model .ym_center{
   display: flex;

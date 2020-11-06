@@ -6,6 +6,18 @@ page {
   padding: 20rpx;
   background-color: #fff;
 }
+.blog_ani{
+  animation: tranY 1.1s linear;
+}
+
+@keyframes tranY{
+  from{
+    transform: translateY(150%);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
 
 .blog-title {
   display: flex;

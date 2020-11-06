@@ -17,6 +17,10 @@ Component({
     txtIndent:{
       type:Number,
       value:0
+    },
+    ani:{
+      type:String,
+      value:''
     }
   },
 
@@ -24,6 +28,14 @@ Component({
   observers: {
     ['blog.createTime'](val) {
       if (val) {
+        let k=1
+        for(let i in val){
+          if(isNaN(val[i])){
+            k=0
+            break
+          }
+        }
+        val=k?(+val):val
         this.setData({
           _createTime: this.formatTime(new Date(val))
         })
