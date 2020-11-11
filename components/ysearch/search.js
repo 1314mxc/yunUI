@@ -5,11 +5,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    placeholder:{
+    y_placeholder:{
       type:String,
-      value:'请输入关键字(左边按钮为发布短文)'
+      value:'请输入查询关键字'
     },
-    button:{
+    y_button:{
       type:String,
       value:'false'
     },
@@ -28,6 +28,14 @@ Component({
     y_color:{
       type:String,
       value:'black'
+    },
+    y_center:{
+      type:String,
+      value:'true'
+    },
+    y_vshow:{
+      type:Number,
+      value:1
     }
   },
 
@@ -36,7 +44,9 @@ Component({
    * 组件的初始数据
    */
   data: {
-    y_value:''
+    y_value:'',
+    icon_center:true,  //图标居中控制
+    text_center:true   //文字居中控制
   },
 
   /**
@@ -55,6 +65,21 @@ Component({
       this.triggerEvent('mousetap',{
         keyword:this.data.y_value
       })
+      if(this.properties.y_vshow){
+        this.setData({
+          y_value:''
+        })
+      }
+    },
+    onFucus(){
+      this.setData({
+        icon_center:false
+      })
+      setTimeout(()=>{
+        this.setData({
+          text_center:false
+        })
+      },400)
     }
   }
 })

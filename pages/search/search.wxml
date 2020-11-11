@@ -1,1 +1,9 @@
-<y-search button="true" bind:search="Onsearch" bind:mousetap="Insearch" />
+<view>
+  <y-search y_button="true" y_center="true" bind:search="Onsearch" bind:mousetap="Insearch" />
+</view>
+<view>
+  <y-search y_button="false" y_center="true" bind:search="Onsearch" bind:mousetap="Insearch" />
+</view>
+<view>
+  <y-search y_button="true" y_center="false" bind:search="Onsearch" bind:mousetap="Insearch" />
+</view>

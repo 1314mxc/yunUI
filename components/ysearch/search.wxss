@@ -3,7 +3,6 @@
 .container {
   display: flex;
   align-items: center;
-  /* margin-left: 20rpx; */
   position: relative;
   box-sizing: border-box;
   padding: 0 9rpx 0 14rpx;
@@ -21,6 +20,11 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  line-height: 68rpx;
+}
+
+.bar_center{
+  text-align: center;
 }
 
 .search {
@@ -42,4 +46,9 @@
   top: 50%;
   transform: translate(16rpx, -50%);
   color: #9f9f9f;
+  transition: all .6s ease;
+}
+
+.bar_center_icon{
+  transform: translate(170rpx,-50%);
 }

@@ -1,1 +1,3 @@
-/* pages/search/search.wxss */
+view{
+  margin-top: 100rpx;
+}
