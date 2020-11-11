@@ -30,7 +30,7 @@
 
 **其余组件亦是如此！**
 
-然后即可在wxml中按如下格式调用：
+然后即可在wxml中按如下格式传参调用：
 ```
 <y-picker slot="midR" time="{{time}}" size="right" color="#888888" defaulttext="请选择时间" seo="0" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
 <y-coupon>
@@ -48,10 +48,10 @@
     <view>sadas</view>
   </view>
 </y-model>
-<y-search button="true" bind:search="Onsearch" bind:mousetap="Insearch" />
+<y-search y_button="true" bind:search="Onsearch" bind:mousetap="Insearch" />
 <y-card txtIndent="{{txtIndent}}" blog="{{blog}}"></y-card>
 ```
-并传参！
+
 
 ## 参数说明
 ### yPicker（日期扩展组件）
@@ -88,7 +88,14 @@
 - **重点：** 此组件采用slot方式接收开发者传入“内容部分”，即：此组件允许子组件（子元素）的存在！而且不止一个！其格式参见上面“如何使用”中的```<y-model></y-model>```，您可以通过wx:if来控制组件的显示与隐藏（并且我强烈推荐用wx:if而不是hidden！）
 
 ### ysearch
-- button：true/false，可选。默认为false（不填），此参数意义为“是否有input后面的button按钮”，当此参数为true时。代表你需要用点击“搜索”按钮的方式来查询，为false时表示需要用“监听键盘实时搜索”的方式查询
+- y_placeholder：String，可选。为无聚焦情况下搜索框中提示文字
+- y_button：String（“true”/“false”），可选。默认为“false”（不传），此参数意义为“是否有input后面的button按钮”，当此参数为true时。代表你需要用点击“搜索”按钮的方式来查询，为false时表示需要用“监听键盘实时搜索”的方式查询
+- but_title：String，可选。为右边按钮出现时按钮中文字，默认为“搜索”
+- y_bgcolor_but：String，可选。为右边按钮背景颜色，默认为“#d43c33”：红色
+- y_bgcolor_bar：String，可选。为搜索框背景颜色，默认为“#f5f5f5”：灰白色
+- y_color：String，可选。为搜索框中用户输入文字颜色，默认为“black”：黑色
+- y_center：String（“true”/“false”），可选。此参数决定初始是否采用居中形式。若传“true”（字符串），则在“聚焦”时会有一个动画效果（参见下面对应展示的效果三）
+- y_vshow：Number，可选。此参数决定触发“提交”按钮后是否清空input框。**此参数在but_title为“false”时无效！（因为此时查询方式为“监听输入实时触发”）**
 - bind:search：监听：search事件。在其中你接收一个event（或e），event（或e）.detail.keyword值为用户在input中输入的“查询条件”。**此参数在button传值为false时存在！**
 - bind:mousetap：监听：mousetap事件。在其中你接收一个event（或e），event（或e）.detail.keyword值为用户在input中输入的“查询条件”。**此参数在button传值为true时存在！**
 （当然，你可以让两个函数都存在，反正值是一样的，它们在组件中“被认为是不共存的”！你可以放心使用！）
@@ -144,6 +151,10 @@
 （2）
 
 ![ysearch_two](https://img-blog.csdnimg.cn/20201101093016495.gif#pic_center)
+
+（3）
+
+![ysearch_thr](https://img-blog.csdnimg.cn/20201111192358158.gif#pic_center)
 
 
 ### ycard
