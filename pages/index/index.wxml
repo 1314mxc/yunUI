@@ -19,9 +19,12 @@
 <view class="mxc6" bindtap="cardshow">
   <text>去康康“自定义卡片ycard组件”吧！</text>
 </view>
+<view class="mxc7" bindtap="effectshow">
+  <text>去康康“自定义雨雪系统RainSnow组件”吧！</text>
+</view>
 
 <!-- 处理对其问题 -->
-<i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 
 <view class="loaded">
   <view class="typing">更多内容，敬请期待 ...</view>

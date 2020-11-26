@@ -50,6 +50,12 @@ Page({
     })
   },
 
+  effectshow(){
+    wx.navigateTo({
+      url: '../RainSnow/rainsnow',
+    })
+  },
+
   cliptwo(){
     this.setclip(this.data.url_two)
   },

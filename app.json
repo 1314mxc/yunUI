@@ -7,7 +7,8 @@
     "pages/coupon/coupon",
     "pages/alphabet/alphabet",
     "pages/search/search",
-    "pages/card/card"
+    "pages/card/card",
+    "pages/RainSnow/rainsnow"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,0 +1,19 @@
+Page{
+  background-color: white;
+}
+#effects{
+  width: 750rpx;
+  height: 768rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#effect{
+  width: 750rpx;
+  height: 768rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
