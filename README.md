@@ -9,6 +9,7 @@
 - “自定义弹窗”组件【ymodel】：自定义程度高，使用更便捷，体验更流畅！
 - “自定义搜索栏”组件【ysearch】：支持多种搜索方式，高自定义程度，使用更流畅！
 - “自定义卡片”组件【ycard】：支持图片、短文、图文三种形式，自定义展示样式，使用方便。
+- **下雨/下雪js插件：位于utils文件夹下，使用(自带)canvas组件在页面中调用！**
 
 
 ## 如何使用（仅为测试示例，具体请参照pages/下相关使用）
@@ -26,6 +27,10 @@
     "y-search":"/components/ysearch/search",
     "y-card":"/components/ycard/ycard"
  }
+```
+```
+//对于js插件来说
+import xxx from '../../utils/effect'   //路径需自己改下
 ```
 
 **其余组件亦是如此！**
@@ -50,6 +55,8 @@
 </y-model>
 <y-search y_button="true" bind:search="Onsearch" bind:mousetap="Insearch" />
 <y-card txtIndent="{{txtIndent}}" blog="{{blog}}"></y-card>
+
+<canvas canvas-id="effect" id="effects"></canvas>
 ```
 
 
@@ -106,6 +113,36 @@
 - blog：{} 对象格式，必填。它的属性有：avatarUrl：发帖人头像，可选，String类型（若传值为空会显示“暂无头像”的占位图）、createTime：发帖时间，必填，String类型，可传时间戳或标准格式（yyyy-MM-dd hh:mm:ss）、nickName：用户名，必填，String类型、content：短文内容，可选，String类型、img：图片，可选，Array类型，可有多张图片（**但建议都用网络图片！**），若用网络图片则可预览。
 - ani：String类型，可选。此参数通常不写或为```ani="ani"```，若传值，则卡片有一个自下而上的动画过程。
 - **blog对象的属性名必须保持一致！**
+
+### js插件之“雨雪特效”
+首先需要在onLoad中引入如下代码：获取宽度 —— 为了兼容机型
+```
+wx.getSystemInfo({
+  success: (res) => {
+    let width = res.windowWidth
+    this.setData({
+      width,
+      scale: width / 375
+    })
+  }
+})
+```
+然后在比如检测到当前城市是下雪天气时在对应函数中引入如下代码：
+```
+const ctx = wx.createCanvasContext('effect')
+let {width, scale} = this.data
+// 768 为 CSS 中设置的 rpx 值
+let height = 768 / 2 * scale
+// 下雪
+let rain=new Snow(ctx, width, height, {
+  amount: 100,
+  speedFactor: 0.03
+})
+// 跑起来
+rain.run()
+```
+其中`new Snow()`那里是要传入参数：canvas对象、宽度、高度、以及对象{雨雪个数、下雨/下雪的速度}
+最后调用run方法使特效出现！
 
 
 ## 展示
