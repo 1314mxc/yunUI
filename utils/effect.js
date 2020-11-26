@@ -1,5 +1,6 @@
 const STATUS_STOP = 'stop'
 const STATUS_RUNNING = 'running'
+// 基类 & 下雨类
 class Particle {
   constructor(ctx, width, height, opts) {
     this._timer = null
@@ -91,6 +92,7 @@ class Particle {
   }
 }
 
+// 下雪类
 class Snow extends Particle {
   _init() {
     let {w, h} = this

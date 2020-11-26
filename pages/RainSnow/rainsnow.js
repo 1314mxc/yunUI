@@ -1,5 +1,7 @@
 import {Particle,Snow} from '../../utils/effect'
 let Rain=Particle
+let rain=null
+let rains=null
 Page({
 
   /**
@@ -36,17 +38,17 @@ Page({
    */
   onShow: function () {
     const ctx = wx.createCanvasContext('effect')
-    const ctxx = wx.createCanvasContext('effect')
+    const ctxx = wx.createCanvasContext('effects')
     let {width, scale} = this.data
     // 768 为 CSS 中设置的 rpx 值
     let height = 768 / 2 * scale
     // 下雨
-    let rains = new Rain(ctxx, width, height, {
+    rains = new Rain(ctxx, width, height, {
       amount: 100,
       speedFactor: 0.03
     })
     // 下雪
-    let rain=new Snow(ctx, width, height, {
+    rain=new Snow(ctx, width, height, {
       amount: 100,
       speedFactor: 0.03
     })
@@ -59,7 +61,8 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    rain.clear()
+    rains.clear()
   },
 
   /**
