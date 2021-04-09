@@ -134,52 +134,22 @@ Component({
     }
     //console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
     if (e.detail.column == 1) {
-      let num = parseInt(this.data.multiArray[e.detail.column][e.detail.value]);
+      let _month = parseInt(this.data.multiArray[e.detail.column][e.detail.value]);
       let temp = [];
-      if (num == 1 || num == 3 || num == 5 || num == 7 || num == 8 || num == 10 || num == 12) { //判断31天的月份
-        for (let i = 1; i <= 31; i++) {
-          if (i < 10) {
-            i = "0" + i;
-          }
-          temp.push("" + i);
+      // 表驱动优化if-else嵌套
+      const _year=this.data.choose_year,
+            _isLeapYear=_year%4==0 && _year%100!=0 || _year%400==0;
+      const monthDays=[31,_isLeapYear?29:28,31,30,31,30,31,31,30,31,30,31];
+      const _days=monthDays[_month-1];
+      for(let i=1;i<=_days;i++){
+        if(i<10){
+          i="0"+i;
         }
-        this.setData({
-          ['multiArray[2]']: temp   //天数更新（根据月份）
-        });
-      } else if (num == 4 || num == 6 || num == 9 || num == 11) { //判断30天的月份
-        for (let i = 1; i <= 30; i++) {
-          if (i < 10) {
-            i = "0" + i;
-          }
-          temp.push("" + i);
-        }
-        this.setData({
-          ['multiArray[2]']: temp
-        });
-      } else if (num == 2) { //判断2月份天数
-        let year = parseInt(this.data.choose_year);
-        if (((year % 400 == 0) || (year % 100 != 0)) && (year % 4 == 0)) {
-          for (let i = 1; i <= 29; i++) {
-            if (i < 10) {
-              i = "0" + i;
-            }
-            temp.push("" + i);
-          }
-          this.setData({
-            ['multiArray[2]']: temp
-          });
-        } else {
-          for (let i = 1; i <= 28; i++) {
-            if (i < 10) {
-              i = "0" + i;
-            }
-            temp.push("" + i);
-          }
-          this.setData({
-            ['multiArray[2]']: temp
-          });
-        }
+        temp.push(""+i);
       }
+      this.setData({
+        ['multiArray[2]']: temp
+      })
       // console.log(this.data.multiArray[2]);
     }
     var data = {
