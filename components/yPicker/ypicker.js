@@ -49,9 +49,9 @@ Component({
     // 这时节点树已创建完成，开始可以用setData渲染节点，但还无法操作节点
     attached:function(){
       this.appd()
-      //设置默认的年份
+      //设置刚开始默认的年份
       this.setData({
-        choose_year: this.data.multiArray[0][0]
+        choose_year: meng_date.getFullYear()
       })
     }
   },
@@ -96,48 +96,61 @@ Component({
       })
     },
     //获取时间日期 - 点进picker组件而什么也不干 && 每次触发完成后 -> 每次点击“确定”时携带值
-  bindMultiPickerChange: function(e) {
-    // console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      multiIndex: e.detail.value
-    })
-    const index = this.data.multiIndex;
-    const year = this.data.multiArray[0][index[0]];
-    const month = this.data.multiArray[1][index[1]];
-    const day = this.data.multiArray[2][index[2]];
-    const hour = this.data.multiArray[3][index[3]];
-    const minute = this.data.multiArray[4][index[4]];
-    if(this.data.multiArray.length==6){
-      const second=this.data.multiArray[5][index[4]]
+    bindMultiPickerChange: function(e) {
       this.setData({
-        time: year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
+        multiIndex: e.detail.value
       })
-    }else{
-      this.setData({
-        time: year + '-' + month + '-' + day + ' ' + hour + ':' + minute
-      })
-    }
-    
-    
-    this.triggerEvent('bindMultiPickerChange',this.data.time)
-    
-  },
-  //监听picker组件的每一列列表滚动事件
-  bindMultiPickerColumnChange: function(e) {
-    //获取年份
-    if (e.detail.column == 0) {
-      let choose_year = this.data.multiArray[e.detail.column][e.detail.value];
+      const index = this.data.multiIndex;
+      const year = this.data.multiArray[0][index[0]];
+      const month = this.data.multiArray[1][index[1]];
+      const day = this.data.multiArray[2][index[2]];
+      const hour = this.data.multiArray[3][index[3]];
+      const minute = this.data.multiArray[4][index[4]];
+      if(this.data.multiArray.length==6){
+        const second=this.data.multiArray[5][index[4]]
+        this.setData({
+          time: year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
+        })
+      }else{
+        this.setData({
+          time: year + '-' + month + '-' + day + ' ' + hour + ':' + minute
+        })
+      }
       
-      this.setData({
-        choose_year
-      })
-    }
-    //console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
-    if (e.detail.column == 1) {
-      let _month = parseInt(this.data.multiArray[e.detail.column][e.detail.value]);
+      this.triggerEvent('bindMultiPickerChange',this.data.time)
+      
+    },
+    //监听picker组件的每一列列表滚动事件
+    bindMultiPickerColumnChange: function(e) {
+      const multiArray=this.data.multiArray,
+            multiIndex=this.data.multiIndex;
+      
+      //获取年份
+      if (e.detail.column == 0) {
+        let choose_year = multiArray[e.detail.column][e.detail.value];
+        let choose_year_month=multiArray[1][multiIndex[1]]
+        this._drive(choose_year,choose_year_month)
+        this.setData({
+          choose_year
+        })
+      }
+      //console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+      if (e.detail.column == 1) {
+        let _month = parseInt(multiArray[e.detail.column][e.detail.value]);
+        this._drive(this.data.choose_year,_month)
+      }
+      var data = {
+        multiArray: multiArray,
+        multiIndex: multiIndex
+      };
+      data.multiIndex[e.detail.column] = e.detail.value;
+      this.setData(data);
+    },
+    // 表驱动优化if-else嵌套
+    _drive:function(choose_year,_month){
       let temp = [];
-      // 表驱动优化if-else嵌套
-      const _year=this.data.choose_year,
+      
+      const _year=choose_year,
             _isLeapYear=_year%4==0 && _year%100!=0 || _year%400==0;
       const monthDays=[31,_isLeapYear?29:28,31,30,31,30,31,31,30,31,30,31];
       const _days=monthDays[_month-1];
@@ -150,15 +163,7 @@ Component({
       this.setData({
         ['multiArray[2]']: temp
       })
-      // console.log(this.data.multiArray[2]);
     }
-    var data = {
-      multiArray: this.data.multiArray,
-      multiIndex: this.data.multiIndex
-    };
-    data.multiIndex[e.detail.column] = e.detail.value;
-    this.setData(data);
-  },
   }
 })
 
