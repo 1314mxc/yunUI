@@ -79,7 +79,7 @@ Component({
         this.setData({
           text_center:false
         })
-      },400)
+      },350)
     }
   }
 })
