@@ -11,38 +11,23 @@ for (let i = meng_date.getFullYear()-10; i <= meng_date.getFullYear() + 10; i++)
 }
 //获取月份
 for (let i = 1; i <= 12; i++) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  months.push("" + i);
+  months.push((i<10)?"0"+i:""+i);
 }
 //获取日期
 for (let i = 1; i <= 31; i++) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  days.push("" + i);
+  days.push((i<10)?"0"+i:""+i);
 }
 //获取小时
 for (let i = 0; i < 24; i++) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  hours.push("" + i);
+  hours.push((i<10)?"0"+i:""+i);
 }
 //获取分钟
 for (let i = 0; i < 60; i++) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  minutes.push("" + i);
+  minutes.push((i<10)?"0"+i:""+i);
 }
 //获取秒数
 for (let i = 0; i < 60; i++) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  seconds.push("" + i);
+  seconds.push((i<10)?"0"+i:""+i);
 }
 Component({
   lifetimes:{
@@ -134,7 +119,6 @@ Component({
           choose_year
         })
       }
-      //console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
       if (e.detail.column == 1) {
         let _month = parseInt(multiArray[e.detail.column][e.detail.value]);
         this._drive(this.data.choose_year,_month)
@@ -155,11 +139,9 @@ Component({
       const monthDays=[31,_isLeapYear?29:28,31,30,31,30,31,31,30,31,30,31];
       const _days=monthDays[_month-1];
       for(let i=1;i<=_days;i++){
-        if(i<10){
-          i="0"+i;
-        }
-        temp.push(""+i);
+        temp.push((i<10)?"0"+i:""+i);
       }
+      console.log(temp)
       this.setData({
         ['multiArray[2]']: temp
       })
