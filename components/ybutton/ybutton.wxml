@@ -1,0 +1,23 @@
+<button class="geek-btn {{inline ? 'geek-btn-inline' : ''}} geek-btn-{{shape}}_{{type}} {{long ? 'geek-btn-long' : ''}} {{bottom ? 'geek-btn-bottom' : ''}} {{disabled ? 'geek-btn-disabled' : ''}}" 
+				hover-class="geek-btn-hover"
+				plain="true"
+				loading="{{loading}}"
+				disabled="{{disabled}}"
+				bindtap="handleTap"
+				binderrror="binderror"
+				bindcontact="bindcontact"
+				bindgetuserinfo="bindgetuserinfo"
+				bindgetphonenumber="bindgetphonenumber"
+				open-type="{{ openType }}"
+				app-parameter="{{ appParameter }}"
+				hover-stop-propagation="{{ hoverStopPropagation }}"
+				hover-start-time="{{ hoverStartTime }}"
+				hover-stay-time="{{ hoverStayTime }}"
+				session-from="{{ sessionFrom }}"
+				send-message-title="{{ sendMessageTitle }}"
+				send-message-path="{{ sendMessagePath }}"
+				send-message-img="{{ sendMessageImg }}"
+				show-message-card="{{ showMessageCard }}"
+				>
+	<image wx:if="{{icon}}" class="geek-btn-icon" src="{{icon}}" mode="aspectFit"></image>{{title}} <text wx:if="{{time>0}}">{{'('+time+'s)'}}</text>
+</button>

@@ -1,0 +1,11 @@
+自定义倒计时时间、倒计时文字、触发按钮时文字
+<y-button t_title="倒计时" times="7" title="开始决战吧" bind:click="bindleTap"></y-button>
+
+自定义倒计时时间、触发按钮时文字
+<y-button times="7" title="开始决战吧" bind:click="bindleTap"></y-button>
+
+自定义倒计时时间
+<y-button times="9" bind:click="bindleTap"></y-button>
+
+一切按照默认值
+<y-button bind:click="bindleTap"></y-button>

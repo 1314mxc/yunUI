@@ -56,6 +56,12 @@ Page({
     })
   },
 
+  butshow(){
+    wx.navigateTo({
+      url: '../ybutton/ybutton',
+    })
+  },
+
   cliptwo(){
     this.setclip(this.data.url_two)
   },

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "自定义button组件",
+  "usingComponents": {
+    "y-button":"/components/ybutton/ybutton"
+  }
+}

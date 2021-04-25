@@ -141,7 +141,6 @@ Component({
       for(let i=1;i<=_days;i++){
         temp.push((i<10)?"0"+i:""+i);
       }
-      console.log(temp)
       this.setData({
         ['multiArray[2]']: temp
       })
