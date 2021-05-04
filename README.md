@@ -10,6 +10,7 @@
 - “自定义搜索栏”组件【ysearch】：支持多种搜索方式，高自定义程度，使用更流畅！
 - “自定义卡片”组件【ycard】：支持图片、短文、图文三种形式，自定义展示样式，使用方便。
 - **下雨/下雪js插件：位于utils文件夹下，使用(自带)canvas组件在页面中调用！**（具体效果见pages/RainSnow/）
+- “自定义按钮button”组件【ybutton】：支持以图片覆盖原样式，支持倒计时按钮。（可应对常见“倒计时完成后才能触发按钮”的场景）
 
 
 ## 如何使用（仅为测试示例，具体请参照pages/下相关使用）
@@ -25,7 +26,8 @@
     "y-alphabet":"/components/alphabet/alphabet",
     "y-model":"/components/yModel/ymodel",
     "y-search":"/components/ysearch/search",
-    "y-card":"/components/ycard/ycard"
+    "y-card":"/components/ycard/ycard",
+    "y-button":"/components/ybutton/ybutton"
  }
 ```
 ```
@@ -57,6 +59,8 @@ import xxx from '../../utils/effect'   //路径需自己改下
 <y-card txtIndent="{{txtIndent}}" blog="{{blog}}"></y-card>
 
 <canvas canvas-id="effect" id="effects"></canvas>
+
+<y-button t_title="倒计时" times="7" title="开始决战吧" bind:click="bindleTap"></y-button>
 ```
 
 
@@ -144,6 +148,14 @@ rain.run()
 其中`new Snow()`那里是要传入参数：canvas对象、宽度、高度、以及对象{雨雪个数、下雨/下雪的速度}
 最后调用run方法使特效出现！
 
+### ybutton
+- t_title：String类型。可选。默认值为“阅读倒计时”，这是显示倒计时时间时展示出来的文字（注意：这个参数只有在times参数存在时才有效）
+- title：String类型。可选。默认值为“点击”，参数控制如果有倒计时则倒计时结束后按钮上展示的文字（无倒计时时直接展示在按钮上）
+- inline：true/false，Bool类型。可选。此参数控制button元素是否以inline-block（行内块）形式展示
+- times：String类型。可选。参数控制倒计时时间，无默认值。不传此参数时和原生button组件表现无异。且只支持String-数字形式的参数
+- 其余参数及回调函数和原生button组件一致，请参见官方文档：https://developers.weixin.qq.com/miniprogram/dev/component/button.html
+
+
 
 ## 展示
 
@@ -198,6 +210,13 @@ rain.run()
 具体使用见pages/card/card
 
 ![y_card](https://img-blog.csdnimg.cn/20201105191121536.gif#pic_center)
+
+
+### ybutton
+具体使用见pages/ybutton/ybutton
+
+![u_button](https://img-blog.csdnimg.cn/20210425185454207.gif#pic_center)
+
 
 
 ## 联系作者
