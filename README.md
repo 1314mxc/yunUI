@@ -47,7 +47,7 @@ import xxx from '../../utils/effect'   //路径需自己改下
 </y-coupon>
 <view>
   <view class="select" bindtap="selected">选择时间</view>
-  <y-calendar wx:if="{{selected}}" before_show="0" task_show="1" dateTimes="{{dateTimes}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
+  <y-calendar wx:if="{{selected}}" before_show="0" task_show="1" yDateTimes="{{dateTimes}}" yEmotions="{{colors}}" yDayColor="{{DateColor}}" bind:timeload="timeload" bind:timechanged="timechanged"></y-calendar>
 </view>
 <y-alphabet list="{{list}}"></y-alphabet>
 <y-model wx:if="{{show}}" center="{{center}}" md="{{md}}" title="{{title}}" fail="{{fail}}" suc="{{suc}}" bind:modelClosed="modelClosed" bind:modelcomplete="modelcomplete">
