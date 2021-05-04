@@ -78,6 +78,7 @@
 .active_date{
   background: rgba(0,0,0,.12);
   color: white;
+  font-weight: bold;
   overflow: hidden;
   position: relative;
 }

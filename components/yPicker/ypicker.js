@@ -94,11 +94,11 @@ Component({
       if(this.data.multiArray.length==6){
         const second=this.data.multiArray[5][index[4]]
         this.setData({
-          time: year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
+          time: `${year}-${month}-${day} ${hour}:${minute}:${second}`
         })
       }else{
         this.setData({
-          time: year + '-' + month + '-' + day + ' ' + hour + ':' + minute
+          time: `${year}-${month}-${day} ${hour}:${minute}`
         })
       }
       

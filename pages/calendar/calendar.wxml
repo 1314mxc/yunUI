@@ -1,6 +1,6 @@
 <view>第一种使用方式：直接选择(这种可用于外面嵌套一个view然后改变大小后用position做一个悬浮)</view>
 <view>
-  <y-calendar before_show="1" task_show="0" dateTimes="{{dateTimes}}" bind:timeload="timeload"
+  <y-calendar before_show="1" task_show="0" yDateTimes="{{dateTimes}}" yEmotions="{{colors}}" yDayColor="{{DateColor}}" bind:timeload="timeload"
     bind:timechanged="timechanged"></y-calendar>
 </view>
 

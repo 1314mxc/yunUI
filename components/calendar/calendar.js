@@ -4,9 +4,19 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    dateTimes:{
+    yDateTimes:{
       type:Array,
       value:[]
+    },
+    // 设置哪一天为什么颜色
+    yDayColor:{
+      type:Object,
+      value:{}
+    },
+    // 颜色映射表
+    yEmotions:{
+      type:Object,
+      value:{}
     },
     before_show:{   //是否作为日期组件由按钮触发弹出（为0时是）
       type:Number,
@@ -29,9 +39,8 @@ Component({
     curMonth:0,   //当前月份
     daysCountArr:[31,28,31,30,31,30,31,31,30,31,30,31],
     weekArr:['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
-    // dateTimes:[{day:'10-1',target:'国庆节'},{day:'10-2',target:'中秋节'}],
     dateList:[],
-    now_event:""
+    now_event:"",
   },
 
   lifetimes:{
@@ -48,9 +57,9 @@ Component({
         curYear,
         curMonth,
         selectedDate,
-        now_selectedDate:selectedDate,
         selectedWeek,
         now_date,
+        now_selectedDate:selectedDate,
         closed:true
       })
       this.getDateList(curYear,curMonth-1,now_date);
@@ -64,8 +73,12 @@ Component({
   methods: {
     getDateList(y,mon,now_date){
       var vm=this;
+      let _year=new Date();
+      let date=this.data.yDayColor.day || (`${_year.getFullYear()}-(${_year.getMonth()}+1)-${_year.getDate()}`);
+      let serenes=this.data.yDayColor.serene;
+      let color=this.data.yEmotions[serenes];
       var daysCountArr=this.data.daysCountArr;
-      if(y%4===0 && y%100!=0){
+      if(y%4==0 && y%100!=0 || y%400==0){
         this.data.daysCountArr[1]=29;
         this.setData({
           daysCountArr
@@ -82,18 +95,21 @@ Component({
           date:i+1,
           week:week
         });
-        // console.log(this.properties.dateTimes)
-        for(let k in vm.data.dateTimes){
+        for(let k in vm.data.yDateTimes){
           for(let j in dateList[weekIndex]){
-            if(dateList[weekIndex][j].dateTime==vm.properties.dateTimes[k].day){
-              dateList[weekIndex][j].event=vm.properties.dateTimes[k].target
+            if(dateList[weekIndex][j].dateTime==vm.properties.yDateTimes[k].day){
+              dateList[weekIndex][j].event=vm.properties.yDateTimes[k].target
             }
-            if(dateList[weekIndex][j].value==vm.properties.dateTimes[k].day){
-              dateList[weekIndex][j].event=vm.properties.dateTimes[k].target
+            if(dateList[weekIndex][j].value==vm.properties.yDateTimes[k].day){
+              dateList[weekIndex][j].event=vm.properties.yDateTimes[k].target
             }
-            if(now_date==vm.properties.dateTimes[k].day){
+            // 判断当前日期是不是设置了心情的日期
+            if(dateList[weekIndex][j].value==date){
+              dateList[weekIndex][j].colors=color
+            }
+            if(now_date==vm.properties.yDateTimes[k].day){
               vm.setData({
-                now_event:vm.properties.dateTimes[k].target
+                now_event:vm.properties.yDateTimes[k].target
               })
             }
           }

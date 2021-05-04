@@ -5,10 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dateTimes:[{day:'10-1',target:'国庆节'},{day:'10-2',target:'中秋节'},{day:'2020-10-24',target:'程序员节'}],
+    dateTimes:[{day:'10-1',target:'国庆节'},{day:'10-2',target:'中秋节'},{day:'2020-10-24',target:'程序员节'},{day:'2021-5-1',target:'劳动节'}],
     selected:false,
     now_date:'',
-    now_week:''
+    now_week:'',
+    emotions: {
+      '开心':'serene',
+      '平静':'hehe',
+      '难过':'sad'
+    },  // 开心、平静、伤心、难过....设置一个值，这个值是下面colors里面的映射名。比如用户选择“开心”，你传的是“serene”和当前日期之类的
+    colors: {
+      serene: '#64d9fe',
+      hehe: '#d3fc1e',
+      ecstatic: '#f7dc0e',
+      sad: '#ec238a',
+      terrified: '#ee1aea'
+    },
+    DateColor:{
+      day:'2021-5-1',
+      serene:'serene'
+    }
   },
 
   selected(){
