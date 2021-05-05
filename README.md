@@ -80,7 +80,7 @@ import xxx from '../../utils/effect'   //路径需自己改下
 ### calendar（“日历”组件）
 - yDateTimes：数组，可选 —— 如果填写的话则必须是数组-对象的形式，它用于为您提供在日历上显示某一天标记的功能：比如“10-1日显示国庆节” —— 强烈建议您注意格式如：```[{day:'哪一天',target:'标记语'}]```（注意：day既可指“不带年份的某一天”也可指“具体哪一年哪一月哪一天”）
 - yDayColor：数组Array，可选 —— ```DateColor:[{day:'2021-5-1',serene:'serene'}]```，对象中第一个参数是当前签到日期，第二个是颜色对象中的键名。**注意：考虑到具体场景：一般签到后通过事件改变心情！还有就是一般都是在onload中读取本地保存的心情日期缓存（对，这个需要您每次触发时手动缓存）**（具体应用场景请看pages/calendar/calendar.js文件）
-- yEmotions：对象Object，可选 —— 颜色映射表。```colors: {serene: '#64d9fe'}```，使用yDayColor和yEmotions时注意场景，比如你想要获取用户“开心”心情时标注不同颜色在日历上，此时你要在调用组件page中添加将“开心”和colors中的“serene”对应起来，然后通过上一个参数传入自定义组件！（具体应用场景请看pages/calendar/calendar.js文件第12行）
+- yEmotions：对象Object，可选 —— 颜色映射表。```colors: {serene: '#64d9fe'}```，使用yDayColor和yEmotions时注意场景，比如你想要获取用户“开心”心情时标注不同颜色在日历上，此时你要在调用组件page中添加将“开心”和colors中的“serene”对应起来，然后通过上一个参数传入自定义组件！（具体应用场景请看pages/calendar/calendar.js文件第12、51行）
 - before_show：Number，可选 —— 如果传0，则表示“要通过按钮事件触发弹出”，这种方式更接近原生组件弹出（从底部向上弹出，若传1则组件正常显示，你可以在组件引用外部包裹view标签并设置大小和位置！），更丝滑！**这时你要为自定义组件添加一个wx:if并通过事件改变其值**，注意：目前此组件只能通过if事件改变状态
 - task_show：Number，可选 —— 控制遮罩层是否显示：为0时组件无遮罩层，为1时且在组件弹出时遮罩层显示——且当遮罩层被点击时组件收回。**我强烈建议您在选择弹出式组件显示时为此属性赋值为1！**
 
@@ -181,6 +181,10 @@ rain.run()
 （2）
 
 ![自定义日历组件-方式2](https://img-blog.csdnimg.cn/20201014153325679.gif#pic_center)
+
+（3）
+
+![自定义日历组件-心情签到](https://img-blog.csdnimg.cn/20210505145702226.gif#pic_center)
 
 ### alphabet
 具体使用见pages/alphabet/alphabet
