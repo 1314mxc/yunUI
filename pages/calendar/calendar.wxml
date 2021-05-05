@@ -3,6 +3,7 @@
   <y-calendar before_show="1" task_show="0" yDateTimes="{{dateTimes}}" yEmotions="{{colors}}" yDayColor="{{DateColor}}" bind:timeload="timeload"
     bind:timechanged="timechanged"></y-calendar>
 </view>
+<button type="primary" bindtap="signIn">心情签到</button>
 
 <view style="margin-top:30rpx;margin-bottom:20rpx;border-top:1rpx solid rgba(0,0,0,.15)">第二种使用方式：弹出式(请点击下面那个按钮)</view>
 

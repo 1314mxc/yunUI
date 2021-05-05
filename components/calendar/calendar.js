@@ -10,8 +10,8 @@ Component({
     },
     // 设置哪一天为什么颜色
     yDayColor:{
-      type:Object,
-      value:{}
+      type:Array,
+      value:[]
     },
     // 颜色映射表
     yEmotions:{
@@ -43,7 +43,17 @@ Component({
     now_event:"",
   },
 
+  observers:{
+    "yDayColor"(val){
+      // console.log(val)
+      if(val.length){
+        this.getDateList(this.data.curYear,this.data.curMonth-1,this.data.now_date);
+      }
+    }
+  },
+
   lifetimes:{
+    // 在这个生命周期中只能拿到传参的初始值(就是页面data中的值)
     attached(){
       var today=new Date();
       var curYear=today.getFullYear();
@@ -62,8 +72,13 @@ Component({
         now_selectedDate:selectedDate,
         closed:true
       })
+      // // 初始化事件、传来的节日标注、style
       this.getDateList(curYear,curMonth-1,now_date);
       this.triggerEvent('timeload',{selectedDate,selectedWeek,event:this.data.now_event})
+    },
+    ready(){
+      // 初始化事件、传来的节日标注、style
+      // this.getDateList(this.data.curYear,this.data.curMonth-1,this.data.now_date);
     }
   },
 
@@ -74,9 +89,8 @@ Component({
     getDateList(y,mon,now_date){
       var vm=this;
       let _year=new Date();
-      let date=this.data.yDayColor.day || (`${_year.getFullYear()}-(${_year.getMonth()}+1)-${_year.getDate()}`);
-      let serenes=this.data.yDayColor.serene;
-      let color=this.data.yEmotions[serenes];
+      let _dayColor=this.data.yDayColor;
+      let _emotion=this.data.yEmotions;
       var daysCountArr=this.data.daysCountArr;
       if(y%4==0 && y%100!=0 || y%400==0){
         this.data.daysCountArr[1]=29;
@@ -103,14 +117,16 @@ Component({
             if(dateList[weekIndex][j].value==vm.properties.yDateTimes[k].day){
               dateList[weekIndex][j].event=vm.properties.yDateTimes[k].target
             }
-            // 判断当前日期是不是设置了心情的日期
-            if(dateList[weekIndex][j].value==date){
-              dateList[weekIndex][j].colors=color
-            }
             if(now_date==vm.properties.yDateTimes[k].day){
               vm.setData({
                 now_event:vm.properties.yDateTimes[k].target
               })
+            }
+            // 判断当前日期是不是设置了心情的日期
+            for(let m of _dayColor){
+              if(dateList[weekIndex][j].value==m.day || dateList[weekIndex][j].value==(`${_year.getFullYear()}-(${_year.getMonth()}+1)-${_year.getDate()}`)){
+                dateList[weekIndex][j].colors=_emotion[m.serene]
+              }
             }
           }
         }
@@ -122,7 +138,7 @@ Component({
       vm.setData({
         dateList
       })
-      
+
     },
     selectDate(e){
       var vm=this;

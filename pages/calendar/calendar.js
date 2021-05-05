@@ -21,10 +21,7 @@ Page({
       sad: '#ec238a',
       terrified: '#ee1aea'
     },
-    DateColor:{
-      day:'2021-5-1',
-      serene:'serene'
-    }
+    DateColor:[]   // 心情签到用
   },
 
   selected(){
@@ -39,7 +36,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 每次填写完心情要保存到本地，在进入页面时就拿到并填充到data中
+    let dColor=wx.getStorageSync('DateColor')
+    if(dColor){
+      this.setData({
+        DateColor:dColor
+      })
+    }
 
+  },
+
+  // 心情签到-模拟改变传值
+  signIn(){
+    // 这里用‘hehe’，你可以看做“用户签到时输入平静”然后在emotions关联表中发现开心对应的是hehe！
+    let bgColor={day:'2021-5-8',serene:'hehe'};
+    let dcolor=this.data.DateColor;
+    dcolor.push(bgColor);
+    
+    wx.setStorage({
+      key:'DateColor',
+      data:dcolor,
+      success:()=>{
+        wx.showToast({
+          title: '成功',
+        })
+        this.setData({
+          DateColor:dcolor
+        })
+      }
+    })
   },
 
   timeload(e){
@@ -56,53 +81,4 @@ Page({
       now_week:e.detail.selectedWeek
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

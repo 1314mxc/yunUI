@@ -18,10 +18,10 @@
       <view class="weekday_label">五</view>
       <view class="weekday_label">六</view>
     </view>
-    <view class="calendar_box" wx:for="{{dateList}}" wx:for-item="week"
+    <view class="calendar_box" wx:for="{{dateList}}" wx:key="*this" wx:for-item="week"
       style="{{index==0?'justify-content:flex-end':''}}">
       <!-- 此处view的data-不是为了向js传值，而只是自定义属性向css伪元素传attr() -->
-      <view class="weekday_label {{(item.value==selectedDate)?'active_date':''}} {{(item.value==now_selectedDate)?'active_dates':''}} {{(item.event)?'actived_date':''}}" wx:for="{{week}}" data-event="{{item.event}}">
+      <view class="weekday_label {{(item.value==selectedDate)?'active_date':''}} {{(item.value==now_selectedDate)?'active_dates':''}} {{(item.event)?'actived_date':''}}" wx:for="{{week}}" wx:key="*this" data-event="{{item.event}}">
         <view class="" style="width:66%;border-radius:50%;text-align:center;background-color:{{item.colors?item.colors:'none'}}" bindtap="selectDate" data-date="{{item}}">
           {{item.date}}</view>
       </view>
