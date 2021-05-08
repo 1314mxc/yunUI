@@ -1,1 +1,3 @@
 <y-card txtIndent="{{txtIndent}}" blog="{{blog}}" ani="ani"></y-card>
+
+<y-card txtIndent="{{txtIndent}}" blog="{{blog2}}" ani="ani"></y-card>

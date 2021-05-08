@@ -5,6 +5,8 @@ page {
 .blog {
   padding: 20rpx;
   background-color: #fff;
+  border-bottom: 1rpx solid rgba(0, 0, 0, .15);
+  margin-bottom: 7rpx;
 }
 
 .blog-title {

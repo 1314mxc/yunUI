@@ -13,6 +13,14 @@ Page({
       nickName:'云小梦',
       content:'唉胡反思uagaiufagsi功夫爱啊功夫噶 就业啊功夫啊啊功夫压根改革法uaoiau和光伏业按规范 ',
       img:['https://img-blog.csdnimg.cn/20200716101914321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0ODc4,size_16,color_FFFFFF,t_70']
+    },
+    blog2:{
+      avatarUrl:'https://avatars.githubusercontent.com/u/44108029?s=60&v=4',
+      createTime:Date.now(),
+      // createTime:'1604639210646',
+      nickName:'云小梦',
+      content:'唉胡反思uagaiufagsi功夫爱啊功夫噶 就业啊功夫啊啊功夫压根改革法uaoiau和光伏业按规范 ',
+      img:['https://img-blog.csdnimg.cn/20200716101914321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0ODc4,size_16,color_FFFFFF,t_70']
     }
   },
 
