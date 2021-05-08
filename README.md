@@ -227,7 +227,7 @@ Time.getFormatTime(date);
 ### ycard
 具体使用见pages/card/card
 
-![y_card](https://img-blog.csdnimg.cn/20201105191121536.gif#pic_center)
+![y_card](https://img-blog.csdnimg.cn/20210508175343444.gif#pic_center)
 
 
 ### ybutton
