@@ -11,6 +11,7 @@
 - “自定义卡片”组件【ycard】：支持图片、短文、图文三种形式，自定义展示样式，使用方便。
 - **下雨/下雪js插件：位于utils文件夹下，使用(自带)canvas组件在页面中调用！**（具体效果见pages/RainSnow/）
 - “自定义按钮button”组件【ybutton】：支持以图片覆盖原样式，支持倒计时按钮。（可应对常见“倒计时完成后才能触发按钮”的场景）
+- **新增日期时间转化插件：位于utils文件夹下，以import {Time} from '路径';方式调用**
 
 
 ## 如何使用（仅为测试示例，具体请参照pages/下相关使用）
@@ -32,7 +33,8 @@
 ```
 ```
 //对于js插件来说
-import xxx from '../../utils/effect'   //路径需自己改下
+import xxx from '../../utils/effect';   // 路径需自己改下
+import {Time} from '../../utils/date_time';   // 路径需自己改下
 ```
 
 **其余组件亦是如此！**
@@ -149,6 +151,7 @@ rain.run()
 ```
 其中`new Snow()`那里是要传入参数：canvas对象、宽度、高度、以及对象{雨雪个数、下雨/下雪的速度}
 最后调用run方法使特效出现！
+**具体使用见pages/RainSnow/rainsnow.js文件**
 
 ### ybutton
 - t_title：String类型。可选。默认值为“阅读倒计时”，这是显示倒计时时间时展示出来的文字（注意：这个参数只有在times参数存在时才有效）
@@ -156,6 +159,15 @@ rain.run()
 - inline：true/false，Bool类型。可选。此参数控制button元素是否以inline-block（行内块）形式展示
 - times：String类型。可选。参数控制倒计时时间，无默认值。不传此参数时和原生button组件表现无异。且只支持String-数字形式的参数
 - 其余参数及回调函数和原生button组件一致，请参见官方文档：https://developers.weixin.qq.com/miniprogram/dev/component/button.html
+
+
+### js插件之时间转化
+作用为将一个时间戳或者标准格式（yyyy-MM-dd hh:mm:ss）转化为“刚刚”、“几分钟前”、“几小时前”、“几天前”或具体日期（精确到秒）。主要用于发表文章/卡片。
+使用直接引入后调用并传入参数即可：
+```
+Time.getFormatTime(date);
+```
+**具体使用见【自定义卡片card组件】（components/ycard/ycard.js）文件**
 
 
 
