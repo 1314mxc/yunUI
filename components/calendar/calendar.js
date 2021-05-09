@@ -45,7 +45,6 @@ Component({
 
   observers:{
     "yDayColor"(val){
-      // console.log(val)
       if(val.length){
         this.getDateList(this.data.curYear,this.data.curMonth-1,this.data.now_date);
       }
@@ -109,8 +108,8 @@ Component({
           date:i+1,
           week:week
         });
-        for(let k in vm.data.yDateTimes){
-          for(let j in dateList[weekIndex]){
+        for(let j in dateList[weekIndex]){
+          for(let k in vm.data.yDateTimes){
             if(dateList[weekIndex][j].dateTime==vm.properties.yDateTimes[k].day){
               dateList[weekIndex][j].event=vm.properties.yDateTimes[k].target
             }
@@ -122,11 +121,12 @@ Component({
                 now_event:vm.properties.yDateTimes[k].target
               })
             }
-            // 判断当前日期是不是设置了心情的日期
-            for(let m of _dayColor){
-              if(dateList[weekIndex][j].value==m.day || dateList[weekIndex][j].value==(`${_year.getFullYear()}-(${_year.getMonth()}+1)-${_year.getDate()}`)){
-                dateList[weekIndex][j].colors=_emotion[m.serene]
-              }
+          }
+          // 心情签到独立于特殊日期标记设计
+          // 判断当前日期是不是设置了心情的日期
+          for(let m of _dayColor){
+            if(dateList[weekIndex][j].value==m.day || dateList[weekIndex][j].value==(`${_year.getFullYear()}-(${_year.getMonth()}+1)-${_year.getDate()}`)){
+              dateList[weekIndex][j].colors=_emotion[m.serene]
             }
           }
         }
@@ -140,6 +140,7 @@ Component({
       })
 
     },
+    // 选中日期
     selectDate(e){
       var vm=this;
       vm.setData({
@@ -152,6 +153,7 @@ Component({
         event:(e.currentTarget.dataset.date.event?e.currentTarget.dataset.date.event:"")
       })
     },
+    // 上个月
     preMonth(){
       var vm=this;
       var curYear=vm.data.curYear;
@@ -164,6 +166,7 @@ Component({
       });
       vm.getDateList(curYear,curMonth-1,this.data.now_date);
     },
+    // 下个月
     nextMonth(){
       var vm=this;
       var curYear=vm.data.curYear;
@@ -176,6 +179,7 @@ Component({
       });
       vm.getDateList(curYear,curMonth-1,this.data.now_date);
     },
+    // 在弹出式场景下关闭日历
     closed(){
       if(this.properties.task_show==1){
         this.setData({
