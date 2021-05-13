@@ -1,15 +1,14 @@
 /**
  * 日期转为固定格式插件
  * 暴露函数：getFormatTime()
- * date:2021/5/8
- * author:孟笑晨（恪愚）
+ * date: 2021/5/8
+ * author: 孟笑晨（恪愚）
  * 
  */
 let Time={
   // 获取当前时间戳
   getUnix:function(){
-    let date=new Date();
-    return date.getTime();
+    return Date.now();
   },
   // 获取今天0点0分0秒的时间戳
   getTodayUnix:function(){

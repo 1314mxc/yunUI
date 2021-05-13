@@ -48,14 +48,15 @@ Page({
 
   // 心情签到-模拟改变传值
   signIn(){
-    // 这里用‘hehe’，你可以看做“用户签到时输入平静”然后在emotions关联表中发现开心对应的是hehe！
-    let bgColor={day:'2021-5-8',serene:'hehe'};
+    // 这里用是测试用，你可以看做“用户签到时输入平静”然后在emotions关联表中发现开心对应的是hehe！
+    let _date=`${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`;
+    let serene=Object.keys(this.data.colors)[Math.floor(Math.random()*3)];
+    let bgColor={day:_date,serene:serene};
     let dcolor=this.data.DateColor;
     dcolor.push(bgColor);
-    
     wx.setStorage({
       key:'DateColor',
-      data:dcolor,
+      data:[...new Set(dcolor)],
       success:()=>{
         wx.showToast({
           title: '成功',
