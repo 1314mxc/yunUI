@@ -90,17 +90,13 @@ Component({
       let _year=new Date();
       let _dayColor=this.data.yDayColor;
       let _emotion=this.data.yEmotions;
-      var daysCountArr=this.data.daysCountArr;
-      if(y%4==0 && y%100!=0 || y%400==0){
-        this.data.daysCountArr[1]=29;
-        this.setData({
-          daysCountArr
-        })
-      }
-      var dateList=[]
+      let daysCountArr=this.data.daysCountArr;
+      // 判断闰年
+      daysCountArr[1]=(y%4==0 && y%100!=0 || y%400==0)?29:28
+      let dateList=[]
       dateList[0]=[]
-      var weekIndex=0;
-      for(var i=0;i<vm.data.daysCountArr[mon];i++){
+      let weekIndex=0;
+      for(var i=0;i<daysCountArr[mon];i++){
         var week=new Date(Date.UTC(y,mon,i+1)).getDay();
         dateList[weekIndex].push({
           value:y+'-'+(mon+1)+'-'+(i+1),
@@ -125,9 +121,7 @@ Component({
           // 心情签到独立于特殊日期标记设计
           // 判断当前日期是不是设置了心情的日期
           for(let m of _dayColor){
-            if(dateList[weekIndex][j].value==m.day || dateList[weekIndex][j].value==(`${_year.getFullYear()}-(${_year.getMonth()}+1)-${_year.getDate()}`)){
-              dateList[weekIndex][j].colors=_emotion[m.serene]
-            }
+            (dateList[weekIndex][j].value==m.day || dateList[weekIndex][j].value==(`${_year.getFullYear()}-(${_year.getMonth()}+1)-${_year.getDate()}`)) && !dateList[weekIndex][j].colors && (dateList[weekIndex][j].colors=_emotion[m.serene])
           }
         }
         if(week==6){
