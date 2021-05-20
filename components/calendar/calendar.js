@@ -91,6 +91,8 @@ Component({
       let _dayColor=this.data.yDayColor;
       let _emotion=this.data.yEmotions;
       let daysCountArr=this.data.daysCountArr;
+      let _ydateTimes=this.data.yDateTimes;
+      let _new_days=`${_year.getFullYear()}-(${_year.getMonth()}+1)-${_year.getDate()}`;
       // 判断闰年
       daysCountArr[1]=(y%4==0 && y%100!=0 || y%400==0)?29:28
       let dateList=[]
@@ -105,23 +107,23 @@ Component({
           week:week
         });
         for(let j in dateList[weekIndex]){
-          for(let k in vm.data.yDateTimes){
-            if(dateList[weekIndex][j].dateTime==vm.properties.yDateTimes[k].day){
-              dateList[weekIndex][j].event=vm.properties.yDateTimes[k].target
+          for(let k in _ydateTimes){
+            if(dateList[weekIndex][j].dateTime==_ydateTimes[k].day){
+              dateList[weekIndex][j].event=_ydateTimes[k].target
             }
-            if(dateList[weekIndex][j].value==vm.properties.yDateTimes[k].day){
-              dateList[weekIndex][j].event=vm.properties.yDateTimes[k].target
+            if(dateList[weekIndex][j].value==_ydateTimes[k].day){
+              dateList[weekIndex][j].event=_ydateTimes[k].target
             }
-            if(now_date==vm.properties.yDateTimes[k].day){
+            if(now_date==_ydateTimes[k].day){
               vm.setData({
-                now_event:vm.properties.yDateTimes[k].target
+                now_event:_ydateTimes[k].target
               })
             }
           }
           // 心情签到独立于特殊日期标记设计
           // 判断当前日期是不是设置了心情的日期
           for(let m of _dayColor){
-            (dateList[weekIndex][j].value==m.day || dateList[weekIndex][j].value==(`${_year.getFullYear()}-(${_year.getMonth()}+1)-${_year.getDate()}`)) && !dateList[weekIndex][j].colors && (dateList[weekIndex][j].colors=_emotion[m.serene])
+            (dateList[weekIndex][j].value==m.day || dateList[weekIndex][j].value==_new_days) && !dateList[weekIndex][j].colors && (dateList[weekIndex][j].colors=_emotion[m.serene])
           }
         }
         if(week==6){
