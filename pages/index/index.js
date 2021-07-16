@@ -62,6 +62,12 @@ Page({
     })
   },
 
+  ldshow(){
+    wx.navigateTo({
+      url: '../liandong/ld',
+    })
+  },
+
   cliptwo(){
     this.setclip(this.data.url_two)
   },

@@ -1,11 +1,21 @@
 <view class="calendar_date {{(before_show==0)?'calendar_select_date':''}} {{(closed)?'':'calendar_unselect_date'}}">
   <view class="selected_date">
-    <view bindtap="preMonth">
-      <i class="iconfont icon-fanhui-copy"></i>
+    <view class="date_change">
+      <view bindtap="preYear">
+        <i class="iconfont icon-shuangjiantou2"></i>
+      </view>
+      <view bindtap="preMonth">
+        <i class="iconfont icon-shangyiyedanjiantou"></i>
+      </view>
     </view>
     <view class="text_center" style="text-align:center;">{{curYear+'-'+curMonth}}</view>
-    <view style="text-align:right;" bindtap="nextMonth">
-      <i class="iconfont icon-fanhui-copy1"></i>
+    <view style="text-align:right;">
+      <view bindtap="nextMonth">
+        <i class="iconfont icon-xiayiyedanjiantou"></i>
+      </view>
+      <view bindtap="nextYear">
+        <i class="iconfont icon-shuangjiantou1"></i>
+      </view>
     </view>
   </view>
   <view class="calendar_panel calendar_panel_two">
@@ -22,7 +32,7 @@
       style="{{index==0?'justify-content:flex-end':''}}">
       <!-- 此处view的data-不是为了向js传值，而只是自定义属性向css伪元素传attr() -->
       <view class="weekday_label {{(item.value==selectedDate)?'active_date':''}} {{(item.value==now_selectedDate)?'active_dates':''}} {{(item.event)?'actived_date':''}}" wx:for="{{week}}" wx:key="*this" data-event="{{item.event}}">
-        <view class="" style="width:66%;border-radius:50%;text-align:center;background-color:{{item.colors?item.colors:'none'}}" bindtap="selectDate" data-date="{{item}}">
+        <view class="" style="width:70%;border-radius:27%;text-align:center;background-color:{{item.colors?item.colors:'none'}}" bindtap="selectDate" data-date="{{item}}">
           {{item.date}}</view>
       </view>
     </view>

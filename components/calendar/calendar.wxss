@@ -37,6 +37,8 @@
 }
 .selected_date>view{
   width: 29.5%;
+  display: flex;
+  justify-content: space-around;
 }
 .calendar_panel{
   width: 100%;

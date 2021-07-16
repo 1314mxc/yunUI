@@ -1,0 +1,31 @@
+var title_x=0,
+    ifs=false;
+
+function bindtouchstart(e){
+  var types=e.currentTarget.dataset.types;
+  ifs=(types=='title');
+}
+
+
+function bindscroll(e,ownerInstance){
+  var move = e.detail.scrollLeft
+      _title_x=title_x; 
+  if (_title_x!=move && !ifs){
+    title_x=move
+    ownerInstance.callMethod('handleTouchmove', { title_x: title_x })
+  }
+}
+
+
+function titlebindscroll(e,ownerInstance){
+  var move = e.detail.scrollLeft;
+  if(ifs){
+    title_x=move
+    ownerInstance.callMethod('handleTouchmove', { title_x: title_x })
+  }
+}
+module.exports = {
+    bindtouchstart: bindtouchstart,
+    bindscroll: bindscroll,
+    titlebindscroll: titlebindscroll
+}

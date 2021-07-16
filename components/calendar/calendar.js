@@ -162,6 +162,17 @@ Component({
       });
       vm.getDateList(curYear,curMonth-1,this.data.now_date);
     },
+    // 上年
+    preYear(){
+      var vm=this;
+      var curYear=vm.data.curYear;
+      var curMonth=vm.data.curMonth;
+      curYear-=1;
+      vm.setData({
+        curYear,
+      });
+      vm.getDateList(curYear-1,curMonth,this.data.now_date);
+    },
     // 下个月
     nextMonth(){
       var vm=this;
@@ -174,6 +185,17 @@ Component({
         curMonth
       });
       vm.getDateList(curYear,curMonth-1,this.data.now_date);
+    },
+    // 下年
+    nextYear(){
+      var vm=this;
+      var curYear=vm.data.curYear;
+      var curMonth=vm.data.curMonth;
+      curYear+=1;
+      vm.setData({
+        curYear,
+      });
+      vm.getDateList(curYear+1,curMonth,this.data.now_date);
     },
     // 在弹出式场景下关闭日历
     closed(){

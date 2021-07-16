@@ -1,0 +1,17 @@
+<wxs module="test" src="./ld.wxs" />
+<scroll-view style='width:100%;height:100rpx;border:1px solid #f00;' scroll-x scroll-left='{{title_x}}'
+  bind:scroll='{{test.titlebindscroll}}' bind:touchstart='{{test.bindtouchstart}}' data-types='title'>
+  <view style='height:300rpx;background:#00f;width:1000rpx;margin-bottom:10rpx;float:left;color:#fff;'>
+    12122665566546546546512346846546465465466666666666666666666666644444444444488888888888888888888999999999999999995555555555555553333333333333333222222222222222777777777776666666666666666666666555555555555533333333332222222
+  </view>
+
+</scroll-view>
+<scroll-view style='width:100%;height:1000rpx;border:1px solid #f00;' scroll-x scroll-yscroll-left='{{title_x}}'
+  bind:scroll='{{test.bindscroll}}' bind:touchstart='{{test.bindtouchstart}}' data-types='data'>
+  <view style='height:300rpx;background:#f00;width:1000rpx;margin-bottom:10rpx;float:left;'>
+    1212266556654654654651234684654646546546666666666666666666666664444444444448888888888888888888899999999999
+  </view>
+
+</scroll-view>
+
+<view>{{test.title_x}}</view>

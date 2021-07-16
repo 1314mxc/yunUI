@@ -26,8 +26,12 @@
   <text>去康康“自定义按钮button组件”吧！</text>
 </view>
 
-<!-- 处理对其问题 -->
-<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+<view class="mxc9" bindtap="ldshow">
+  <text>去康康“联动测试”吧！</text>
+</view>
+
+<!-- 处理flex布局最后一行对其问题 -->
+<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 
 <view class="loaded">
   <view class="typing">更多内容，敬请期待 ...</view>

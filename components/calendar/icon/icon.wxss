@@ -1,10 +1,8 @@
-@font-face {font-family: "iconfont";
-  src: url('//at.alicdn.com/t/font_2091489_52fju9yms0u.eot?t=1600881100414'); /* IE9 */
-  src: url('//at.alicdn.com/t/font_2091489_52fju9yms0u.eot?t=1600881100414#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAALMAAsAAAAABtQAAAKAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCfgqBOIEqATYCJAMMCwgABCAFhG0HRBv2BcieGjszMAUJBbzuDsDBcBbB19hv3919VBMk1WSSGRKJTKIEKklD9xIoCe9ikfz/d01zHaLDjNQdyyErtAftT5qj3Mv9Dp6fcAXhh0pVuHXCbb2V4hflIqLkq4RiY1Px7CU9xBeHqE/cO/0TKJD5gHJaa1udjwmYYGB7YpusQAo8MWsYu8AlHCfQoJ9B2z67uSfDCmtcIA4FD8lwLqoorFAn1NQsLeJURV06ToqT8P3xYy6GSSqZNXX34LRGDt69Rz6qkn2fECPA1RVkTCAKsVeb3dUnGKdPQ7bfALKvfsF7VKu88//xhIIkiBpWcRMYQbnEO1ea6gLK7/ioDGpQMIVYZBm7xrpST9i34FqrG6DVuWLhnf3EpeYAKLV2D7J2OwS5EFr3+4YfdCK6CZmfX7/a+x3gTRsL+kIv383Yzvb7dpwl3QtgC1g90kP6g/QUyvf6lUuC/tTO/3BjAW9nFVqL/rk6CSb7b7KeTUVXWLZcVKkrNf1Z70h3Aop5QJUV7PA33th9f/lQpztFUqsPWZ0BsrATqGi0gBp11tBg3PnqRp2UPlHqMeYNILT5QdLiHlmbLlnYHip6/KNGW/ShwV7MbdloKMTosYIQoUajVyqqMmeOA0ej0lvgjTRUWUXIfQRVigR1LadYOIcc1BwzyifuITLKlMzoGTgN0lTSQskYqmjVEYst22Z1T7KqMiOjtigghEANFXlFCVVSjvmd0Wjp9bcA15AKqZaymugjoJRE95TL4vQgz7V5r7J7Oaf0hPMgxFCMImWoMzAIpFISVdQPioEqZKmPSBe22HY71ldrra/PPqCEVWF9NkeKHEXjQZjXG8KsyuJ1PPW4hAA=') format('woff2'),
-  url('//at.alicdn.com/t/font_2091489_52fju9yms0u.woff?t=1600881100414') format('woff'),
-  url('//at.alicdn.com/t/font_2091489_52fju9yms0u.ttf?t=1600881100414') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('//at.alicdn.com/t/font_2091489_52fju9yms0u.svg?t=1600881100414#iconfont') format('svg'); /* iOS 4.1- */
+@font-face {
+  font-family: "iconfont"; /* Project id 2680842 */
+  src: url('//at.alicdn.com/t/font_2680842_7rnppv91o07.woff2?t=1626450958908') format('woff2'),
+       url('//at.alicdn.com/t/font_2680842_7rnppv91o07.woff?t=1626450958908') format('woff'),
+       url('//at.alicdn.com/t/font_2680842_7rnppv91o07.ttf?t=1626450958908') format('truetype');
 }
 
 .iconfont {
@@ -15,10 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-fanhui-copy:before {
-  content: "\e601";
+.icon-shuangjiantou1:before {
+  content: "\e63c";
 }
 
-.icon-fanhui-copy1:before {
-  content: "\e600";
+.icon-shuangjiantou2:before {
+  content: "\e63d";
+}
+
+.icon-shangyiyedanjiantou:before {
+  content: "\e712";
+}
+
+.icon-xiayiyedanjiantou:before {
+  content: "\e718";
 }
