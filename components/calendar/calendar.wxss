@@ -10,8 +10,8 @@
   bottom: 0;
   left: 0;
   z-index: 100000 !important;
-  animation: transfer 1s linear;
-  animation-delay: -.4s;
+  animation: transfer .4s linear;
+  /* animation-delay: -.4s; */
 }
 @keyframes transfer{
   0%{
@@ -22,7 +22,7 @@
   }
 }
 .calendar_unselect_date{
-  transition: all .6s ease;
+  transition: all .4s ease;
   transform: translateY(100%);
 }
 

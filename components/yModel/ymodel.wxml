@@ -2,7 +2,7 @@
   <view class="ym_mask"></view>
   <view class="ym_model" style="width:{{md}}">
     <view class="ym_title">{{title}}</view>
-    <view class="ym_content {{center==1?'ym_center':''}}">
+    <view class="ym_content {{ycenter?'ym_center':''}}">
       <slot></slot>
     </view>
     <view class="ym_button" catchtap="trigger">

@@ -1,6 +1,6 @@
 <view>第一种使用方式：直接选择(这种可用于外面嵌套一个view然后改变大小后用position做一个悬浮)</view>
 <view>
-  <y-calendar before_show="1" task_show="0" yDateTimes="{{dateTimes}}" yEmotions="{{colors}}" yDayColor="{{DateColor}}" bind:timeload="timeload"
+  <y-calendar yDateTimes="{{dateTimes}}" yEmotions="{{colors}}" yDayColor="{{DateColor}}" bind:timeload="timeload"
     bind:timechanged="timechanged"></y-calendar>
 </view>
 <button type="primary" bindtap="signIn">心情签到</button>
@@ -17,5 +17,5 @@
   </view>
 </view>
 <!-- 引用自定义组件calendar -->
-<y-calendar wx:if="{{selected}}" before_show="0" task_show="1" dateTimes="{{dateTimes}}" bind:timeload="timeload"
+<y-calendar wx:if="{{selected}}" before_show ySelData="{{now_date}}" dateTimes="{{dateTimes}}" bind:timeload="timeload"
   bind:timechanged="timechanged"></y-calendar>

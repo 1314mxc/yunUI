@@ -7,7 +7,6 @@ Page({
   data: {
     show:false,
     showed:false,   //第二个展示用弹窗控制变量
-    center:1,
     md:'60%'
   },
   showone(){
@@ -22,7 +21,6 @@ Page({
   showtwo(){
     this.setData({
       show:true,
-      center:0,   //注意：这里只是为了减少展示wxml的代码，真实使用中不传此参数即可达到效果
       fail:'取消',
       suc:'确定',
       title:'提示',
@@ -32,7 +30,6 @@ Page({
   showthr(){
     this.setData({
       show:true,
-      center:1,
       title:'我是云小梦',   //注意：这里只是为了减少展示wxml的代码，真实使用中不传此参数即可达到效果
       fail:'取消',
       suc:'确定',
@@ -42,7 +39,6 @@ Page({
   showfou(){
     this.setData({
       show:true,
-      center:1,
       title:'提示',
       fail:'我知道了',   //注意：这里只是为了减少展示wxml的代码，真实使用中不传此参数即可达到效果
       suc:'OK',   //注意：这里只是为了减少展示wxml的代码，真实使用中不传此参数即可达到效果
@@ -53,7 +49,6 @@ Page({
     this.setData({
       md:'86%',
       show:true,
-      center:1,
       title:'提示',
       fail:'我知道了',   //注意：这里只是为了减少展示wxml的代码，真实使用中不传此参数即可达到效果
       suc:'OK',   //注意：这里只是为了减少展示wxml的代码，真实使用中不传此参数即可达到效果

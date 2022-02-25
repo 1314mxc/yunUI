@@ -27,8 +27,8 @@ Page({
   selected(){
     this.setData({
       selected:!this.data.selected,
-      now_date:this.selectedDate,
-      now_week:this.selectedWeek
+      // now_date:this.data.now_date,
+      // now_week:this.data.now_week
     })
   },
 
@@ -71,7 +71,7 @@ Page({
   timeload(e){
     console.log(e.detail)
     // 保存到变量中，在刚打开组件时显示到页面上初始值
-    this.selectedDate=e.detail.selectedDate
+    this.selectedDate=e.detail.selectedDate //伪写法，这种写法不能渲染到页面上，但能在js内部流通
     this.selectedWeek=e.detail.selectedWeek
   },
 

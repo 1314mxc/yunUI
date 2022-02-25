@@ -5,7 +5,34 @@
 <view id="button" bindtap="showfou">按钮自定义多行弹窗</view>
 <view id="button" bindtap="showfiv">看，我大小不一样</view>
 
-<y-model wx:if="{{show}}" center="{{center}}" md="{{md}}" title="{{title}}" fail="{{fail}}" suc="{{suc}}" bind:modelClosed="modelClosed" bind:modelcomplete="modelcomplete">
+<y-model wx:if="{{show}}" md="{{md}}" title="{{title}}" fail="{{fail}}" suc="{{suc}}" bind:modelClosed="modelClosed" bind:modelcomplete="modelcomplete">
+  <view>
+    <view>sadas</view>
+    <view>safafa</view>
+    <view>sadas</view>
+    <view>safafa</view>
+    <view>sadas</view>
+  </view>
+</y-model>
+<y-model wx:if="{{show}}" ycenter md="{{md}}" title="{{title}}" fail="{{fail}}" suc="{{suc}}" bind:modelClosed="modelClosed" bind:modelcomplete="modelcomplete">
+  <view>
+    <view>sadas</view>
+    <view>safafa</view>
+    <view>sadas</view>
+    <view>safafa</view>
+    <view>sadas</view>
+  </view>
+</y-model>
+<y-model wx:if="{{show}}" ycenter md="{{md}}" title="{{title}}" fail="{{fail}}" suc="{{suc}}" bind:modelClosed="modelClosed" bind:modelcomplete="modelcomplete">
+  <view>
+    <view>sadas</view>
+    <view>safafa</view>
+    <view>sadas</view>
+    <view>safafa</view>
+    <view>sadas</view>
+  </view>
+</y-model>
+<y-model wx:if="{{show}}" ycenter md="{{md}}" title="{{title}}" fail="{{fail}}" suc="{{suc}}" bind:modelClosed="modelClosed" bind:modelcomplete="modelcomplete">
   <view>
     <view>sadas</view>
     <view>safafa</view>

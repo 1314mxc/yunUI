@@ -4,6 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    ySelData: {
+      type: String,
+      value: ""
+    },
     yDateTimes:{
       type:Array,
       value:[]
@@ -18,14 +22,14 @@ Component({
       type:Object,
       value:{}
     },
-    before_show:{   //是否作为日期组件由按钮触发弹出（为0时是）
-      type:Number,
-      value:1
+    before_show:{   //是否作为日期组件由按钮触发弹出（为true时是）
+      type:Boolean,
+      value:false
     },
-    task_show:{   //只有这个为1时，“和遮罩层有关的事件才会响应”
-      type:Number,
-      value:1
-    }
+    // task_show:{   //只有这个为1时，“和遮罩层有关的事件才会响应”
+    //   type:Boolean,
+    //   value:true
+    // }
   },
 
   /**
@@ -59,7 +63,8 @@ Component({
       var curMonth=today.getMonth()+1;
       var d=today.getDate();
       var i=today.getDay();
-      var selectedDate=curYear+'-'+curMonth+'-'+d;
+      var selData = curYear+'-'+curMonth+'-'+d;
+      var selectedDate=this.properties.ySelData?this.properties.ySelData:selData;
       var now_date=curMonth+'-'+d;
       var selectedWeek=this.data.weekArr[i];
       this.setData({
@@ -68,7 +73,7 @@ Component({
         selectedDate,
         selectedWeek,
         now_date,
-        now_selectedDate:selectedDate,
+        now_selectedDate:selData,
         closed:true
       })
       // // 初始化事件、传来的节日标注、style
@@ -170,8 +175,9 @@ Component({
       curYear-=1;
       vm.setData({
         curYear,
+        curMonth
       });
-      vm.getDateList(curYear-1,curMonth,this.data.now_date);
+      vm.getDateList(curYear,curMonth-1,this.data.now_date);
     },
     // 下个月
     nextMonth(){
@@ -194,12 +200,13 @@ Component({
       curYear+=1;
       vm.setData({
         curYear,
+        curMonth
       });
-      vm.getDateList(curYear+1,curMonth,this.data.now_date);
+      vm.getDateList(curYear,curMonth-1,this.data.now_date);
     },
     // 在弹出式场景下关闭日历
     closed(){
-      if(this.properties.task_show==1){
+      if(this.properties.before_show){
         this.setData({
           closed:false
         })

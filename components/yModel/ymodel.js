@@ -12,9 +12,9 @@ Component({
       type:String,
       value:'提示'
     },
-    center:{
-      type:Number,
-      value:0
+    ycenter:{
+      type:Boolean,
+      value:false
     },
     fail:{
       type:String,

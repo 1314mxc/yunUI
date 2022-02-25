@@ -1,4 +1,4 @@
-<view class="calendar_date {{(before_show==0)?'calendar_select_date':''}} {{(closed)?'':'calendar_unselect_date'}}">
+<view class="calendar_date {{before_show?'calendar_select_date':''}} {{(closed)?'':'calendar_unselect_date'}}">
   <view class="selected_date">
     <view class="date_change">
       <view bindtap="preYear">
@@ -38,4 +38,4 @@
     </view>
   </view>
 </view>
-<view class="calendar_task" wx:if="{{task_show && closed}}" bindtap="closed"></view>
+<view class="calendar_task" wx:if="{{before_show && closed}}" bindtap="closed"></view>
