@@ -73,6 +73,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 
 ## 参数说明
 <div id="picker"> </div>
+
 ### yPicker（日期扩展组件）
 - open：true / false —— 是否启用已定义的颜色、字体大小 —— 必选
 - size：left / center / right —— 自定义组件展示位置（默认为right） —— 可选
@@ -86,6 +87,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 - 无
 
 <div id="calender"> </div>
+
 ### calendar（“日历”组件）
 - yDateTimes：数组，可选 —— 如果填写的话则必须是数组-对象的形式，它用于为您提供在日历上显示某一天标记的功能：比如“10-1日显示国庆节” —— 强烈建议您注意格式如：```[{day:'哪一天',target:'标记语'}]```（注意：day既可指“不带年份的某一天”也可指“具体哪一年哪一月哪一天”）
 - yDayColor：数组Array，可选 —— ```DateColor:[{day:'2021-5-1',serene:'serene'}]```，对象中第一个参数是当前签到日期，第二个是颜色对象中的键名。**注意：考虑到具体场景：一般签到后通过事件改变心情！还有就是一般都是在onload中读取本地保存的心情日期缓存（对，这个需要您每次触发时手动缓存）**（颜色映射表也需要你手动创建）（具体应用场景请看pages/calendar/calendar.js文件）
@@ -98,6 +100,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 - timechanged：使用同上，用来在选中某个日期时返回当前选中日期——接收一个参数e，其中包含有两个值：当前年月日和当前为周几以及当前日期节日显示
 
 <div id="alphabet"> </div>
+
 ### alphabet
 - list：数组，必填！其格式必须严格参照“pages/alphabet/alphabet.js”中list格式！（当数组第一项的alphabet属性值为top或Top时，触发显示为“回到页面顶部”）
 
@@ -105,6 +108,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 - bind:selector：接收组件传回的事件名 —— 用户点击的某一条数据值
 
 <div id="model"> </div>
+
 ### ymodel
 - center：false/true（Boolean），可选。不传此参数时默认为0——内容以靠左展示（仿原生sheet弹窗），传参数名即表示内容部分居中展示
 - title：String，可选。不传此参数时默认为“提示”（仿原生sheet弹窗标题部分）
@@ -114,6 +118,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 - **重点：** 此组件采用slot方式接收开发者传入“内容部分”，即：此组件允许子组件（子元素）的存在！而且不止一个！其格式参见上面“如何使用”中的```<y-model></y-model>```，您可以通过wx:if来控制组件的显示与隐藏（并且我强烈推荐用wx:if而不是hidden！）
 
 <div id="search"> </div>
+
 ### ysearch
 - y_placeholder：String，可选。为无聚焦情况下搜索框中提示文字
 - y_button：String（“true”/“false”），可选。默认为“false”（不传），此参数意义为“是否有input后面的button按钮”，当此参数为true时。代表你需要用点击“搜索”按钮的方式来查询，为false时表示需要用“监听键盘实时搜索”的方式查询
@@ -130,6 +135,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 （当然，你可以让两个函数都存在，反正值是一样的，它们在组件中“被认为是不共存的”！你可以放心使用！）
 
 <div id="card"> </div>
+
 ### ycard
 - txtIndent：0/1，可选。不填或传值为0时默认，表示“以短句形式展示”，即头部对其；若传值为1，表示“首行头部有缩进”
 - blog：{} 对象格式，必填。它的属性有：avatarUrl：发帖人头像，可选，String类型（若传值为空会显示“暂无头像”的占位图）、createTime：发帖时间，必填，String类型，可传时间戳或标准格式（yyyy-MM-dd hh:mm:ss）、nickName：用户名，必填，String类型、content：短文内容，可选，String类型、img：图片，可选，Array类型，可有多张图片（**但建议都用网络图片！**），若用网络图片则可预览。
@@ -168,6 +174,7 @@ rain.run()
 **具体使用见pages/RainSnow/rainsnow.js文件**
 
 <div id="button"> </div>
+
 ### ybutton
 - t_title：String类型。可选。默认值为“阅读倒计时”，这是显示倒计时时间时展示出来的文字（注意：这个参数只有在times参数存在时才有效）
 - title：String类型。可选。默认值为“点击”，参数控制如果有倒计时则倒计时结束后按钮上展示的文字（无倒计时时直接展示在按钮上）
@@ -176,6 +183,7 @@ rain.run()
 - 其余参数及回调函数和原生button组件一致，请参见官方文档：https://developers.weixin.qq.com/miniprogram/dev/component/button.html
 
 <div id="img"> </div>
+
 ### yImg
 - yMovable: Boolean。不传即为默认值false。此时没有拖动排序功能，只有长按提示删除操作。传参数名即为true，此时长按可以拖拽图片进行删除。
 
