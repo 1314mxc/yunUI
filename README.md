@@ -12,6 +12,8 @@
 - **下雨/下雪js插件：位于utils文件夹下，使用(自带)canvas组件在页面中调用！**（具体效果见pages/RainSnow/）
 - “自定义按钮button”组件【ybutton】：支持以图片覆盖原样式，支持倒计时按钮。（可应对常见“倒计时完成后才能触发按钮”的场景）
 - **新增日期时间转化插件：位于utils文件夹下，以import {Time} from '路径';方式调用**
+- “自定义图片上传img”组件【yImg】：支持最多九张图片，支持长按删除和拖动排序，使用起来像QQ空间和朋友圈一样适应！【<font color="red">新！</font>】
+
 
 
 ## 如何使用（仅为测试示例，具体请参照pages/下相关使用）
@@ -28,7 +30,8 @@
     "y-model":"/components/yModel/ymodel",
     "y-search":"/components/ysearch/search",
     "y-card":"/components/ycard/ycard",
-    "y-button":"/components/ybutton/ybutton"
+    "y-button":"/components/ybutton/ybutton",
+    "y-img":"/components/yImg/index"
  }
 ```
 ```
@@ -63,6 +66,8 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 <canvas canvas-id="effect" id="effects"></canvas>
 
 <y-button t_title="倒计时" times="7" title="开始决战吧" bind:click="bindleTap"></y-button>
+
+<y-button yMovable bind:chooseImg="chooseImg"></y-button>
 ```
 
 
@@ -92,6 +97,8 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 
 ### alphabet
 - list：数组，必填！其格式必须严格参照“pages/alphabet/alphabet.js”中list格式！（当数组第一项的alphabet属性值为top或Top时，触发显示为“回到页面顶部”）
+
+- 还有一个监听函数供调用：
 - bind:selector：接收组件传回的事件名 —— 用户点击的某一条数据值
 
 ### ymodel
@@ -111,6 +118,8 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 - y_color：String，可选。为搜索框中用户输入文字颜色，默认为“black”：黑色
 - y_center：String（“true”/“false”），可选。此参数决定初始是否采用居中形式。若传“true”（字符串），则在“聚焦”时会有一个动画效果（参见下面对应展示的效果三）
 - y_vshow：Number，可选。此参数决定触发“提交”按钮后是否清空input框。**此参数在but_title为“false”时无效！（因为此时查询方式为“监听输入实时触发”）**
+
+- 还有两个监听函数供调用：
 - bind:search：监听：search事件。在其中你接收一个event（或e），event（或e）.detail.keyword值为用户在input中输入的“查询条件”。**此参数在button传值为false时存在！**
 - bind:mousetap：监听：mousetap事件。在其中你接收一个event（或e），event（或e）.detail.keyword值为用户在input中输入的“查询条件”。**此参数在button传值为true时存在！**
 （当然，你可以让两个函数都存在，反正值是一样的，它们在组件中“被认为是不共存的”！你可以放心使用！）
@@ -159,6 +168,12 @@ rain.run()
 - inline：true/false，Bool类型。可选。此参数控制button元素是否以inline-block（行内块）形式展示
 - times：String类型。可选。参数控制倒计时时间，无默认值。不传此参数时和原生button组件表现无异。且只支持String-数字形式的参数
 - 其余参数及回调函数和原生button组件一致，请参见官方文档：https://developers.weixin.qq.com/miniprogram/dev/component/button.html
+
+### yImg
+- yMovable: Boolean。不传即为默认值false。此时没有拖动排序功能，只有长按提示删除操作。传参数名即为true，此时长按可以拖拽图片进行删除。
+
+- 还有一个监听函数供调用：
+- bind:chooseImg 回调事件，监听组件中的添加和删除以及排序事件。得到每一步操作最终的图片集合（表现为数组）。可以在此进行下一步操作
 
 
 ### js插件之时间转化
@@ -234,6 +249,12 @@ Time.getFormatTime(date);
 具体使用见pages/ybutton/ybutton
 
 ![u_button](https://img-blog.csdnimg.cn/20210425185454207.gif#pic_center)
+
+
+### yImg
+具体使用件pages/YImgShow/picture
+
+![y_img](https://img-blog.csdnimg.cn/e9022feafe644945a1f154457c262e1e.gif#pic_center)
 
 
 
