@@ -1,0 +1,3 @@
+<view class="container">
+    <y-img yMovable bind:chooseImg="chooseImg"></y-img>
+</view>

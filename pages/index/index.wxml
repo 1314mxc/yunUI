@@ -30,6 +30,10 @@
   <text>去康康“联动测试”吧！</text>
 </view>
 
+<view class="mxc10" bindtap="pgshow">
+  <text>去康康“自定义图片选择组件”吧！</text>
+</view>
+
 <!-- 处理flex布局最后一行对其问题 -->
 <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 

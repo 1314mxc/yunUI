@@ -68,6 +68,12 @@ Page({
     })
   },
 
+  pgshow(){
+    wx.navigateTo({
+      url: '../yImgShow/picture',
+    })
+  },
+
   cliptwo(){
     this.setclip(this.data.url_two)
   },

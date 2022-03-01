@@ -1,0 +1,34 @@
+<view class="container">
+    <movable-area style="width: 100%;height: auto;">
+        <view class="image-list">
+            <!-- 显示图片 -->
+            <block wx:if="{{yMovable}}">
+                <block wx:for="{{images}}" wx:key="{{item.index}}">
+                    <view class="image-wrap image-bg {{(images.length > 2) ? 'image-flex' : ''}}" id="{{item.index}}" data-index='{{index}}' bindlongpress='onShowMenu' bindtouchstart='touchs' bindtouchend='touchend' bindtouchmove='touchm'>
+                        <image class="image" src="{{item.img}}" mode="aspectFill" bind:tap="onPreviewImage" data-imgsrc="{{item.img}}"></image>
+                        <i class="iconfont icon-delete" wx:if="{{showMenuImg}}" bind:tap="onDelImage" data-index="{{index}}"></i>
+                    </view>
+                </block>
+                <movable-view x="{{x}}" y="{{y}}" direction="all" damping="{{5000}}" friction="{{1}}" disabled="{{disabled}}">
+                    <view class='image-wrap' style="z-index: 2;" hidden='{{hidden}}'>
+                        <image class="image" src="{{doubleImg}}" mode="aspectFill"></image>
+                    </view>
+                </movable-view>
+            </block>
+            <block wx:else>
+                <block wx:for="{{images}}" wx:key="*this">
+                    <view class="image-wrap image-bg {{(images.length > 2) ? 'image-flex' : ''}}">
+                        <image class="image" src="{{item.img}}" mode="aspectFill" bind:tap="onPreviewImage" bindlongpress="onShowMenu" data-imgsrc="{{item.img}}"></image>
+                        <i class="iconfont icon-delete" wx:if="{{showMenuImg}}" bind:tap="onDelImage" data-index="{{index}}"></i>
+                    </view>
+
+                </block>
+            </block>
+
+            <!-- 选择图片 -->
+            <view class="image-wrap selectphoto" bind:tap="onChooseImage" hidden="{{!selectPhoto}}">
+                <i class="iconfont icon-jiashang"></i>
+            </view>
+        </view>
+    </movable-area>
+</view>
