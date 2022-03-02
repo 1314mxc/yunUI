@@ -9,8 +9,8 @@
                         <i class="iconfont icon-delete" wx:if="{{showMenuImg}}" bind:tap="onDelImage" data-index="{{index}}"></i>
                     </view>
                 </block>
-                <movable-view x="{{x}}" y="{{y}}" direction="all" damping="{{5000}}" friction="{{1}}" disabled="{{disabled}}">
-                    <view class='image-wrap' style="z-index: 2;" hidden='{{hidden}}'>
+                <movable-view x="{{x}}" y="{{y}}" direction="all" inertia damping="{{5000}}" friction="{{1}}" disabled="{{true}}">
+                    <view class='image-wrap image-check' style="z-index: 3;" hidden='{{hidden}}'>
                         <image class="image" src="{{doubleImg}}" mode="aspectFill"></image>
                     </view>
                 </movable-view>

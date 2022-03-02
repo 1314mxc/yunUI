@@ -1,21 +1,9 @@
-const MAX_IMG_NUM=9;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    images:[],
-    selectPhoto:true,
-    showMenuImg: false,
-    flag: false,
-    hidden:true,
-    x:0,
-    y:0,
-    disabled: true,
-    elements:[],
-    doubleImg: "",
-    yMovable: true
   },
 
   /**

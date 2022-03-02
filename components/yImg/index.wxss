@@ -16,6 +16,13 @@
     overflow: hidden;
 }
 
+.image-check {
+    overflow: visible;
+}
+.image-check .image {
+    transform: scale(1.05);
+}
+
 .image-bg {
     background-color: rgba(0,0,0, .01);
 }
@@ -36,7 +43,7 @@
     width: 30rpx;
     height: 30rpx;
     background-color: #000;
-    opacity: 0.6å;
+    opacity: 0.6;
     color: #fff;
     text-align: center;
     line-height: 30rpx;
