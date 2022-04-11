@@ -1,5 +1,7 @@
 const MAX_IMG_NUM = 9;
 let elements = [];
+let flag = false;
+let containerTop = 0;
 
 Component({
   /**
@@ -10,6 +12,10 @@ Component({
       type: Boolean,
       value: false
     },
+    yCenter: {
+      type: Boolean,
+      value: false
+    },
   },
   /**
    * 组件的初始数据
@@ -17,8 +23,8 @@ Component({
   data: {
     images: [],
     selectPhoto: true,
+    movImg: false,
     showMenuImg: false,
-    flag: false,
     hidden: true,
     x: 0,
     y: 0,
@@ -39,11 +45,12 @@ Component({
         showMenuImg: true
       })
       if (this.properties.yMovable) {
+        console.log(detail.offsetLeft, detail.offsetTop)
+        flag = true;
         this.setData({
           x: detail.offsetLeft + 4,
           y: detail.offsetTop,
           hidden: false,
-          flag: true,
           doubleImg: this.data.images[detail.dataset.index].img
         })
       }
@@ -56,7 +63,7 @@ Component({
     },
     //触摸结束
     touchend: function (e) {
-      if (!this.data.flag) {
+      if (!flag) {
         return;
       }
       const x = e.changedTouches[0].pageX
@@ -86,24 +93,28 @@ Component({
           }
 
           this.setData({
-            images: data
+            images: data,
+            showMenuImg: true,
+            movImg: false
           })
           this.initImg(this.triggerMsg(data, "sort-img"))
         }
       }
+      flag = false
       this.setData({
-        hidden: true,
-        flag: false
+        hidden: true
       })
     },
     //滑动
     touchm: function (e) {
-      if (this.data.flag) {
+      if (flag) {
         const x = e.touches[0].pageX
-        const y = e.touches[0].pageY
+        const y = e.touches[0].pageY - containerTop
         this.setData({
-          x: x - 75,
-          y: y - 45
+          x: x - 65,
+          y: y - 45,
+          showMenuImg: false,
+          movImg: true
         })
       }
     },
@@ -153,6 +164,10 @@ Component({
         elements = result;
         fn();
       }).exec()
+      query.select(".container").boundingClientRect();
+      query.exec(function (rect) {
+        containerTop = rect[1].top || rect[0][0].top
+      });
     },
 
     onDelImage(event) {

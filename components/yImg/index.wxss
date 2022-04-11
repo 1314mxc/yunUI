@@ -10,8 +10,8 @@
 .image-wrap {
     width: 220rpx;
     height: 220rpx;
-    margin-right: 10rpx;
-    margin-bottom: 10rpx;
+    margin-right: 13rpx;
+    margin-bottom: 13rpx;
     position: relative;
     overflow: hidden;
 }
@@ -40,16 +40,17 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 30rpx;
-    height: 30rpx;
+    width: 29rpx;
+    height: 29rpx;
     background-color: #000;
     opacity: 0.6;
     color: #fff;
     text-align: center;
-    line-height: 30rpx;
-    font-size: 28rpx;
+    line-height: 28rpx;
+    font-size: 22rpx;
     font-weight: bolder;
     padding: 2rpx;
+    border-radius: 0 0 0 11rpx;
 }
   
 .selectphoto {
