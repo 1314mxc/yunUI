@@ -1,6 +1,7 @@
 const MAX_IMG_NUM = 9;
 let elements = [];
 let flag = false;
+let cacheBeginIndexN = -1;
 let containerTop = 0;
 
 Component({
@@ -28,7 +29,8 @@ Component({
     hidden: true,
     x: 0,
     y: 0,
-    doubleImg: ""
+    doubleImg: "",
+    cacheBeginIndex: -1,
   },
 
   /**
@@ -45,18 +47,20 @@ Component({
         showMenuImg: true
       })
       if (this.properties.yMovable) {
-        console.log(detail.offsetLeft, detail.offsetTop)
+        // console.log(detail.offsetLeft, detail.offsetTop)
         flag = true;
         this.setData({
           x: detail.offsetLeft + 4,
           y: detail.offsetTop,
           hidden: false,
+          cacheBeginIndex: cacheBeginIndexN,
           doubleImg: this.data.images[detail.dataset.index].img
         })
       }
     },
     //触摸开始
     touchs: function (e) {
+      cacheBeginIndexN = e.currentTarget.dataset.index
       this.setData({
         beginIndex: e.currentTarget.dataset.index
       })
@@ -66,6 +70,9 @@ Component({
       if (!flag) {
         return;
       }
+      this.touchmoveEnd(e);
+    },
+    touchmoveEnd(e, check=false) {
       const x = e.changedTouches[0].pageX
       const y = e.changedTouches[0].pageY
       const list = elements;
@@ -101,8 +108,10 @@ Component({
         }
       }
       flag = false
+      cacheBeginIndexN = -1;
       this.setData({
-        hidden: true
+        hidden: true,
+        cacheBeginIndex:-1,
       })
     },
     //滑动

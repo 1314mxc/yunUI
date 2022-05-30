@@ -1,0 +1,23 @@
+{
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/yImgShow/picture",
+                    "pathName": "pages/yImgShow/picture",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

@@ -5,7 +5,8 @@
             <block wx:if="{{yMovable}}">
                 <block wx:for="{{images}}" wx:key="{{item.index}}">
                     <view class="image-wrap image-bg {{(yCenter && images.length > 2) ? 'image-flex' : ''}}" id="{{item.index}}" data-index='{{index}}' bindlongpress='onShowMenu' bindtouchstart='touchs' bindtouchend='touchend' bindtouchmove='touchm'>
-                        <image class="image" src="{{item.img}}" mode="aspectFill" bind:tap="onPreviewImage" data-imgsrc="{{item.img}}"></image>
+                        <view hidden="{{index !== cacheBeginIndex}}"></view>
+                        <image hidden="{{index === cacheBeginIndex}}" class="image" src="{{item.img}}" mode="aspectFill" bind:tap="onPreviewImage" data-imgsrc="{{item.img}}"></image>
                         <i class="iconfont icon-delete" wx:if="{{showMenuImg}}" bind:tap="onDelImage" data-index="{{index}}"></i>
                     </view>
                 </block>
