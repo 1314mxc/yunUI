@@ -1,4 +1,5 @@
 {
+    "setting": {},
     "condition": {
         "plugin": {
             "list": []
@@ -11,6 +12,18 @@
         },
         "miniprogram": {
             "list": [
+                {
+                    "name": "pages/ylistscroll/listscroll",
+                    "pathName": "pages/ylistscroll/listscroll",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": null
+                },
                 {
                     "name": "pages/yImgShow/picture",
                     "pathName": "pages/yImgShow/picture",

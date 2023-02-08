@@ -145,6 +145,8 @@ Component({
           for (let i = 0; i < images.length; i++) {
             images[i] = {
               img: images[i],
+              tranX: 0,
+              tranY: 0,
               index: i + 1
             }
           }

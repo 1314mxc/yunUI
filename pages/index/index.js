@@ -74,6 +74,12 @@ Page({
     })
   },
 
+  longlistshow() {
+    wx.navigateTo({
+      url: '../ylistscroll/listscroll',
+    })
+  },
+
   cliptwo(){
     this.setclip(this.data.url_two)
   },

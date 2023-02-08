@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "自定义图片上传组件",
   "usingComponents": {
-    "y-img":"/components/yImg/index"
+    "y-img":"/components/yImg/index",
+    "y-img-pro":"/components/yImgPro/index"
   }
 }

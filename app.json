@@ -10,7 +10,8 @@
         "pages/card/card",
         "pages/RainSnow/rainsnow",
         "pages/ybutton/ybutton",
-        "pages/yImgShow/picture"
+        "pages/yImgShow/picture",
+        "pages/ylistscroll/listscroll"
     ],
     "window": {
         "backgroundTextStyle": "light",

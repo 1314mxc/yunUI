@@ -31,11 +31,15 @@
 </view>
 
 <view class="mxc10" bindtap="pgshow">
-  <text>去康康“自定义图片选择组件”吧！</text>
+  <text>“图片选择排序组件”增强了，快去看看吧！</text>
+</view>
+
+<view class="mxc10" bindtap="longlistshow">
+  <text>去康康“长列表滚动组件”吧！</text>
 </view>
 
 <!-- 处理flex布局最后一行对其问题 -->
-<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 
 <view class="loaded">
   <view class="typing">更多内容，敬请期待 ...</view>

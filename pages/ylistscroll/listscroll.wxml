@@ -1,0 +1,36 @@
+<view class="viewport" id="viewport" style="height: {{vHeight}}px">
+    <view class="scroll-bar" id="scrollBar" style="height: {{scrollHeight}}px"></view>
+    <view class="scroll-list">
+        <block wx:for="{{comp.visibleData(items, start, end)}}" wx:key="item.id">
+            <view style="height: 40px;border: 1px solid red;">{{item.value}}</view>
+        </block>
+<!-- <slot items="{{items}}"></slot> -->
+	</view>
+</view>
+
+<wxs module="comp">
+  module.exports = {
+    visibleData: function (items, start, end) {
+      return items.slice(start, end);
+    }
+  }
+</wxs>
+<!-- 
+    size必传，不管你的列表是不是固定高度，是固定高度的话作用就是每一项有多高
+    remain，告诉可视范围内展示几项
+    <virtualList size="40" remain="8" items="{{items}}"></virtualList>
+ -->
+
+<!-- <view class="item-wrap" style="height: auto;">
+	<view
+		class="item {{cur == index? 'cur':''}} {{curZ == index? 'zIndex':''}} {{itemTransition ? 'itemTransition':''}}"
+		wx:for="{{list}}" wx:key="{{index}}" id="item{{index}}" data-key="{{item.key}}" data-index="{{index}}"
+		style="transform: translate3d({{index === cur ? tranX : item.tranX}}px, {{index === cur ? tranY: item.tranY}}px, 0px);"
+		bind:longpress="longPress" catch:touchmove="touchMove" catch:touchend="touchEnd">
+		<view class="info">
+			<image src="{{item.data}}"></image>
+		</view>
+	</view>
+	<view class="item-sel selectphoto" style="transform: translate3d({{selSite.tranX}}px, {{selSite.tranY}}px, 0px);" bind:tap="onChooseImage">
+	</view>
+</view> -->
