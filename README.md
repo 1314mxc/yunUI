@@ -12,7 +12,8 @@
 - **下雨/下雪js插件：位于utils文件夹下，使用(自带)canvas组件在页面中调用！**（具体效果见pages/RainSnow/）
 - <a href="#button">“自定义按钮button”组件【ybutton】</a>：支持以图片覆盖原样式，支持倒计时按钮。（可应对常见“倒计时完成后才能触发按钮”的场景）
 - **新增日期时间转化插件：位于utils文件夹下，以import {Time} from '路径';方式调用**
-- <a href="#img">“自定义图片上传img”组件【yImg】</a>：支持最多九张图片，支持长按删除和拖动排序，使用起来像QQ空间和朋友圈一样适应！【<font color="red">新！</font>】
+- <a href="#img">“自定义图片上传img”组件【yImg】</a>：支持最多九张图片，支持长按删除和拖动排序，使用起来像QQ空间和朋友圈一样适应！
+- <a href="#img">“增强图片排序img”组件【yImgPro】</a>：yImg组件的增强版，动画真正流畅！使用起来像朋友圈一样适应！【<font color="red">新！</font>】
 
 
 
@@ -31,7 +32,8 @@
     "y-search":"/components/ysearch/search",
     "y-card":"/components/ycard/ycard",
     "y-button":"/components/ybutton/ybutton",
-    "y-img":"/components/yImg/index"
+    "y-img":"/components/yImg/index",
+    "y-img-pro":"/components/yImgPro/index"
  }
 ```
 ```
@@ -67,7 +69,8 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 
 <y-button t_title="倒计时" times="7" title="开始决战吧" bind:click="bindleTap"></y-button>
 
-<y-button yMovable bind:chooseImg="chooseImg"></y-button>
+<y-img yMovable bind:chooseImg="chooseImg"></y-img>
+<y-img-pro bind:chooseImg="chooseImg"></y-img-pro>
 ```
 
 
@@ -190,6 +193,11 @@ rain.run()
 - 还有一个监听函数供调用：
 - bind:chooseImg 回调事件，监听组件中的添加和删除以及排序事件。得到每一步操作最终的图片集合（表现为数组）。可以在此进行下一步操作。接收两个参数：1.images，图片数组；2.key，当前操作code，比如删除时key为“delete-img”，可供开发者区别。
 
+<div id="img-pro"> </div>
+
+### yImgPro
+- 有一个监听函数供调用：
+- bind:chooseImg 回调事件，监听组件中的添加和删除以及排序事件。得到每一步操作最终的图片集合（表现为数组）。可以在此进行下一步操作。接收两个参数：1.images，图片数组；2.key，当前操作code，比如删除时key为“delete-img”，可供开发者区别。
 
 ### js插件之时间转化
 作用为将一个时间戳或者标准格式（yyyy-MM-dd hh:mm:ss）转化为“刚刚”、“几分钟前”、“几小时前”、“几天前”或具体日期（精确到秒）。主要用于发表文章/卡片。
@@ -272,7 +280,15 @@ Time.getFormatTime(date);
 ![y_img](https://img-blog.csdnimg.cn/e9022feafe644945a1f154457c262e1e.gif#pic_center)
 
 
+### yImgPro
+具体使用件pages/YImgShow/picture。效果和上面一样，但是有更强的动画！
+
 
 ## 联系作者
 
 ![wx](https://img-blog.csdnimg.cn/20200716101914321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjI0ODc4,size_16,color_FFFFFF,t_70)
+
+
+## 打赏
+
+![wxzf](https://img-blog.csdnimg.cn/1731613a2aec4f15a75dec89bebfb4bf.jpeg)
