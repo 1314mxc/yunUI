@@ -1,6 +1,6 @@
 <view class="container">
     <textarea class="content" placeholder="分享新鲜事..." maxlength="140" auto-focus></textarea>
     <y-img wx:if="{{selOne}}" yMovable bind:chooseImg="chooseImg"></y-img>
-    <y-img-pro wx:else bind:chooseImg="chooseImg"></y-img-pro>
+    <y-img-pro wx:else yTDel bind:chooseImg="chooseImg"></y-img-pro>
     <button class="changeBtn" type="primary" bindtap="change">当前为{{btnText}}组件</button>
 </view>

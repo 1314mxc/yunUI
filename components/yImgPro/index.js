@@ -9,7 +9,10 @@ Component({
      * 组件的属性列表
      */
     properties: {
-
+        yTDel: {
+            type: Boolean,
+            value: false
+        }
     },
 
     itemWrap: [],
@@ -290,76 +293,91 @@ Component({
                 })
                 return;
             }
-            let list = JSON.parse(JSON.stringify(this.data.list));
-            let _list = [];
+            let cacheList = JSON.parse(JSON.stringify(this.data.list));
             let listData = [];
-            // let cacheList = [];
-            // let cacheNow = -1;
 
-            // let _item = {
-            //     key: -1,
-            //     data: ""
-            // }
+            if(!this.properties.yTDel) {
+                this.normalDelItem(cacheList, event, listData)
+            }else {
+                this.aniDelItem(cacheList, event, listData)
+            }
+            
+        },
 
-            // for(let i = 0; i < list.length; i++) {
-            //     cacheList[i] = Object.assign(list[i], {kIndex: i})
-            // }
-
-            // for(let i = 0; i < cacheList.length; i++) {
-            //     if(cacheList[i].key === event.currentTarget.dataset.index) {
-            //         cacheNow = cacheList[i].kIndex
-            //         break;
-            //     }
-            // }
-
-            // let reverseArr = []
-            // for(let i = cacheList.length - 1; i >= 0; i--) {
-            //     if(cacheNow < 0 || cacheList[i].kIndex < cacheNow) break;
-            //     if(_item.key < 0) {
-            //         _item = {
-            //             key: cacheList[i].key,
-            //             data: cacheList[i].data
-            //         }
-            //         continue;
-            //     }
-            //     let tempData = {
-            //         key: cacheList[i].key,
-            //         data: cacheList[i].data
-            //     }
-            //     cacheList[i].key = _item.key;
-            //     cacheList[i].data = _item.data;
-            //     _item = tempData;
-            // }
-
-            // cacheList.length -= 1;
-
-            // console.log(this.data.list, cacheList)
-
-
-            // cacheList.map(item => {
-            //     listData.push(item.data)
-            // })
-            // console.log(_list)
-
-            // this.triggerMsg(listData, "delete-img")
+        normalDelItem(list, event, listData) {
             list.sort(this.sortBy("key"));
 
             list.map(item => {
                 if(event.currentTarget.dataset.index !== item.key) {
-                    _list.push(item)
                     listData.push(item.data)
                 }
             })
 
             this.triggerMsg(listData, "delete-img")
+            this.setData({
+                listData,
+            })
+            this.init()
+        },
+
+        aniDelItem(cacheList, event, listData) {
+            let cacheNow = -1;
+
+            let _item = {
+                key: -1,
+                data: ""
+            }
+            cacheList.sort(this.sortBy("key"));
+
+            for(let i = 0; i < cacheList.length; i++) {
+                if(cacheList[i].key === event.currentTarget.dataset.index) {
+                    cacheNow = cacheList[i].key
+                    break;
+                }
+            }
+
+            for(let i = cacheList.length - 1; i >= 0; i--) {
+                if(cacheNow < 0 || cacheList[i].key < cacheNow) break;
+                if(_item.key < 0) {
+                    _item = {
+                        key: cacheList[i].key,
+                        data: cacheList[i].data
+                    }
+                    continue;
+                }
+                let tempData = {
+                    key: cacheList[i].key,
+                    data: cacheList[i].data
+                }
+                cacheList[i].key = _item.key;
+                cacheList[i].data = _item.data;
+                _item = tempData;
+            }
+
+            cacheList.length -= 1;
+
+            cacheList.map(item => {
+                listData.push(item.data)
+            })
+
+            // 计算最后的加号位置
+            let _selSite = this.data.selSite;
+            if(this.data.list.length >= this.data.columns && !(this.data.list.length % this.data.columns)) {
+                _selSite.tranX = this.item.width * (this.data.columns - 1);
+                _selSite.tranY -= this.item.height;
+            }else {
+                _selSite.tranX -= this.item.width
+            }
+
+            this.triggerMsg(listData, "delete-img")
 
             this.setData({
                 listData,
-                // list: cacheList
+                list: cacheList,
+                selSite: _selSite
             })
-
-            this.init()
         },
+
         triggerMsg(images, key) {
             this.triggerEvent('chooseImg', {
                 images,
