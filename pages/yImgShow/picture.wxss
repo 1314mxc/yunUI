@@ -1,3 +1,10 @@
 .container {
     padding: 20rpx;
 }
+.changeBtn {
+    position: fixed;
+    bottom: 60rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}

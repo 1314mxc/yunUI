@@ -240,6 +240,14 @@ Component({
          * 长按触发移动排序
          */
         longPress(e) {
+            if(this.data.list.length < 2){
+                this.setData({
+                    showMenuImg: true
+                });
+                wx.vibrateShort();
+                return;
+            }
+
             this.setData({
                 touch: true
             });
@@ -269,6 +277,19 @@ Component({
             wx.vibrateShort();
         },
         onDelImage(event) {
+            if(this.data.list.length < 2) {
+                this.triggerMsg([], "delete-img")
+                this.setData({
+                    listData: [],
+                    list: [],
+                    showMenuImg: false,
+                    selSite: {
+                        tranX: 0,
+                        tranY: 0
+                    }
+                })
+                return;
+            }
             let list = JSON.parse(JSON.stringify(this.data.list));
             let _list = [];
             let listData = [];
