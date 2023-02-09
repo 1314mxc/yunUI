@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="item-wrap" style="height: auto;">
+    <view class="item-wrap" style="height: {{ itemWrapHeight }}px;">
         <view
             class="item {{cur == index? 'cur':''}} {{curZ == index? 'zIndex':''}} {{itemTransition ? 'itemTransition':''}}"
             wx:for="{{list}}" wx:key="{{index}}" id="item{{index}}" data-key="{{item.key}}" data-index="{{index}}"

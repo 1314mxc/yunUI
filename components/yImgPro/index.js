@@ -82,7 +82,11 @@ Component({
             // 获取每一项的宽高等属性
             this.createSelectorQuery().select(".item").boundingClientRect((res) => {
 
+                let rows = Math.ceil((this.data.list.length + 1) / this.data.columns);
+
                 this.item = res;
+
+                let itemWrapHeight = rows * res.height;
 
                 this.getPosition(this.data.list, false);
 
@@ -91,6 +95,7 @@ Component({
                 let tranY = Math.floor((obj.key + 1) / this.data.columns) * res.height;
 
                 this.setData({
+                    itemWrapHeight,
                     selSite: {
                         tranX,
                         tranY
@@ -323,12 +328,14 @@ Component({
         aniDelItem(cacheList, event, listData) {
             let cacheNow = -1;
 
+            // 缓存
             let _item = {
                 key: -1,
                 data: ""
             }
             cacheList.sort(this.sortBy("key"));
 
+            // 正向遍历，获取关键节点
             for(let i = 0; i < cacheList.length; i++) {
                 if(cacheList[i].key === event.currentTarget.dataset.index) {
                     cacheNow = cacheList[i].key
@@ -336,6 +343,7 @@ Component({
                 }
             }
 
+            // 逆向遍历，到关键节点处停止，梳理被删除节点后面的元素
             for(let i = cacheList.length - 1; i >= 0; i--) {
                 if(cacheNow < 0 || cacheList[i].key < cacheNow) break;
                 if(_item.key < 0) {
@@ -356,6 +364,7 @@ Component({
 
             cacheList.length -= 1;
 
+            // 拿到更新后的img列表
             cacheList.map(item => {
                 listData.push(item.data)
             })
