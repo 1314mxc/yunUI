@@ -12,10 +12,27 @@ Component({
         yTDel: {
             type: Boolean,
             value: false
+        },
+        scrollOffset: {
+            type: Number,
+            value: 0
+        },
+        defaultImgList: {
+            type: Array,
+            value: [],
+            observer(res) {
+                if(res?.length && !this.data.listData.length) {
+                    this.setData({
+                        canSelphoto: res.length >= MAX_IMG_NUM ? false : true,
+                        listData: res
+                    })
+                    this.init()
+                }
+            }
         }
     },
 
-    itemWrap: [],
+    itemWrap: {},
     tranX: 0,
     tranY: 0,
 
@@ -33,7 +50,12 @@ Component({
             tranX: 0,
             tranY: 0
         },
-        canSelPhoto: true
+        tranX: 0,
+        tranY: 0,
+        canSelPhoto: true,
+        curZ: -1,
+        cur: -1,
+        itemTransition: false,
     },
 
     /**
@@ -82,7 +104,13 @@ Component({
             // 获取每一项的宽高等属性
             this.createSelectorQuery().select(".item").boundingClientRect((res) => {
 
-                let rows = Math.ceil((this.data.list.length + 1) / this.data.columns);
+                let rows;
+                let len = this.data.list.length;
+                if(len == MAX_IMG_NUM) {
+                    rows = Math.ceil(len / this.data.columns);
+                }else {
+                    rows = Math.ceil((len + 1) / this.data.columns);
+                }
 
                 this.item = res;
 
@@ -102,10 +130,22 @@ Component({
                     }
                 })
 
-                this.createSelectorQuery().select(".item-wrap").boundingClientRect((res) => {
+                let query = wx.createSelectorQuery().in(this);
+                query.select('.item-wrap').boundingClientRect((res) => {
                     this.itemWrap = res;
 
-                }).exec();
+                })
+                // 需要的是“距离文档流顶部的距离”。所以咱们需要这片区域已经在页面上滚动了多少了，把这个值加上
+                if(this.properties.scrollOffset) {
+                    this.itemWrap.top += this.properties.scrollOffset;
+                }else {
+                    query.selectViewport().scrollOffset((res) => {
+                        let _wrap = this.itemWrap.top + res.scrollTop;
+                        this.itemWrap.top = _wrap;
+                    })
+                }
+                
+                query.exec()
             }).exec();
         },
 
@@ -121,6 +161,8 @@ Component({
                 tranX: 0,
                 tranY: 0
             });
+            this.tranX = 0;
+            this.tranY = 0;
 
             // 延迟清空
             setTimeout(() => {
