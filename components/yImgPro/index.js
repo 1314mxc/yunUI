@@ -22,8 +22,9 @@ Component({
             value: [],
             observer(res) {
                 if(res?.length && !this.data.listData.length) {
+                    MAX_IMG_NUM -= res.length;
                     this.setData({
-                        canSelphoto: res.length >= MAX_IMG_NUM ? false : true,
+                        canSelphoto: MAX_IMG_NUM <= 0 ? false : true,
                         listData: res
                     })
                     this.init()
