@@ -1,0 +1,9 @@
+<view 
+  class="y-message y-message--{{type}} {{ visible ? '' : 'is-hidden' }} custom-class"
+  style="{{ 'top:' + top  }};{{ 'z-index:' + zIndex }}" 
+>
+  {{ content }}
+  <view class="y-message__close" wx:if="{{showClose}}">
+    <view class="y-message__close-btn" bindtap="close"></view>
+  </view>
+</view>

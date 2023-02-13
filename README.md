@@ -1,6 +1,29 @@
 # yunUI（微信小程序自定义功能组件库）
 ### 致力于“微信小程序”原生组件扩展开发 —— 功能更强大，使用更方便。
 
+## 使用
+
+### npm使用
+```
+npm install yun-ui-micro
+```
+
+在项目全局的 app.json 或者页面与组件的 .json 中，按需求引入组件即可使用，示例如下：
+```
+"usingComponents": {
+    "y-button": "yun-ui-micro/button/index",
+}
+```
+
+### clone使用(推荐！)
+直接从github中下载全部或单个文件，然后二次修改并使用。
+
+
+## 体验
+
+![wx-yunUI](https://img-blog.csdnimg.cn/20201024121550490.png#pic_center)
+
+
 ## 现收录有：
 
 ### 组件
@@ -229,7 +252,6 @@ Time.getFormatTime(date);
 
 ## 展示
 
-![wx-yunUI](https://img-blog.csdnimg.cn/20201024121550490.png#pic_center)
 
 ### yPicker
 具体使用见page/notice/notice

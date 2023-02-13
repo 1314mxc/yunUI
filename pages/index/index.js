@@ -74,6 +74,18 @@ Page({
     })
   },
 
+  noticeshow() {
+    wx.navigateTo({
+      url: '../notice/index',
+    })
+  },
+
+  msgshow() {
+    wx.navigateTo({
+      url: '../message/index',
+    })
+  },
+
   longlistshow() {
     wx.navigateTo({
       url: '../ylistscroll/listscroll',

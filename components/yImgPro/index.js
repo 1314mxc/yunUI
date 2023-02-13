@@ -17,6 +17,13 @@ Component({
             type: Number,
             value: 0
         },
+        imgShape: {
+            type: Object,
+            value: {
+                side: 232,
+                pd: 13
+            }
+        },
         defaultImgList: {
             type: Array,
             value: [],

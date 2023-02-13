@@ -34,8 +34,16 @@
   <text>“图片选择排序组件”增强了，快去看看吧！</text>
 </view>
 
-<view class="mxc10" bindtap="longlistshow">
-  <text>去康康“长列表滚动组件”吧！</text>
+<view class="mxc11" bindtap="noticeshow">
+  <text>去康康“溢出滚动”组件吧！</text>
+</view>
+
+<view class="mxc12" bindtap="msgshow">
+  <text>去康康“消息通知”组件吧！</text>
+</view>
+
+<view class="mxc13" bindtap="longlistshow">
+  <text>“长列表滚动组件”(开发中...)</text>
 </view>
 
 <!-- 处理flex布局最后一行对其问题 -->

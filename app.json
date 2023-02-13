@@ -11,7 +11,9 @@
         "pages/RainSnow/rainsnow",
         "pages/ybutton/ybutton",
         "pages/yImgShow/picture",
-        "pages/ylistscroll/listscroll"
+        "pages/ylistscroll/listscroll",
+        "pages/notice/index",
+        "pages/message/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

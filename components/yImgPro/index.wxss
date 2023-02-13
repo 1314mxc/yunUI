@@ -13,8 +13,8 @@
     z-index: 1;
 }
 .selectphoto {
-    width: 218rpx;
-    height: 218rpx;
+    /* width: 218rpx;
+    height: 218rpx; */
     border: 2rpx dashed #cbd1d7;
 }
 .item-wrap .item.itemTransition {
@@ -30,9 +30,9 @@
 
 .info {
     position: relative;
-    width: 232rpx;
+    /* width: 232rpx;
     height: 232rpx;
-    padding: 0 13rpx 13rpx 0;
+    padding: 0 13rpx 13rpx 0; */
     background: #ffffff;
     box-sizing: border-box;
 }

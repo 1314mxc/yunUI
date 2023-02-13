@@ -1,0 +1,78 @@
+.y-message {
+    display: block;
+    position: fixed;
+    margin-top: 22rpx;
+    top: 0;
+    left: 32rpx;
+    right: 32rpx;
+    padding: 15rpx 80rpx;
+    min-height: 66rpx;
+    line-height: 36rpx;
+    color: #fff;
+    font-size: 28rpx;
+    text-align: center;
+    opacity: 1;
+    background: var(--color-primary, #409EFF);
+    transform: translate3d(0, 0, 0);
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  }
+  
+  .y-message.is-hidden {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  
+  .y-message--primary {
+    background: var(--color-primary, #409EFF);
+  }
+  
+  .y-message--success {
+    background: var(--color-success, #67C23A);
+  }
+  
+  .y-message--warning {
+    background: var(--color-warning, #E6A23C);
+  }
+  
+  .y-message--error {
+    background: var(--color-danger, #F56C6C);
+  }
+  
+  .y-message .y-message__close {
+    position: absolute;
+    right: 10rpx;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .y-message .y-message__close-btn {
+    position: relative;
+    width: 40rpx;
+    height: 40rpx;
+    color: #fff;
+    border: 10rpx;
+  }
+  
+  .y-message .y-message__close-btn::before, .y-message .y-message__close-btn::after {
+    z-index: 1;
+    display: block;
+    content: "";
+    position: absolute;
+    left: 3rpx;
+    top: 50%;
+    color: #fff;
+    width: 32rpx;
+    height: 1px;
+    background: currentColor;
+  }
+  
+  .y-message .y-message__close-btn::before {
+    transform: rotate(45deg);
+  }
+  
+  .y-message .y-message__close-btn::after {
+    transform: rotate(-45deg);
+  }
+  

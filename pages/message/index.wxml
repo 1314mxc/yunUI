@@ -1,0 +1,9 @@
+<button bindtap="handleDefault">默认提示</button>
+  <button bindtap="handleSuccess">成功提示</button>
+  <button bindtap="handleWarning">警告提示</button>
+  <button bindtap="handleError">错误提示</button>
+  <button bindtap="handleDuration">自定义提示时间</button>
+  <button bindtap="handleShowClose">显示关闭按钮</button>
+  <button bindtap="handleOpen" wx:if="{{ !isOpen }}">需手动关闭提示</button>
+  <button type="warning" plain bindtap="handleClose" wx:else>手动关闭提示</button>
+  <y-message id="message" />
