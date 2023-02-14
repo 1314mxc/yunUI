@@ -1,0 +1,10 @@
+<view class="custom-class y-cell-group {{ card ? 'y-cell-group--card':'' }}">
+	<view wx:if="{{ title }}" class="y-cell-group__header">
+    <view class="y-cell-group__title">{{ title }}</view>
+    <slot name="group-suffix" />
+  </view>
+
+  <view class="y-cell-group__list">
+    <slot />
+  </view>
+</view>

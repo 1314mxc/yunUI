@@ -1,0 +1,25 @@
+<view 
+  bindtap="onClick"
+  class="y-cell custom-class {{ border ? 'y-cell__hairline':'' }}"
+  hover-class="{{ url ? 'y-cell--hover' : '' }}"  
+> 
+  <!-- 头部图标 -->
+  <view wx:if="{{ icon }}" class="y-cell__icon y-cell__header">
+    <y-icon name="{{ icon }}" size="36" color="{{ iconColor ? iconColor : '' }}" />
+  </view>
+
+  <!-- 自定义标题 -->
+  <view wx:if="{{ title }}" class="y-cell__title">{{ title }}</view>
+  <slot wx:else name="title" />
+
+  <!-- 描述内容 -->
+  <view wx:if="{{ value }}" class="y-cell__desc {{ isMultiple ? '':'is-ellipsis' }}" style="color: {{yTColor}}">{{ value }}</view>
+
+  <!-- 自定义内容 -->
+  <view wx:else class="y-cell__slot">
+    <slot />
+  </view>
+
+  <!-- 右侧跳转箭头 -->
+  <y-icon wx:if="{{ url }}" class="y-cell__icon y-cell__footer" catchtap="navigateTo" name="arrow-right" size="32" color="#999" />
+</view>

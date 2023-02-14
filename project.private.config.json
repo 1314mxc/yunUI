@@ -25,8 +25,8 @@
                     "scene": null
                 },
                 {
-                    "name": "pages/yImgShow/picture",
-                    "pathName": "pages/yImgShow/picture",
+                    "name": "pages/search/search",
+                    "pathName": "pages/search/search",
                     "query": "",
                     "scene": null
                 }

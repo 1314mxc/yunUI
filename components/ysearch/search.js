@@ -1,5 +1,6 @@
 // components/search/search.js
-let keyword=''
+let keyword = ''
+let cacheSize = {}
 Component({
   /**
    * 组件的属性列表
@@ -10,28 +11,28 @@ Component({
       value:'请输入查询关键字'
     },
     y_button:{
-      type:String,
-      value:'false'
+      type: Boolean,
+      value: false
     },
-    but_title:{
-      type:String,
-      value:'搜索'
+    btnSize: {
+      type: Number,
+      value: 108
+    },
+    aniBtn: {
+      type: Boolean,
+      value: false
     },
     y_bgcolor_bar:{
       type:String,
       value:'#f5f5f5'
-    },
-    y_bgcolor_but:{
-      type:String,
-      value:'#d43c33'
     },
     y_color:{
       type:String,
       value:'black'
     },
     y_center:{
-      type:String,
-      value:'true'
+      type: Boolean,
+      value: true
     },
     y_vshow:{
       type:Number,
@@ -46,7 +47,27 @@ Component({
   data: {
     y_value:'',
     icon_center:true,  //图标居中控制
-    text_center:true   //文字居中控制
+    text_center:true,   //文字居中控制
+    show_text_c: true,
+    sizeBtn: 0,
+    sizeFont: 27,
+    btnAni: false
+  },
+
+  lifetimes:{
+    // 在这个生命周期中只能拿到传参的初始值(就是页面data中的值)
+    attached(){
+      if(this.properties.y_button && this.properties.aniBtn) {
+        cacheSize = this.properties.btnSize
+        this.setData({
+          btnAni: this.properties.aniBtn
+        })
+      } else {
+        this.setData({
+          sizeBtn: this.properties.btnSize
+        })
+      }
+    },
   },
 
   /**
@@ -55,7 +76,10 @@ Component({
   methods: {
     onInput(event){
       keyword=event.detail.value
-      if(this.properties.button=="false"){
+      this.setData({
+        show_text_c: keyword ? false : true
+      })
+      if(!this.properties.y_button){
         this.triggerEvent('search',{
           keyword
         })
@@ -65,16 +89,37 @@ Component({
       this.triggerEvent('mousetap',{
         keyword:this.data.y_value
       })
-      if(this.properties.y_vshow){
+      if(this.properties.aniBtn) {
         this.setData({
-          y_value:''
+          y_value: '',
+          sizeBtn: 0,
+          icon_center: true,
+          text_center: true,
+          show_text_c: true
+        })
+      }else if(this.properties.y_vshow){
+        this.setData({
+          y_value:'',
+          icon_center: true,
+          text_center: true,
+          show_text_c: true
         })
       }
     },
+    onBlur() {
+      this.triggerEvent('blur', {})
+    },
     onFucus(){
-      this.setData({
-        icon_center:false
-      })
+      if(this.properties.aniBtn) {
+        this.setData({
+          icon_center:false,
+          sizeBtn: cacheSize
+        })
+      }else {
+        this.setData({
+          icon_center:false
+        })
+      }
       setTimeout(()=>{
         this.setData({
           text_center:false

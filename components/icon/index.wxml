@@ -1,0 +1,35 @@
+<view 
+	class="m-icon m-icon-{{ name }} custom-class" 
+	style="{{ icon.setIconStyle(isImage, fsize, color) }} {{ customStyle }}"
+>
+  <image
+    wx:if="{{ isImage }}"
+    src="{{ name }}"
+    mode="aspectFit"
+    class="m-icon__image"
+   />
+</view>
+
+<wxs module="icon">
+  function setIconStyle(isImage, size, color) {
+    var styles = []
+
+    if(size) {
+      if(isImage) {
+        styles.push('width:' + size +'rpx')
+        styles.push('height:' + size +'rpx')
+      }
+      styles.push('font-size:' + size +'rpx')
+    }
+
+    if(color) {
+      styles.push('color:' + color)
+    }
+    return styles.join(";")
+  }
+
+  module.exports = {
+    setIconStyle: setIconStyle
+  }
+</wxs>
+

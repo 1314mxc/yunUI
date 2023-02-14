@@ -1,37 +1,12 @@
-Page{
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  overflow-y: auto;
-  background-color: white;
-}
-
-view{
-  width: 46%;
-  height: 469rpx;
-  border-radius: 7px;
-  background-color: rgba(0,0,0,.09);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 26rpx;
-  margin-bottom: 24rpx;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  box-sizing: border-box;
-  padding: 0 17rpx;
-}
-i{
-  width: 46%;
-}
 
 .loaded{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 96%;
   height: 180rpx;
-  background-color: rgba(0,0,0,.04);
   margin-top: 7rpx;
+  margin-left: 8rpx;
   overflow: hidden;
 }
 

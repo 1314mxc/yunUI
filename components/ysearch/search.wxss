@@ -3,13 +3,16 @@
 .container {
   display: flex;
   align-items: center;
-  position: relative;
   box-sizing: border-box;
-  padding: 0 9rpx 0 14rpx;
 }
 
-.bar {
+.y-i-box {
+  position: relative;
+  top: 0;
+  left: 0;
   flex: 1.5;
+}
+.bar {
   height: 68rpx;
   font-size: 30rpx;
   border-radius: 50px;
@@ -21,6 +24,7 @@
   overflow: hidden;
   white-space: nowrap;
   line-height: 68rpx;
+  transition: all .5s ease;
 }
 
 .bar_center{
@@ -28,13 +32,10 @@
 }
 
 .search {
-  background: #d43c33;
+  height: 68rpx;
   color: #fff;
-  font-size: 27rpx;
-  flex: 0.2;
-  padding: 14rpx;
-  letter-spacing: 4rpx;
-  border-radius: 13px;
+  flex-grow: 0;
+  transition: width .5s ease;
 }
 
 .in-bar {
@@ -44,11 +45,26 @@
 .find {
   position: absolute;
   top: 50%;
-  transform: translate(16rpx, -50%);
+  left: 0;
+  transform: scale(0.8) translate(16rpx, -58%);
   color: #9f9f9f;
   transition: all .6s ease;
 }
 
+.y-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(67rpx, -50%);
+  font-size: 30rpx;
+  color: #9f9f9f;
+  transition: all .6s ease;
+}
+
+.bar_center_text{
+  transform: translate(221rpx,-50%);
+}
+
 .bar_center_icon{
-  transform: translate(170rpx,-50%);
+  transform: scale(0.8) translate(219rpx,-58%);
 }

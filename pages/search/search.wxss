@@ -1,3 +1,11 @@
-view{
+.box{
   margin-top: 100rpx;
+}
+
+.search {
+  background: #d43c33;
+  color: #fff;
+  font-size: 27rpx;
+  letter-spacing: 4rpx;
+  border-radius: 13px;
 }

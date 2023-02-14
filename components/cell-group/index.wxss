@@ -1,0 +1,33 @@
+.y-cell-group {
+  position: relative;
+  margin: 0;
+  background: #fff;
+  transition: margin .2s ease-in-out;
+}
+
+.y-cell-group.y-cell-group--card {
+  margin: 32rpx;
+  box-shadow: 0 0 5px 1px #ccc;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.y-cell-group .y-cell-group__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  position: relative;
+  padding: 0 32rpx;
+  height: 100rpx;
+  font-size: 32rpx;
+  color: var(--color-text-regular, #606266);
+  background-color: #fcfcfc;
+}
+
+.y-cell-group .y-cell-group__header .y-cell-group__title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,53 +1,22 @@
-<view class="mxc0" bindtap="gonotice">
-  <text>去康康“自定义日期组件扩展组件”——高自定义程度、可精确到分、秒</text>
-</view>
-<view class="mxc1" bindtap="gocoupon">
-  <text>去康康“自定义优惠券组件”——左右布局，支持slot，可自定义文字</text>
-</view>
-<view class="mxc2" bindtap="gotime">
-  <text>去康康“自定义日历组件”吧！</text>
-</view>
-<view class="mxc3" bindtap="alphabetshow">
-  <text>去康康“自定义侧边栏字母导航组件”吧！</text>
-</view>
-<view class="mxc4" bindtap="modelshow">
-  <text>去康康“自定义弹出框yModel组件”吧！</text>
-</view>
-<view class="mxc5" bindtap="searchshow">
-  <text>去康康“自定义搜索栏ysearch组件”吧！</text>
-</view>
-<view class="mxc6" bindtap="cardshow">
-  <text>去康康“自定义卡片ycard组件”吧！</text>
-</view>
-<view class="mxc7" bindtap="effectshow">
-  <text>去康康“自定义雨雪系统RainSnow组件”吧！</text>
-</view>
-<view class="mxc8" bindtap="butshow">
-  <text>去康康“自定义按钮button组件”吧！</text>
-</view>
+<y-cell-group title="功能组件" border card>
+  <y-cell title="Date" value="高自定义程度、可精确到分、秒" url="/pages/notices/notices" />
+  <y-cell title="Coupon" value="左右布局，可自定义文字" url="/pages/coupon/coupon" />
+  <y-cell title="Calender" value="两种模式，心情签到" url="/pages/calendar/calendar" />
+  <y-cell title="Model" value="和原生一致的弹窗，自定义布局" url="/pages/tdetail/tdetail" />
+  <y-cell title="Button" value="高自定义，支持倒计时" url="/pages/ybutton/ybutton" />
+  <y-cell title="Message" value="消息通知" url="/pages/message/index" />
+  <y-cell title="RainSnow" value="雨雪插件，直接调用！" url="/pages/RainSnow/rainsnow" />
+  <y-cell title="Notice" value="广告滚动组件" url="/pages/notice/index" />
+  <y-cell title="LongList" value="开发中..." url="/pages/ylistscroll/listscroll" />
+</y-cell-group>
+<y-cell-group title="布局组件" border card>
+  <y-cell title="侧边栏字母导航" url="/pages/alphabet/alphabet" />
+  <y-cell title="自定义search搜索" value="动画过渡，自定义按钮" url="/pages/search/search" />
+  <y-cell title="自定义卡片" value="内置时间，完美“空间动态”效果" url="/pages/card/card" />
+  <y-cell title="图片排序" value="新增“增强排序”组件了！" yTColor="red" url="/pages/yImgShow/picture" />
+  <y-cell title="联动滑动" value="上下联动" url="/pages/liandong/ld" />
+</y-cell-group>
 
-<view class="mxc9" bindtap="ldshow">
-  <text>去康康“联动测试”吧！</text>
-</view>
-
-<view class="mxc10" bindtap="pgshow">
-  <text>“图片选择排序组件”增强了，快去看看吧！</text>
-</view>
-
-<view class="mxc11" bindtap="noticeshow">
-  <text>去康康“溢出滚动”组件吧！</text>
-</view>
-
-<view class="mxc12" bindtap="msgshow">
-  <text>去康康“消息通知”组件吧！</text>
-</view>
-
-<view class="mxc13" bindtap="longlistshow">
-  <text>“长列表滚动组件”(开发中...)</text>
-</view>
-
-<!-- 处理flex布局最后一行对其问题 -->
-<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 
 <view class="loaded">
   <view class="typing">更多内容，敬请期待 ...</view>
@@ -57,5 +26,7 @@
   <text>项目开源地址：</text>
   <text class="url" bindlongtap="cliptwo">{{url_two}}</text>
 
-  <text>在其中你可以看到详细代码及注释以及使用方式（本小程序版本只展示其中一种或几种应用方式）\n\n有任何疑问欢迎提issue！</text>
+  <text>本小程序版本只展示其中部分应用方式</text>
+  <text>有任何疑问欢迎提issue！欢迎star！</text>
+  <text>注：本页面由组件cell及cell-group实现</text>
 </view>

@@ -16,7 +16,7 @@ npm install yun-ui-micro
 ```
 
 ### clone使用(推荐！)
-直接从github中下载全部或单个文件，然后二次修改并使用。
+直接从github中下载全部或单个组件文件，然后二次修改并使用。
 
 
 ## 体验
@@ -32,11 +32,13 @@ npm install yun-ui-micro
 - <a href="#calender">“日历”组件【calendar】</a>：使日期选择更便捷！可以支持选中得到当前选中日期、星期几。可支持切换上一月、下一月；上一年、下一年（预计下一提交新增年份快速选择）。突出显示当前日期模块及某一天标记，可以实现“心情签到”的功能，**现有直接使用和弹出两种方式，使更接近原生组件**。
 - <a href="#alphabet">“侧边栏字母导航”组件【alphabet】</a>：使用便捷，查找方便，更顺滑！
 - <a href="#model">“自定义弹窗”组件【ymodel】</a>：基于原生，比原生modal自定义程度高，使用便捷，体验更流畅！
-- <a href="#search">“自定义搜索栏”组件【ysearch】</a>：支持多种搜索方式，高自定义程度，使用更流畅！
+- <a href="#search">“自定义搜索栏”组件【ysearch】</a>：支持多种搜索方式，高自定义程度，使用更流畅！(search组件更新了！动画效果&自定义按钮)
 - <a href="#card">“自定义卡片”组件【ycard】</a>：支持图片、短文、图文三种形式，自定义展示样式，配合 util 下时间插件使用，让展示随心所欲！可自定义是否预览图片。
 - <a href="#button">“自定义按钮button”组件【ybutton】</a>：支持以图片覆盖原样式，支持倒计时按钮。（可应对常见“倒计时完成后才能触发按钮”的场景）
 - <a href="#img">“自定义图片上传img”组件【yImg】</a>：支持最多九张图片，支持长按删除和拖动排序!
 - <a href="#img-pro">“增强图片排序img”组件【yImgPro】</a>：yImg组件的增强版，动画真正流畅！使用起来像朋友圈一样适应！【<font color="red">新！</font>】
+- “展示集cell-group”组件：和下面cell组件一起使用
+- “单个展示cell”组件：和cell-group一起使用
 
 ### 插件
 - 日期时间转化插件：位于utils文件夹下，以import {Time} from '路径';方式调用
@@ -44,7 +46,7 @@ npm install yun-ui-micro
 
 
 
-## 如何使用（仅为测试示例，具体请参照pages/下相关test文件使用）
+## 如何使用（仅clone下载方式的测试示例，具体请参照pages/下相关test文件使用）
 
 (components中是组件 pages里是相关使用实例)
 
@@ -91,7 +93,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
     <view>sadas</view>
   </view>
 </y-model>
-<y-search y_button="true" bind:search="Onsearch" bind:mousetap="Insearch" />
+<y-search y_button bind:search="Onsearch" bind:mousetap="Insearch" />
 <y-card txtIndent="{{txtIndent}}" blog="{{blog}}"></y-card>
 
 <canvas canvas-id="effect" id="effects"></canvas>
@@ -153,12 +155,14 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 
 ### ysearch
 - y_placeholder：String，可选。为无聚焦情况下搜索框中提示文字
-- y_button：String（“true”/“false”），可选。默认为“false”（不传），此参数意义为“是否有input后面的button按钮”，当此参数为true时。代表你需要用点击“搜索”按钮的方式来查询，为false时表示需要用“监听键盘实时搜索”的方式查询
+- y_button：Boolean（true/false），可选。默认为“false”（不传），此参数意义为“是否有input后面的button按钮”，当此参数为true时。代表你需要用点击“搜索”按钮的方式来查询，为false时表示需要用“监听键盘实时搜索”的方式查询
+- btnSize：Number，可选。当y_button参数为true时传入，为右侧按钮区域的宽度
+- aniBtn：Boolean（true/false），可选。聚焦时是否按钮以动画效果展示。当此参数为false而且y_button参数为true时表示按钮一直存在，与聚焦事件无关。
 - but_title：String，可选。为右边按钮出现时按钮中文字，默认为“搜索”
 - y_bgcolor_but：String，可选。为右边按钮背景颜色，默认为“#d43c33”：红色
 - y_bgcolor_bar：String，可选。为搜索框背景颜色，默认为“#f5f5f5”：灰白色
 - y_color：String，可选。为搜索框中用户输入文字颜色，默认为“black”：黑色
-- y_center：String（“true”/“false”），可选。此参数决定初始是否采用居中形式。若传“true”（字符串），则在“聚焦”时会有一个动画效果（参见下面对应展示的效果三）
+- y_center：Boolean（true/false），可选。此参数决定初始是否采用居中形式。若传此参数或值为true，则在“聚焦”时会有一个动画效果（参见下面对应展示的效果三）
 - y_vshow：Number，可选。此参数决定触发“提交”按钮后是否清空input框。**此参数在but_title为“false”时无效！（因为此时查询方式为“监听输入实时触发”）**
 
 - 还有两个监听函数供调用：
