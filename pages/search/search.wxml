@@ -1,13 +1,19 @@
+
 <view class="box">
+  <text>自定义搜索栏展示示例-按钮动态展示隐藏：</text>
   <y-search y_button="{{hello}}" y_center aniBtn bind:search="Onsearch" bind:mousetap="Insearch">
     <button name="nameBtn" class="search" style="width: 108rpx; padding: 14rpx;"
     bindtap="onSearch">搜索</button>
   </y-search>
 </view>
+
 <view class="box">
+  <text>自定义搜索栏展示示例-无按钮：</text>
   <y-search y_center bind:search="Onsearch" bind:mousetap="Insearch" />
 </view>
+
 <view class="box">
+  <text>自定义搜索栏展示示例-按钮永远存在：</text>
   <y-search y_button bind:search="Onsearch" bind:mousetap="Insearch">
     <button name="nameBtn" class="search" style="width: 108rpx; padding: 14rpx;"
     bindtap="onSearch">搜索</button>

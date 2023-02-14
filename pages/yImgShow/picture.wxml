@@ -1,3 +1,4 @@
+<text>自定义图片排序展示示例-上传图片，拖动排序（本地数据，无服务器无存储）：</text>
 <view class="container">
     <textarea class="content" placeholder="分享新鲜事..." maxlength="140" auto-focus></textarea>
     <y-img wx:if="{{selOne}}" yMovable bind:chooseImg="chooseImg"></y-img>

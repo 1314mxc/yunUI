@@ -1,3 +1,5 @@
+<text>自定义卡片展示示例-24小时之前：</text>
 <y-card txtIndent="{{txtIndent}}" blog="{{blog}}" ani="ani"></y-card>
 
+<text>自定义卡片展示示例-24小时之内：</text>
 <y-card txtIndent="{{txtIndent}}" blog="{{blog2}}" ani="ani"></y-card>

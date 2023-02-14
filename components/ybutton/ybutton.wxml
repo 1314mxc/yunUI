@@ -19,5 +19,5 @@
 				send-message-img="{{ sendMessageImg }}"
 				show-message-card="{{ showMessageCard }}"
 				>
-	<image wx:if="{{icon}}" class="geek-btn-icon" src="{{icon}}" mode="aspectFit"></image>{{title}} <text wx:if="{{time>0}}">{{'('+time+'s)'}}</text>
+	<image wx:if="{{icon}}" class="geek-btn-icon" src="{{icon}}" mode="aspectFit"></image>{{title}} <text wx:if="{{zeroTime? zero_text : time >0}}">{{'('+time+'s)'}}</text>
 </button>

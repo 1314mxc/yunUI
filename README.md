@@ -185,6 +185,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 - t_title：String类型。可选。默认值为“阅读倒计时”，这是显示倒计时时间时展示出来的文字（注意：这个参数只有在times参数存在时才有效）
 - title：String类型。可选。默认值为“点击”，参数控制如果有倒计时则倒计时结束后按钮上展示的文字（无倒计时时直接展示在按钮上）
 - inline：true/false，Bool类型。可选。此参数控制button元素是否以inline-block（行内块）形式展示
+- zeroTime：true/false，Bool类型。可选。此参数控制按钮上是否显示“0s”。默认为false，不显示
 - times：String类型。可选。参数控制倒计时时间，无默认值。不传此参数时和原生button组件表现无异。且只支持String-数字形式的参数
 - 其余参数及回调函数和原生button组件一致，请参见官方文档：https://developers.weixin.qq.com/miniprogram/dev/component/button.html
 

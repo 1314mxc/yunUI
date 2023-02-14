@@ -1,3 +1,4 @@
+<text>自定义优惠券展示示例-左右布局：</text>
 <y-coupon>
   <!-- 测试图片 -->
   <image slot="l_img" src="img/localSDK.png" mode="aspectFill"></image>

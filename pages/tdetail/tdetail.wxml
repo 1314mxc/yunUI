@@ -1,3 +1,4 @@
+<text>自定义model示例-点击按钮查看：</text>
 <view id="button" bindtap="showone">居中式多行弹窗</view>
 <view id="button" bindtap="showtwo">普通多行弹窗</view>
 <view id="button" bindtap="showsix">普通单行弹窗</view>

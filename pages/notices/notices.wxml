@@ -1,16 +1,18 @@
 <form bindsubmit="register">
+	<text>自定义日期选择示例-精确到秒：</text>
 	<view class="n_top">
 		<view class="list" wx:if="{{swItch!=0}}">
-			<view class="left">通知时间（s）</view>
+			<view class="left">通知时间</view>
 			<view class="l_right">
         <y-picker open="true" size="right" color="#888888" yseo defaulttext="请选择时间" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
 				<i class="iconfont icon-fanhui-copy-copy"></i>
 			</view>
 		</view>
 	</view>
+	<text>自定义日期选择示例-精确到分：</text>
 	<view class="n_top">
 		<view class="list" wx:if="{{swItch!=0}}">
-			<view class="left">通知时间（精确到分）</view>
+			<view class="left">通知时间</view>
 			<view class="l_right">
         <y-picker open="true" size="right" color="#888888" defaulttext="请选择时间" bind:bindMultiPickerChange="bindMultiPickerChange"></y-picker>
 				<i class="iconfont icon-fanhui-copy-copy"></i>

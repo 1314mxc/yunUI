@@ -40,6 +40,10 @@ Component({
       type: Boolean,
       value: false
     },
+    zeroTime: {
+      type: Boolean,
+      value: false
+    },
     times: {
       type: String,
       value: ''
@@ -70,7 +74,8 @@ Component({
   },
   data: {
     time: 0,
-    originTitle: ''
+    originTitle: '',
+    zero_text: true
   },
   lifetimes: {
     attached: function () {
@@ -84,6 +89,10 @@ Component({
           disabled: true,
           originTitle: _this.data.title,
           title: this.properties.t_title
+        })
+      }else if(this.properties.zeroTime) {
+        _this.setData({
+          zero_text: false
         })
       }
     },
@@ -103,10 +112,18 @@ Component({
           })
         }
         let done = function () {
-          _this.setData({
-            disabled: false,
-            title: _this.data.originTitle
-          })
+          if(_this.properties.zeroTime) {
+            _this.setData({
+              disabled: false,
+              zero_text: false,
+              title: _this.data.originTitle
+            })
+          } else {
+            _this.setData({
+              disabled: false,
+              title: _this.data.originTitle
+            })
+          }
         }
         let timer = null
         clearInterval(timer)

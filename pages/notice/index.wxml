@@ -1,17 +1,19 @@
 
-progress组件:
+<text>自定义progress示例-滚动：</text>
 <y-notice>
     练得身形似鹤形，千株松下两函经。
     我来问道无馀说，云在青霄水在瓶。
     选得幽居惬野情，终年无送亦无迎。
     有时直上孤峰顶，月下披云啸一声。
   </y-notice>
+  <text>自定义progress示例-溢出省略：</text>
   <y-notice scrollable="{{ false }}">
     练得身形似鹤形，千株松下两函经。
     我来问道无馀说，云在青霄水在瓶。
     选得幽居惬野情，终年无送亦无迎。
     有时直上孤峰顶，月下披云啸一声。
   </y-notice>
+  <text>自定义progress示例-多行展示：</text>
   <y-notice multiline>
     练得身形似鹤形，千株松下两函经。
     我来问道无馀说，云在青霄水在瓶。

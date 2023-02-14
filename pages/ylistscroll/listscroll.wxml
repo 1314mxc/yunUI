@@ -1,3 +1,4 @@
+<text>长列表无限滚动示例：</text>
 <view class="viewport" id="viewport" style="height: {{vHeight}}px">
     <view class="scroll-bar" id="scrollBar" style="height: {{scrollHeight}}px"></view>
     <view class="scroll-list">

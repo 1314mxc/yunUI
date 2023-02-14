@@ -71,6 +71,10 @@ Page({
   },
   modelcomplete(e){
     console.log(e.detail)
+    this.setData({
+      show:false,
+      md:'60%'
+    })
   },
 
   /**
