@@ -37,7 +37,7 @@ npm install yun-ui-micro
 - <a href="#button">“自定义按钮button”组件【ybutton】</a>：支持以图片覆盖原样式，支持倒计时按钮。（可应对常见“倒计时完成后才能触发按钮”的场景）
 - <a href="#img">“自定义图片上传img”组件【yImg】</a>：支持最多九张图片，支持长按删除和拖动排序!
 - <a href="#img-pro">“增强图片排序img”组件【yImgPro】</a>：yImg组件的增强版，动画真正流畅！使用起来像朋友圈一样适应！【<font color="red">新！</font>】
-- “展示集cell-group”组件：和下面cell组件一起使用
+- <a href="#cell-group">“展示集cell-group”组件</a>：和下面cell组件一起使用
 - “单个展示cell”组件：和cell-group一起使用
 
 ### 插件
@@ -46,7 +46,7 @@ npm install yun-ui-micro
 
 
 
-## 如何使用（仅clone下载方式的测试示例，具体请参照pages/下相关test文件使用）
+## 如何使用（仅clone下载方式的测试示例！具体请参照pages/下相关test文件使用）
 
 (components中是组件 pages里是相关使用实例)
 
@@ -102,6 +102,11 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 
 <y-img yMovable bind:chooseImg="chooseImg"></y-img>
 <y-img-pro bind:chooseImg="chooseImg"></y-img-pro>
+
+<y-cell-group title="布局组件" border card custom-class="border-box">
+  <y-cell title="侧边栏字母导航" url="/pages/alphabet/alphabet" />
+  <y-cell title="自定义search搜索" value="动画过渡，自定义按钮" url="/pages/search/search" />
+</y-cell-group>
 ```
 
 
@@ -211,6 +216,16 @@ query.selectViewport().scrollOffset((res) => {
 
 - 有一个监听函数供调用：
 - bind:chooseImg 回调事件，监听组件中的添加和删除以及排序事件。得到每一步操作最终的图片集合（表现为数组）。可以在此进行下一步操作。接收两个参数：1.images，图片数组；2.key，当前操作code，比如删除时key为“delete-img”，可供开发者区别。
+
+<div id="cell-group"> </div>
+
+### cell&cell-group
+```
+<y-cell-group title="布局组件" border card custom-class="border-box">
+  <y-cell title="侧边栏字母导航" url="/pages/alphabet/alphabet" />
+  <y-cell title="自定义search搜索" value="动画过渡，自定义按钮" url="/pages/search/search" />
+</y-cell-group>
+```
 
 
 ### js插件之“雨雪特效”

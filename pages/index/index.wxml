@@ -1,4 +1,4 @@
-<y-cell-group title="功能组件" border card>
+<y-cell-group title="功能组件" border card custom-class="border-box">
   <y-cell title="Date" value="高自定义程度、可精确到分、秒" url="/pages/notices/notices" />
   <y-cell title="Coupon" value="左右布局，可自定义文字" url="/pages/coupon/coupon" />
   <y-cell title="Calender" value="两种模式，心情签到" url="/pages/calendar/calendar" />
@@ -9,7 +9,7 @@
   <y-cell title="Notice" value="广告滚动组件" url="/pages/notice/index" />
   <y-cell title="LongList" value="开发中..." url="/pages/ylistscroll/listscroll" />
 </y-cell-group>
-<y-cell-group title="布局组件" border card>
+<y-cell-group title="布局组件" border card custom-class="border-box">
   <y-cell title="侧边栏字母导航" url="/pages/alphabet/alphabet" />
   <y-cell title="自定义search搜索" value="动画过渡，自定义按钮" url="/pages/search/search" />
   <y-cell title="自定义卡片" value="内置时间，完美“空间动态”效果" url="/pages/card/card" />

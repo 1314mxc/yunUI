@@ -1,14 +1,9 @@
 .y-cell-group {
   position: relative;
-  margin: 0;
-  background: #fff;
   transition: margin .2s ease-in-out;
 }
 
 .y-cell-group.y-cell-group--card {
-  margin: 32rpx;
-  box-shadow: 0 0 5px 1px #ccc;
-  border-radius: 12rpx;
   overflow: hidden;
 }
 

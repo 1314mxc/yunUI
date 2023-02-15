@@ -4,7 +4,7 @@
     <text hidden="{{!show_text_c}}"
       class="y-text {{(y_center && icon_center)?'bar_center_text':''}}">{{y_placeholder}}</text>
     <input class="bar {{(y_center && text_center)?'bar_center':''}}" placeholder="" placeholder-class="in-bar"
-      style="background-color:{{y_bgcolor_bar}};color:{{y_color}}" model:value="{{y_value}}" bindfocus="onFucus"
+      style="background-color:{{y_bgcolor_bar}};color:{{y_color}}" model:value="{{y_value}}" catchtap="onFucus"
       bindblur="onBlur"
       bindinput="onInput"></input>
   </view>

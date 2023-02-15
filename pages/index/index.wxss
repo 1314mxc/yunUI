@@ -1,4 +1,11 @@
 
+.border-box {
+  margin: 32rpx;
+  box-shadow: 0 0 5px 1px #ccc;
+  border-radius: 12rpx;
+  background: #fff;
+}
+
 .loaded{
   display: flex;
   align-items: center;
