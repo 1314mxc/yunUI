@@ -221,7 +221,7 @@ query.selectViewport().scrollOffset((res) => {
 
 ### cell&cell-group
 ```
-<y-cell-group title="布局组件" border card custom-class="border-box">
+<y-cell-group title="布局组件" border card custom-class="border-box"> <!-- border-box为外部样式，可以由开发者决定边框、阴影、背景色这些细节点 -->
   <y-cell title="侧边栏字母导航" url="/pages/alphabet/alphabet" />
   <y-cell title="自定义search搜索" value="动画过渡，自定义按钮" url="/pages/search/search" />
 </y-cell-group>
