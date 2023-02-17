@@ -1,0 +1,16 @@
+<view class="y-popup" hidden="{{!showPop}}">
+    <view class="y-popup-bg {{ visible ? '' : 'is-hidden-bg' }}" style="background: rgba(0, 0, 0, {{bg_opacity}});" hidden="{{bg_opacity < 0}}" bindtap="onClose"></view>
+    <view class="y-popup-box y-popup-box-{{site}} is-hidden-{{site}} {{ visible ? 'show-popup' : ''}} popup-class"
+        style="width: {{maxWidth}}; height: {{maxHeight}};background-color: white;">
+        <view wx:if="{{default_layout}}" class="y-pop-top default-popup poptop-class">
+            <view class="y-title">{{title}}</view>
+            <view class="y-cancel" bindtap="onCancel">取消</view>
+        </view>
+        <view wx:else class="y-pop-top">
+            <slot name="top-suffix"></slot>
+        </view>
+        <view class="y-pop-content">
+            <slot name="content-suffix"></slot>
+        </view>
+    </view>
+</view>

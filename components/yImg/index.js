@@ -1,4 +1,4 @@
-const MAX_IMG_NUM = 9;
+let MAX_IMG_NUM = 9;
 let elements = [];
 let flag = false;
 let cacheBeginIndexN = -1;
@@ -17,6 +17,10 @@ Component({
       type: Boolean,
       value: false
     },
+    maxLen: {
+      type: Number,
+      value: 9
+    },
   },
   /**
    * 组件的初始数据
@@ -31,6 +35,13 @@ Component({
     y: 0,
     doubleImg: "",
     cacheBeginIndex: -1,
+  },
+
+  lifetimes:{
+    // 在这个生命周期中只能拿到传参的初始值(就是页面data中的值)
+    attached(){
+        MAX_IMG_NUM = this.properties.maxLen
+    },
   },
 
   /**

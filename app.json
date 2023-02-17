@@ -13,7 +13,8 @@
         "pages/yImgShow/picture",
         "pages/ylistscroll/listscroll",
         "pages/notice/index",
-        "pages/message/index"
+        "pages/message/index",
+        "pages/popup/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

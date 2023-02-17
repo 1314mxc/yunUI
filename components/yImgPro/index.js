@@ -24,6 +24,10 @@ Component({
                 pd: 13
             }
         },
+        maxLen: {
+            type: Number,
+            value: 9
+        },
         defaultImgList: {
             type: Array,
             value: [],
@@ -64,6 +68,13 @@ Component({
         curZ: -1,
         cur: -1,
         itemTransition: false,
+    },
+
+    lifetimes:{
+        // 在这个生命周期中只能拿到传参的初始值(就是页面data中的值)
+        attached(){
+            MAX_IMG_NUM = this.properties.maxLen
+        },
     },
 
     /**

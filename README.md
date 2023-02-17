@@ -3,7 +3,7 @@
 
 ## 使用
 
-### npm使用
+### npm使用(此方式调用，所有引用组件名都是小写字母且没有“y”前缀，且最后一级都是index)
 ```
 npm install yun-ui-micro
 ```
@@ -38,7 +38,8 @@ npm install yun-ui-micro
 - <a href="#img">“自定义图片上传img”组件【yImg】</a>：支持最多九张图片，支持长按删除和拖动排序!
 - <a href="#img-pro">“增强图片排序img”组件【yImgPro】</a>：yImg组件的增强版，动画真正流畅！使用起来像朋友圈一样适应！【<font color="red">新！</font>】
 - <a href="#cell-group">“展示集cell-group”组件</a>：和下面cell组件一起使用
-- “单个展示cell”组件：和cell-group一起使用
+- “单个展示cell”组件：建议如果有多个，请和cell-group一起使用
+- <a href="#popup">“底部弹层”组件</a>：从底部弹出，更丝滑、更高效。自定义内容与样式。未来将支持上下左右四边弹出。
 
 ### 插件
 - 日期时间转化插件：位于utils文件夹下，以import {Time} from '路径';方式调用
@@ -47,6 +48,8 @@ npm install yun-ui-micro
 
 
 ## 如何使用（仅clone下载方式的测试示例！具体请参照pages/下相关test文件使用）
+
+**请注意：**如果是npm方式调用，所有组件名都是小写字母且没有“y”前缀！
 
 (components中是组件 pages里是相关使用实例)
 
@@ -198,6 +201,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 
 ### yImg
 - yMovable: Boolean。不传即为默认值false。此时没有拖动排序功能，只有长按提示删除操作。传参数名即为true，此时长按可以拖拽图片进行删除。
+- maxLen: Number。不传默认为9。表示最多可以选择的图片数量
 
 - 还有一个监听函数供调用：
 - bind:chooseImg 回调事件，监听组件中的添加和删除以及排序事件。得到每一步操作最终的图片集合（表现为数组）。可以在此进行下一步操作。接收两个参数：1.images，图片数组；2.key，当前操作code，比如删除时key为“delete-img”，可供开发者区别。
@@ -206,6 +210,7 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 
 ### yImgPro
 - yTDel: Boolean。不传即为默认值false。为true时删除后会有动画排序效果。默认删除后直接是新的。
+- maxLen: Number。不传默认为9。表示最多可以选择的图片数量
 - defaultImgList: Array。默认为`[]`空数组。当您需要页面上默认就存在一些图片时，您可以传入它！结构为：`['xxx', 'xxx']`
 - scrollOffset: Number。默认为0。如果你的页面会有滚动行为，而且此组件并不是“第一时间”出现在页面上，建议传入此参数！此时值应当为外部某组件的滚动距离。您可以用官方 API 得到它：
 ```
@@ -226,6 +231,21 @@ query.selectViewport().scrollOffset((res) => {
   <y-cell title="自定义search搜索" value="动画过渡，自定义按钮" url="/pages/search/search" />
 </y-cell-group>
 ```
+
+<div id="popup"> </div>
+
+### popup
+- showPop: Boolean。不传即为默认值false。此参数表示弹层是否显示。一般由调用方动态控制。注意：在关闭回调中应当将其恢复初始值
+- default_layout：Bool。默认为true。此时表示在弹层中使用默认的“顶部区域”内容和样式
+- title：String。默认为“弹层”。当default_layout为true时的顶部标题
+- bg_closed: Bool。不传默认为false。此参数控制是否可以通过点击遮罩层关闭弹层
+- popHeight：String。默认为“60%”。此参数控制弹层体的高度，可以传入百分比或“rpx”单位字符串
+- maxWidth：String。默认为“100%”。此参数控制弹层体的宽度，可以传入百分比或“rpx”单位字符串
+- bg_opacity：Number。默认为“0.1”。控制遮罩层的透明度。注意：可以且仅可以传入小于0的值“-1”此时没有遮罩层
+
+- 还有一个监听函数供调用：
+- bind:onCancel 回调事件，监听关闭事件。此时开发者务必将外部传入的“开关参数”showPop恢复初始值！
+
 
 
 ### js插件之“雨雪特效”
