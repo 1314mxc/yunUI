@@ -6,7 +6,8 @@ Page({
      */
     data: {
         visible: false,
-        visible2: false
+        visible2: false,
+        visible3: false
     },
 
     openBottom() {
@@ -21,6 +22,12 @@ Page({
         })
     },
 
+    openBottom3() {
+        this.setData({
+            visible3: true
+        })
+    },
+
     onCancel() {
         this.setData({
             visible: false
@@ -30,6 +37,12 @@ Page({
     onCancel2() {
         this.setData({
             visible2: false
+        })
+    },
+
+    onCancel3() {
+        this.setData({
+            visible3: false
         })
     },
 

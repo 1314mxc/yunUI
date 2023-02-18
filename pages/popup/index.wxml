@@ -10,3 +10,10 @@
     <view slot="top-suffix" style="width: 100%;text-align: center;">222</view>
     <view slot="content-suffix">111</view>
 </y-popup>
+
+<button style="margin-top: 20px" type="primary" bindtap="openBottom3">侧边-自定义弹窗顶部内容</button>
+
+<y-popup showPop="{{visible3}}" site="right" bg_closed bind:onCancel="onCancel3">
+    <view slot="top-suffix" style="width: 100%;text-align: center;">222</view>
+    <view slot="content-suffix">111</view>
+</y-popup>

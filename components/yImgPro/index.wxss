@@ -66,12 +66,12 @@
     position: absolute;
     top: 0;
     right: 10rpx;
+    text-align: center;
     width: 39rpx;
     height: 39rpx;
     background-color: #000;
     opacity: 0.6;
     color: #fff;
-    text-align: center;
     line-height: 36rpx;
     font-size: 22rpx;
     font-weight: bolder;

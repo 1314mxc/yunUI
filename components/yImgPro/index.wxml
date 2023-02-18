@@ -7,12 +7,13 @@
             bind:longpress="longPress" catch:touchmove="touchMove" catch:touchend="touchEnd">
             <view class="info" style="width: {{imgShape.side}}rpx; height: {{imgShape.side}}rpx; padding: 0 {{imgShape.pd}}rpx {{imgShape.pd}}rpx 0;">
                 <image mode="aspectFill" src="{{item.data}}"></image>
-                <i class="iconfont icon-delete" wx:if="{{showMenuImg}}" bind:tap="onDelImage" data-index="{{item.key}}"></i>
+                <i class="iconfont icon-delete customImg-del" wx:if="{{showMenuImg}}" bind:tap="onDelImage" data-index="{{item.key}}"></i>
             </view>
         </view>
         <view class="item-sel selectphoto"
             style="transform: translate3d({{selSite.tranX}}px, {{selSite.tranY}}px, 0px); width: {{imgShape.side - imgShape.pd}}rpx; height: {{imgShape.side - imgShape.pd}}rpx;" hidden="{{!canSelPhoto}}" bind:tap="onChooseImage">
-            <i class="iconfont icon-jiashang"></i>
+            <slot wx:if="{{default_add}}"></slot>
+            <i wx:else class="iconfont icon-jiashang"></i>
         </view>
     </view>
 </view>

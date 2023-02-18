@@ -212,6 +212,8 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
 - yTDel: Boolean。不传即为默认值false。为true时删除后会有动画排序效果。默认删除后直接是新的。
 - maxLen: Number。不传默认为9。表示最多可以选择的图片数量
 - defaultImgList: Array。默认为`[]`空数组。当您需要页面上默认就存在一些图片时，您可以传入它！结构为：`['xxx', 'xxx']`
+- default_add：Bool。默认为false。为true时“添加图片”按钮是一个插槽。由外部以普通slot方式传入按钮
+- 外部样式customImg-del。调用方自定义图片上“删除”按钮样式。使用：`customImg-del="xxx"`
 - scrollOffset: Number。默认为0。如果你的页面会有滚动行为，而且此组件并不是“第一时间”出现在页面上，建议传入此参数！此时值应当为外部某组件的滚动距离。您可以用官方 API 得到它：
 ```
 query.selectViewport().scrollOffset((res) => {
@@ -242,6 +244,9 @@ query.selectViewport().scrollOffset((res) => {
 - popHeight：String。默认为“60%”。此参数控制弹层体的高度，可以传入百分比或“rpx”单位字符串
 - maxWidth：String。默认为“100%”。此参数控制弹层体的宽度，可以传入百分比或“rpx”单位字符串
 - bg_opacity：Number。默认为“0.1”。控制遮罩层的透明度。注意：可以且仅可以传入小于0的值“-1”此时没有遮罩层
+- site：String（“bottom”/“right”）。默认为“bottom”。控制弹窗从底部弹出还是侧边弹出（注：为“right”时default_layout参数强制为false）
+- 外部样式popup-class。由调用方自定义弹层体样式，比如border-radius、background等。使用方式：`popup-class="xxx"`
+- 外部样式poptop-class。当default_layout参数为true（使用默认顶部样式和内容）时由调用方自定义弹层中顶部状态栏样式，比如height、background等。使用方式：`poptop-class="xxx"`
 
 - 还有一个监听函数供调用：
 - bind:onCancel 回调事件，监听关闭事件。此时开发者务必将外部传入的“开关参数”showPop恢复初始值！

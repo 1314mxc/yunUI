@@ -5,6 +5,8 @@
 let MAX_IMG_NUM = 9;
 
 Component({
+    externalClasses: ['customImg-del'],
+
     /**
      * 组件的属性列表
      */
@@ -41,6 +43,10 @@ Component({
                     this.init()
                 }
             }
+        },
+        default_add: {
+            type: Boolean,
+            value: false
         }
     },
 
