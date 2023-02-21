@@ -1,0 +1,2 @@
+<!--components/atinput/index.wxml-->
+<textarea class="at-input-content custom-input" placeholder="{{placeholder}}" maxlength="{{maxlength}}" bindfocus="eventFocus" bindinput="eventInput" bindblur="eventBlur" value="{{inputContent}}"></textarea>

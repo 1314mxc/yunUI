@@ -1,0 +1,12 @@
+<text>具有@功能的输入框！可外部自定义整体样式。可结合popup组件达到“选择人员”的目的：</text>
+
+<y-input name="{{member}}" custom-input="input-class" bind:at="onSelectItem"></y-input>
+
+<y-popup showPop="{{visible4}}" bg_closed bind:onCancel="onCancel4">
+    <view slot="top-suffix" style="width: 100%;text-align: center;">人员选择</view>
+    <view slot="content-suffix">
+        <block wx:for="{{list}}" wx:key="{{index}}">
+            <view data-key="{{item.key}}" data-index="{{index}}" focus="{{focus}}" selection-start='{{textNum}}' selection-end='{{textNum}}' bindtap="onChooseItem">{{item.name}}</view>
+        </block>
+    </view>
+</y-popup>

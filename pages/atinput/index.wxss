@@ -1,0 +1,4 @@
+.input-class{
+    height: 360rpx;
+    border: 1px solid;
+}

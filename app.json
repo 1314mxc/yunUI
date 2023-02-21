@@ -14,7 +14,8 @@
         "pages/ylistscroll/listscroll",
         "pages/notice/index",
         "pages/message/index",
-        "pages/popup/index"
+        "pages/popup/index",
+        "pages/atinput/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

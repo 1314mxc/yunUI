@@ -40,6 +40,7 @@ npm install yun-ui-micro
 - <a href="#cell-group">“展示集cell-group”组件</a>：和下面cell组件一起使用
 - “单个展示cell”组件：建议如果有多个，请和cell-group一起使用
 - <a href="#popup">“底部弹层”组件</a>：从底部弹出，更丝滑、更高效。自定义内容与样式。未来将支持上下左右四边弹出。
+- <a href="#atinput">“@输入框”组件</a>：支持@功能的输入框。可结合popup组件实现人员选择功能！
 
 ### 插件
 - 日期时间转化插件：位于utils文件夹下，以import {Time} from '路径';方式调用
@@ -65,7 +66,8 @@ npm install yun-ui-micro
     "y-card":"/components/ycard/ycard",
     "y-button":"/components/ybutton/ybutton",
     "y-img":"/components/yImg/index",
-    "y-img-pro":"/components/yImgPro/index"
+    "y-img-pro":"/components/yImgPro/index",
+    "y-input":"/components/atinput/index"
  }
 ```
 
@@ -110,6 +112,8 @@ import {Time} from '../../utils/date_time';   // 路径需自己改下
   <y-cell title="侧边栏字母导航" url="/pages/alphabet/alphabet" />
   <y-cell title="自定义search搜索" value="动画过渡，自定义按钮" url="/pages/search/search" />
 </y-cell-group>
+
+<y-input name="{{member}}" custom-input="input-class" bind:at="onSelectItem"></y-input>
 ```
 
 
@@ -250,6 +254,20 @@ query.selectViewport().scrollOffset((res) => {
 
 - 还有一个监听函数供调用：
 - bind:onCancel 回调事件，监听关闭事件。此时开发者务必将外部传入的“开关参数”showPop恢复初始值！
+
+<div id="atinput"> </div>
+
+### atinput
+- name: String。不传即为默认值空。表示被艾特的人员名字，外部调用无需自行处理尾部空格。外部可动态更改
+- placeholder：String。默认为“请输入”。输入框默认文字
+- maxlength：Number。默认为140。输入框最大可输入文字个数
+
+- 外部样式custom-input。由调用方自定义输入框整体样式，比如border、border-radius、height、background等（width默认100%，不建议更改，可以在外部添加父元素控制）。使用方式：`custom-inpu="xxx"`
+
+- 还有三个监听函数供调用：
+- bind:at 回调事件，监听输入框输入@。此时开发者可以唤起人员选择弹窗/跳转页面人员选择
+- bind:focus 回调事件，监听输入框聚焦
+- bind:blur 回调事件，监听输入框失焦
 
 
 

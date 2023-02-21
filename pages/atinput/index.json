@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "y-input": "/components/atinput/index",
+    "y-popup": "/components/popup/index"
+  }
+}

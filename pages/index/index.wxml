@@ -8,13 +8,14 @@
   <y-cell title="RainSnow" value="雨雪插件，直接调用！" url="/pages/RainSnow/rainsnow" />
   <y-cell title="Notice" value="广告滚动组件" url="/pages/notice/index" />
   <y-cell title="Popup" value="底部/侧边滑出弹层，高度自适应" url="/pages/popup/index" />
+  <y-cell title="图片排序" value="新增“增强排序”组件了！" yTColor="red" url="/pages/yImgShow/picture" />
+  <y-cell title="input" value="@功能！可结合popup组件使用" yTColor="red" url="/pages/atinput/index" />
   <y-cell title="LongList" value="开发中..." url="/pages/ylistscroll/listscroll" />
 </y-cell-group>
 <y-cell-group title="布局组件" border card custom-class="border-box">
   <y-cell title="侧边栏字母导航" url="/pages/alphabet/alphabet" />
   <y-cell title="自定义search搜索" value="动画过渡，自定义按钮" url="/pages/search/search" />
   <y-cell title="自定义卡片" value="内置时间，完美“空间动态”效果" url="/pages/card/card" />
-  <y-cell title="图片排序" value="新增“增强排序”组件了！" yTColor="red" url="/pages/yImgShow/picture" />
   <y-cell title="联动滑动" value="上下联动" url="/pages/liandong/ld" />
 </y-cell-group>
 

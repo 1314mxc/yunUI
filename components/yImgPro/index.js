@@ -352,7 +352,8 @@ Component({
             wx.vibrateShort();
         },
         onDelImage(event) {
-            if(this.data.list.length < 2) {
+            let list = this.data.list;
+            if(list.length < 2) {
                 this.triggerMsg([], "delete-img")
                 this.setData({
                     listData: [],
@@ -365,14 +366,10 @@ Component({
                 })
                 return;
             }
-            let cacheList = JSON.parse(JSON.stringify(this.data.list));
+            let cacheList = JSON.parse(JSON.stringify(list));
             let listData = [];
 
-            if(!this.properties.yTDel) {
-                this.normalDelItem(cacheList, event, listData)
-            }else {
-                this.aniDelItem(cacheList, event, listData)
-            }
+            this.aniDelItem(cacheList, event, listData, list)
             
         },
 
@@ -392,7 +389,7 @@ Component({
             this.init()
         },
 
-        aniDelItem(cacheList, event, listData) {
+        aniDelItem(cacheList, event, listData, sourceList=[]) {
             let cacheNow = -1;
 
             // 缓存
@@ -400,6 +397,8 @@ Component({
                 key: -1,
                 data: ""
             }
+            let cacheMoka = {}
+
             cacheList.sort(this.sortBy("key"));
 
             // 正向遍历，获取关键节点
@@ -431,8 +430,29 @@ Component({
 
             cacheList.length -= 1;
 
+            cacheList.forEach(item => {
+                cacheMoka[item.key] = {
+                    tranX: item.tranX,
+                    tranY: item.tranY
+                }
+            })
+
+            let useList = []
+
+            // 重新赋值到原数组
+            for(let i=0; i< sourceList.length; i++) {
+                if(cacheMoka[sourceList[i].key]) {
+                    useList.push({
+                        key: sourceList[i].key,
+                        tranX: cacheMoka[sourceList[i].key].tranX,
+                        tranY: cacheMoka[sourceList[i].key].tranY,
+                        data: sourceList[i].data
+                    })
+                }
+            }
+
             // 拿到更新后的img列表
-            cacheList.map(item => {
+            useList.map(item => {
                 listData.push(item.data)
             })
 
@@ -449,7 +469,7 @@ Component({
 
             this.setData({
                 listData,
-                list: cacheList,
+                list: useList,
                 selSite: _selSite
             })
         },
