@@ -1,6 +1,10 @@
 # yunUI（微信小程序自定义功能组件库）
 ### 致力于“微信小程序”原生组件扩展开发 —— 功能更强大，使用更方便。
 
+### npm地址
+
+- [yun-ui-micro](https://www.npmjs.com/package/yun-ui-micro)
+
 ## 使用
 
 ### npm使用(此方式调用，所有引用组件名都是小写字母且没有“y”前缀，且最后一级都是index)
@@ -385,6 +389,9 @@ Time.getFormatTime(date);
 
 ### yImgPro
 具体使用件pages/YImgShow/picture。效果和上面一样，但是有更强的动画！
+
+### atinput
+![atinput](https://s27.aconvert.com/convert/p3r68-cdx67/4ulo9-fp0iw.gif)
 
 
 ## 联系作者

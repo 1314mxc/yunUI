@@ -108,8 +108,15 @@ Component({
                         focus_name_map = cacheMapList2
                         // 删除整个规则再赋值
                         this.setData({
-                            inputContent: `${_content.slice(0, cacheName.before_len)}${_content.slice(cacheName.all_len)}`
+                            inputContent: `${_content.slice(0, cacheName.before_len)}${_content.slice(cacheName.all_len)}`,
+                            focus: false
                         })
+                        setTimeout(()=> {
+                            this.setData({
+                                focus: true,
+                                textNum: cacheName.before_len
+                            })
+                        }, 0)
                         return
                     }
                 }
