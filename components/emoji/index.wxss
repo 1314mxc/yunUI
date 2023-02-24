@@ -1,0 +1,27 @@
+.emoji-content {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.emoji_list {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 12rpx 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.emoji_list view {
+    margin-top: 22rpx;
+    padding: 12rpx;
+}
+
+.emoji {
+    font-size: 52rpx;
+    width: 70rpx;
+    padding: 8rpx;
+    margin: 8rpx;
+    display: inline-block;
+    text-align: center;
+}

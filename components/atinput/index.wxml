@@ -1,2 +1,6 @@
-<!--components/atinput/index.wxml-->
-<textarea class="at-input-content custom-input" placeholder="{{placeholder}}" maxlength="{{maxlength}}" focus="{{focus}}" selection-start='{{textNum}}' selection-end='{{textNum}}' bindfocus="eventFocus" bindinput="eventInput" bindblur="eventBlur" value="{{inputContent}}" confirm-type="done"></textarea>
+<view class="at-input-box">
+    <textarea class="at-input-content custom-input" placeholder="{{placeholder}}" maxlength="{{maxlength}}" focus="{{focus}}" selection-start='{{textNum}}' selection-end='{{textNum}}' bindfocus="eventFocus" bindinput="eventInput" bindblur="eventBlur" value="{{inputContent}}" confirm-type="done"></textarea>
+    <view hidden="{{!showEmoji}}" class="emoji-box custom-emoji">
+        <slot></slot>
+    </view>
+</view>

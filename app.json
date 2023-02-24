@@ -15,7 +15,8 @@
         "pages/notice/index",
         "pages/message/index",
         "pages/popup/index",
-        "pages/atinput/index"
+        "pages/atinput/index",
+        "pages/emoji/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

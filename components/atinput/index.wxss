@@ -1,4 +1,15 @@
+
+.at-input-box {
+    position: relative;
+    width: 100%;
+}
 .at-input-content {
     width: 100%;
     box-sizing: border-box;
+}
+.emoji-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
 }

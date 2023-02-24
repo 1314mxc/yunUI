@@ -13,8 +13,8 @@
         "miniprogram": {
             "list": [
                 {
-                    "name": "pages/ylistscroll/listscroll",
-                    "pathName": "pages/ylistscroll/listscroll",
+                    "name": "pages/emoji/index",
+                    "pathName": "pages/emoji/index",
                     "query": "",
                     "scene": null
                 },

@@ -5,8 +5,10 @@ let textLen = 0;
 let focus_name_map = []
 let lastLen = 0; // 上一次输入的长度
 
+let cursorIndex = 0;
+
 Component({
-    externalClasses: ['custom-input'],
+    externalClasses: ['custom-input', 'custom-emoji'],
     
     properties: {
         name: {
@@ -29,6 +31,26 @@ Component({
                     })
                 }
             }
+        },
+        yText: {
+            type: String,
+            value: '',
+            observer(res) {
+                if(res) {
+                    let text = this.data.inputContent;
+                    text = text.substring(0, cursorIndex) + res + text.substring(cursorIndex, text.length);
+                    this.eventInput({
+                        detail: {
+                            value: text,
+                            cursor: cursorIndex + res.length
+                        }
+                    })
+                }
+            }
+        },
+        showEmoji: {
+            type: Boolean,
+            value: false
         },
         placeholder: {
             type: String,
@@ -54,6 +76,7 @@ Component({
             lastLen = textValue.length
             textIndex = textValue.indexOf('@', textValue.length - 1);
             let _content = this.data.inputContent;
+            cursorIndex = e.detail.cursor;
             if (_content.length > textValue.length){
                 // 删除操作
                 // 首先判断：删除了艾特，则当前项失效，正常字符串
@@ -63,7 +86,7 @@ Component({
                 let cacheMapList = []
                 let once = -1;
                 for(let i=0; i<focus_name_map.length; i++) {
-                    if(focus_name_map[i].before_len != e.detail.cursor) {
+                    if(focus_name_map[i].before_len != cursorIndex) {
                         cacheMapList.push(focus_name_map[i])
                     }else {
                         once = i;
@@ -86,7 +109,7 @@ Component({
                 let cacheIndex = -1
                 let cacheName = {}
                 for(let i=0; i<focus_name_map.length; i++) {
-                    if((focus_name_map[i].all_len - 1) == e.detail.cursor) {
+                    if((focus_name_map[i].all_len - 1) == cursorIndex) {
                         cacheIndex = i
                         cacheName = focus_name_map[i]
                         break;
@@ -122,7 +145,7 @@ Component({
                 }
                 let key = -1;
                 for(let i=0; i<focus_name_map.length; i++) {
-                    if(focus_name_map[i].before_len < e.detail.cursor && focus_name_map[i].all_len > e.detail.cursor + diffrence) {
+                    if(focus_name_map[i].before_len < cursorIndex && focus_name_map[i].all_len > cursorIndex + diffrence) {
                         key = i + 1;
                         focus_name_map[i].name_len -= diffrence;
                         focus_name_map[i].all_len -= diffrence;
@@ -140,7 +163,7 @@ Component({
                     return
                 }
                 for(let i=0; i<focus_name_map.length; i++) {
-                    if((e.detail.cursor + diffrence) < focus_name_map[i].before_len) {
+                    if((cursorIndex + diffrence) < focus_name_map[i].before_len) {
                         focus_name_map[i].before_len -= diffrence;
                         focus_name_map[i].all_len -= diffrence;
                     }
@@ -152,10 +175,10 @@ Component({
                 if(textIndex > -1) {
                     this.triggerEvent('at', {
                         text: e.detail.value,
-                        cursorIndex: e.detail.cursor
+                        cursorIndex: cursorIndex
                     })
                     this.setData({
-                        focus: false,
+                        // focus: false,
                         inputContent: e.detail.value
                     })
                 }else {
@@ -168,8 +191,12 @@ Component({
         eventFocus(e) {
             this.triggerEvent('focus', e)
         },
-        eventBlur() {
-            this.triggerEvent('blur', true)
-        }
+        eventBlur(e) {
+            cursorIndex = e.detail.cursor
+            this.triggerEvent('blur', {
+                cursorIndex,
+                text: this.data.inputContent
+            })
+        },
     }
 })

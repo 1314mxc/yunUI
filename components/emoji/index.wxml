@@ -1,0 +1,58 @@
+<y-popup showPop="{{showEmoji}}" bg_closed default_layout="{{false}}" bind:onCancel="onCancel">
+    <view slot="content-suffix" class="emoji-content">
+        <scroll-view class='emoji_list' scroll-y="true">
+            <view>
+                <text>基础表情</text>
+            </view>
+            <text wx:for="{{emojiList.basic}}" class='emoji' bindtap="emojiInput" data-emoji="{{item}}">{{item}}</text>
+
+            <view>
+                <text>手势</text>
+            </view>
+            <text wx:for="{{emojiList.gesture}}" class='emoji' bindtap="emojiInput"
+                data-emoji="{{item}}">{{item}}</text>
+
+            <view>
+                <text>人物</text>
+            </view>
+            <text wx:for="{{emojiList.people}}" class='emoji' bindtap="emojiInput" data-emoji="{{item}}">{{item}}</text>
+
+            <view>
+                <text>动植物</text>
+            </view>
+            <text wx:for="{{emojiList.animals}}" class='emoji' bindtap="emojiInput"
+                data-emoji="{{item}}">{{item}}</text>
+
+            <view>
+                <text>生肖</text>
+            </view>
+            <text wx:for="{{emojiList.zodiac}}" class='emoji' bindtap="emojiInput" data-emoji="{{item}}">{{item}}</text>
+
+            <view>
+                <text>水果食物</text>
+            </view>
+            <text wx:for="{{emojiList.food}}" class='emoji' bindtap="emojiInput" data-emoji="{{item}}">{{item}}</text>
+
+            <view>
+                <text>运动娱乐</text>
+            </view>
+            <text wx:for="{{emojiList.fun}}" class='emoji' bindtap="emojiInput" data-emoji="{{item}}">{{item}}</text>
+
+            <view>
+                <text>交通旅行</text>
+            </view>
+            <text wx:for="{{emojiList.traffic}}" class='emoji' bindtap="emojiInput"
+                data-emoji="{{item}}">{{item}}</text>
+
+            <view>
+                <text>物体</text>
+            </view>
+            <text wx:for="{{emojiList.object}}" class='emoji' bindtap="emojiInput" data-emoji="{{item}}">{{item}}</text>
+
+            <view>
+                <text>标志</text>
+            </view>
+            <text wx:for="{{emojiList.sign}}" class='emoji' bindtap="emojiInput" data-emoji="{{item}}">{{item}}</text>
+        </scroll-view>
+    </view>
+</y-popup>

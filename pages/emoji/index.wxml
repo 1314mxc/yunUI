@@ -1,0 +1,13 @@
+
+<view class='content'>
+    <view>
+        <view>
+            <button>可像文字框中输入emoji表情！</button>
+        </view>
+    </view>
+</view>
+<y-input yText="{{emoji}}" showEmoji bind:blur="onBlur">
+    <view bindtap="openEmoji">😁</view>
+</y-input>
+<!-- 表情选项框,占屏幕高度一半 -->
+<y-emoji show="{{emojiView}}" bind:cancel="onCancel" bind:choose="emojiInput"></y-emoji>

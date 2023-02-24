@@ -45,6 +45,7 @@ npm install yun-ui-micro
 - “单个展示cell”组件：建议如果有多个，请和cell-group一起使用
 - <a href="#popup">“底部弹层”组件</a>：从底部弹出，更丝滑、更高效。自定义内容与样式。未来将支持上下左右四边弹出。
 - <a href="#atinput">“@输入框”组件</a>：支持@功能的输入框。可结合popup组件实现人员选择功能！
+- <a href="#emoji">“emoji”组件</a>：目前以popup形式存在。选择emoji表情。一般和input输入框一起使用
 
 ### 插件
 - 日期时间转化插件：位于utils文件夹下，以import {Time} from '路径';方式调用
@@ -262,16 +263,24 @@ query.selectViewport().scrollOffset((res) => {
 <div id="atinput"> </div>
 
 ### atinput
-- name: String。不传即为默认值空。表示被艾特的人员名字，外部调用无需自行处理尾部空格。外部可动态更改
+- name: String。不传即为默认值空。此参数专门用来表示被艾特的人员名字，外部调用无需自行处理尾部空格。外部可动态更改
+- yText: String。不传即为默认值空。此参数表示一开始就要存在的文字，或是外部需要动态传入的字符串（比如“emoji表情”）
+- showEmoji：Boolean。默认为false。是否为输入框添加“emoji表情”功能，如果为true，则可以以slot形式传入emoji唤起按钮唤起emoji组件弹层
 - placeholder：String。默认为“请输入”。输入框默认文字
 - maxlength：Number。默认为140。输入框最大可输入文字个数
 
-- 外部样式custom-input。由调用方自定义输入框整体样式，比如border、border-radius、height、background等（width默认100%，不建议更改，可以在外部添加父元素控制）。使用方式：`custom-inpu="xxx"`
+- 外部样式custom-input。由调用方自定义输入框整体样式，比如border、border-radius、height、background等（width默认100%，不建议更改，可以在外部添加父元素控制）。使用方式：`custom-input="xxx"`
+- 外部样式custom-emoji。当showEmoji为true时可以由调用方自定义emoji表情按钮。使用方式：`custom-emoji="xxx"`
 
 - 还有三个监听函数供调用：
 - bind:at 回调事件，监听输入框输入@。此时开发者可以唤起人员选择弹窗/跳转页面人员选择
 - bind:focus 回调事件，监听输入框聚焦
-- bind:blur 回调事件，监听输入框失焦
+- bind:blur 回调事件，监听输入框失焦。接收两个参数cursorIndex，表示失焦时的光标位置，text表示当前文本框内容。
+
+<div id="cell-group"> </div>
+
+### emoji
+和 popup 组件传参、使用方式一致
 
 
 

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "y-input": "/components/atinput/index",
+    "y-emoji": "/components/emoji/index"
+  }
+}
