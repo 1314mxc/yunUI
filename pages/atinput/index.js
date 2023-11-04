@@ -14,12 +14,14 @@ Page({
 
     onSelectItem() {
         this.setData({
-            visible4: true
+            visible4: true,
+            member: ""
         })
     },
 
     onChooseItem(e) {
         let name = this.data.list[e.target.dataset.index].name;
+        console.log(name)
         this.setData({
             visible4: false,
             member: name
